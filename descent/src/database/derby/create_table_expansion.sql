@@ -29,3 +29,5 @@ insert into EXPANSION (NAME, MESSAGE_CODE, ICON)
 values ('VoD', 'expansion.vod',null);
 insert into EXPANSION (NAME, MESSAGE_CODE, ICON)
 values ('BotW', 'expansion.botw',null);
+insert into EXPANSION (NAME, MESSAGE_CODE, ICON)
+values ('ToC', 'expansion.toc',null);

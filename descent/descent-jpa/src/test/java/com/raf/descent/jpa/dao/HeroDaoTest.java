@@ -96,7 +96,7 @@ public class HeroDaoTest extends AbstractDaoTest {
     list = this.heroDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
-    assertEquals(13, list.size());
+    assertEquals(29, list.size());
     example.setArchetype(null);
     example.setExpansionName("LoR");
     example.setArchetypeName("Warrior");

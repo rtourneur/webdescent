@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -31,25 +32,21 @@ public class Item extends AbstractNamedEntity {
   /** Serial UID. */
   private static final long serialVersionUID = 2076464997993579868L;
 
-  /** The expansion. */
-  @ManyToOne
-  @JoinColumn(name = "EXPANSION", nullable = false)
-  private Expansion expansion;
+  /** The expansion name. */
+  @Column(name = "EXPANSION", nullable = false, length = 30)
+  private String expansionName;
 
-  /** The item type. */
-  @ManyToOne
-  @JoinColumn(name = "ITEM_TYPE", nullable = false)
-  private ItemType itemType;
+  /** The item type name. */
+  @Column(name = "ITEM_TYPE", nullable = false, length = 30)
+  private String itemTypeName;
 
-  /** The attack type. */
-  @ManyToOne
-  @JoinColumn(name = "ATTACK_TYPE")
-  private AttackType attackType;
+  /** The attack type name. */
+  @Column(name = "ATTACK_TYPE", nullable = false, length = 30)
+  private String attackTypeName;
 
-  /** The equipement space. */
-  @ManyToOne
-  @JoinColumn(name = "EQUIPMENT", nullable = false)
-  private Equipment equipment;
+  /** The equipmennt name. */
+  @Column(name = "EQUIPMENT", nullable = false, length = 30)
+  private String equipmentName;
 
   /** The cost. */
   @Column(precision = 3)
@@ -63,22 +60,46 @@ public class Item extends AbstractNamedEntity {
   @Column(name = "\"COUNT\"", nullable = false, precision = 1)
   private Integer count;
 
-  /** The class. */
-  @ManyToOne
-  @JoinColumn(name = "CLASS")
-  private Clazz clazz;
+  /** The class name. */
+  @Column(name = "CLASS", length = 30)
+  private String clazzName;
 
   /** The image. */
   @Column(nullable = false, length = 30)
   private String image;
 
+  /** The expansion. */
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "EXPANSION", nullable = false, insertable = false, updatable = false)
+  private Expansion expansion;
+
+  /** The item type. */
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "ITEM_TYPE", nullable = false, insertable = false, updatable = false)
+  private ItemType itemType;
+
+  /** The attack type. */
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "ATTACK_TYPE", insertable = false, updatable = false)
+  private AttackType attackType;
+
+  /** The equipement space. */
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "EQUIPMENT", nullable = false, insertable = false, updatable = false)
+  private Equipment equipment;
+
+  /** The class. */
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "CLASS", insertable = false, updatable = false)
+  private Clazz clazz;
+
   /** The list of dices. */
-  @OneToMany(mappedBy = "item")
+  @OneToMany(mappedBy = "item", fetch = FetchType.LAZY)
   private List<ItemDice> dices;
 
   /** The list of traits. */
-  @ManyToMany
-  @JoinTable(name = "ITEM_TRAIT", joinColumns = { @JoinColumn(name = "ITEM", nullable = false) }, inverseJoinColumns = { @JoinColumn(name = "TRAIT", nullable = false) })
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(name = "ITEM_TRAIT", schema = "DESCENT", joinColumns = { @JoinColumn(name = "ITEM", nullable = false) }, inverseJoinColumns = { @JoinColumn(name = "TRAIT", nullable = false) })
   private List<Trait> traits;
 
   /**
@@ -86,6 +107,177 @@ public class Item extends AbstractNamedEntity {
    */
   public Item() {
     super();
+  }
+
+  /**
+   * Returns the expansion name.
+   * 
+   * @return the expansionName
+   */
+  public String getExpansionName() {
+    return this.expansionName;
+  }
+
+  /**
+   * Defines the expansion name.
+   * 
+   * @param expansionName
+   *          the expansionName to set
+   */
+  public void setExpansionName(final String expansionName) {
+    this.expansionName = expansionName;
+  }
+
+  /**
+   * Returns the item type name.
+   * 
+   * @return the itemTypeName
+   */
+  public String getItemTypeName() {
+    return this.itemTypeName;
+  }
+
+  /**
+   * Defines the item type name.
+   * 
+   * @param itemTypeName
+   *          the itemTypeName to set
+   */
+  public void setItemTypeName(final String itemTypeName) {
+    this.itemTypeName = itemTypeName;
+  }
+
+  /**
+   * Returns the attack type name.
+   * 
+   * @return the attackTypeName
+   */
+  public String getAttackTypeName() {
+    return this.attackTypeName;
+  }
+
+  /**
+   * Defines the attack type name.
+   * 
+   * @param attackTypeName
+   *          the attackTypeName to set
+   */
+  public void setAttackTypeName(final String attackTypeName) {
+    this.attackTypeName = attackTypeName;
+  }
+
+  /**
+   * Returns the equipment name.
+   * 
+   * @return the equipmentName
+   */
+  public String getEquipmentName() {
+    return this.equipmentName;
+  }
+
+  /**
+   * Defines the equipment name.
+   * 
+   * @param equipmentName
+   *          the equipmentName to set
+   */
+  public void setEquipmentName(final String equipmentName) {
+    this.equipmentName = equipmentName;
+  }
+
+  /**
+   * Returns the cost.
+   * 
+   * @return the cost
+   */
+  public Integer getCost() {
+    return this.cost;
+  }
+
+  /**
+   * Defines the cost.
+   * 
+   * @param cost
+   *          the cost to set
+   */
+  public void setCost(final Integer cost) {
+    this.cost = cost;
+  }
+
+  /**
+   * Returns the rule code.
+   * 
+   * @return the ruleCode
+   */
+  public String getRuleCode() {
+    return this.ruleCode;
+  }
+
+  /**
+   * Defines the rule code.
+   * 
+   * @param ruleCode
+   *          the ruleCode to set
+   */
+  public void setRuleCode(final String ruleCode) {
+    this.ruleCode = ruleCode;
+  }
+
+  /**
+   * Returns the count.
+   * 
+   * @return the count
+   */
+  public Integer getCount() {
+    return this.count;
+  }
+
+  /**
+   * Defines the count.
+   * 
+   * @param count
+   *          the count to set
+   */
+  public void setCount(final Integer count) {
+    this.count = count;
+  }
+
+  /**
+   * Returns the class name.
+   * 
+   * @return the clazzName
+   */
+  public String getClazzName() {
+    return this.clazzName;
+  }
+
+  /**
+   * Defines the class name.
+   * 
+   * @param clazzName
+   *          the clazzName to set
+   */
+  public void setClazzName(final String clazzName) {
+    this.clazzName = clazzName;
+  }
+
+  /**
+   * Returns the image.
+   * 
+   * @return the image
+   */
+  public String getImage() {
+    return this.image;
+  }
+
+  /**
+   * Defines the image.
+   * 
+   * @param image
+   *          the image to set
+   */
+  public void setImage(final String image) {
+    this.image = image;
   }
 
   /**
@@ -165,63 +357,6 @@ public class Item extends AbstractNamedEntity {
   }
 
   /**
-   * Returns the cost.
-   * 
-   * @return the cost
-   */
-  public Integer getCost() {
-    return this.cost;
-  }
-
-  /**
-   * Defines the cost.
-   * 
-   * @param cost
-   *          the cost to set
-   */
-  public void setCost(final Integer cost) {
-    this.cost = cost;
-  }
-
-  /**
-   * Returns the rule code.
-   * 
-   * @return the ruleCode
-   */
-  public String getRuleCode() {
-    return this.ruleCode;
-  }
-
-  /**
-   * Defines the rule code.
-   * 
-   * @param ruleCode
-   *          the ruleCode to set
-   */
-  public void setRuleCode(final String ruleCode) {
-    this.ruleCode = ruleCode;
-  }
-
-  /**
-   * Returns the count.
-   * 
-   * @return the count
-   */
-  public Integer getCount() {
-    return this.count;
-  }
-
-  /**
-   * Defines the count.
-   * 
-   * @param count
-   *          the count to set
-   */
-  public void setCount(final Integer count) {
-    this.count = count;
-  }
-
-  /**
    * Returns the clazz.
    * 
    * @return the clazz
@@ -238,25 +373,6 @@ public class Item extends AbstractNamedEntity {
    */
   public void setClazz(final Clazz clazz) {
     this.clazz = clazz;
-  }
-
-  /**
-   * Returns the image.
-   * 
-   * @return the image
-   */
-  public String getImage() {
-    return this.image;
-  }
-
-  /**
-   * Defines the image.
-   * 
-   * @param image
-   *          the image to set
-   */
-  public void setImage(final String image) {
-    this.image = image;
   }
 
   /**

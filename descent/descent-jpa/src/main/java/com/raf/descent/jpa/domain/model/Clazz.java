@@ -27,7 +27,7 @@ public class Clazz extends AbstractNamedEntity {
   @Column(name = "ARCHETYPE", nullable = false, length = 30)
   private String archetypeName;
 
-  /** The archetype name. */
+  /** The expansion name. */
   @Column(name = "EXPANSION", nullable = false, length = 30)
   private String expansionName;
 

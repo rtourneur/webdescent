@@ -3,7 +3,7 @@ package com.raf.descent.jpa.domain.model;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.raf.descent.jpa.domain.AbstractNamedEntity;
+import com.raf.descent.jpa.domain.AbstractIconEntity;
 
 /**
  * The persistent class for the EQUIPMENT database table.
@@ -12,7 +12,7 @@ import com.raf.descent.jpa.domain.AbstractNamedEntity;
  */
 @Entity
 @Table(name = "EQUIPMENT", schema = "DESCENT")
-public class Equipment extends AbstractNamedEntity {
+public class Equipment extends AbstractIconEntity {
 
   /** Serial UID. */
   private static final long serialVersionUID = -7248230614694065631L;
