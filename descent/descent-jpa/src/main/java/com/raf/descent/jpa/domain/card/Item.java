@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.raf.descent.jpa.domain.AbstractNamedEntity;
 import com.raf.descent.jpa.domain.model.AttackType;
 import com.raf.descent.jpa.domain.model.Clazz;
@@ -411,6 +413,36 @@ public class Item extends AbstractNamedEntity {
    */
   public void setTraits(final List<Trait> traits) {
     this.traits = traits;
+  }
+
+  /**
+   * Append the properties for the to string builder.
+   * 
+   * @param builder
+   *          the builder
+   * @see AbstractNamedEntity#appendNamed(ToStringBuilder)
+   */
+  @Override
+  protected void appendNamed(final ToStringBuilder builder) {
+    builder.append("expansionName", this.expansionName).append("itemTypeName", this.itemTypeName)
+        .append("attackTypeName", this.attackTypeName).append("equipmentName", this.equipmentName)
+        .append("cost", this.cost).append("ruleCode", this.ruleCode).append("count", this.count)
+        .append("clazzName", this.clazzName).append("image", this.image);
+    if (this.expansion != null && Expansion.class.equals(this.expansion.getClass())) {
+      builder.append("expansion", this.expansion);
+    }
+    if (this.itemType != null && ItemType.class.equals(this.itemType.getClass())) {
+      builder.append("itemType", this.itemType);
+    }
+    if (this.attackType != null && AttackType.class.equals(this.attackType.getClass())) {
+      builder.append("attackType", this.attackType);
+    }
+    if (this.equipment != null && Equipment.class.equals(this.equipment.getClass())) {
+      builder.append("equipment", this.equipment);
+    }
+    if (this.clazz != null && Clazz.class.equals(this.clazz.getClass())) {
+      builder.append("clazz", this.clazz);
+    }
   }
 
 }

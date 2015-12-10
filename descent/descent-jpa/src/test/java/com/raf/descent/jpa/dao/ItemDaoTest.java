@@ -14,8 +14,10 @@ import org.junit.Test;
 
 import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.card.Item;
+import com.raf.descent.jpa.domain.card.ItemDice;
 import com.raf.descent.jpa.domain.model.AttackType;
 import com.raf.descent.jpa.domain.model.Clazz;
+import com.raf.descent.jpa.domain.model.Dice;
 import com.raf.descent.jpa.domain.model.Equipment;
 import com.raf.descent.jpa.domain.model.Expansion;
 import com.raf.descent.jpa.domain.model.ItemType;
@@ -87,6 +89,9 @@ public class ItemDaoTest extends AbstractDaoTest {
     List<Trait> traits = example.getTraits();
     assertNotNull(traits);
     assertFalse(traits.isEmpty());
+    List<ItemDice> itemDices = example.getDices();
+    assertNotNull(itemDices);
+    assertFalse(itemDices.isEmpty());
   }
 
   /**
