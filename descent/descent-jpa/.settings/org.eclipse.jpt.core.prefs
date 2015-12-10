@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+org.eclipse.jpt.core.platform=generic2_1
+org.eclipse.jpt.jpa.core.discoverAnnotatedClasses=true
+problem.TYPE_MAPPING_CLASS_MISSING_NO_ARG_CONSTRUCTOR=warning
+problem.TYPE_MAPPING_CLASS_PRIVATE_NO_ARG_CONSTRUCTOR=warning
+workspace_validation_preferences_overridden=true
