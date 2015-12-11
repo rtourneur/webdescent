@@ -21,6 +21,7 @@ import com.raf.descent.jpa.domain.model.Trait;
 /**
  * The persistent class for the SEARCH database table.
  * 
+ * @author RAF
  */
 @Entity
 @Table(name = "SEARCH", schema = "DESCENT")

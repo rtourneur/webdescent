@@ -207,10 +207,10 @@ public abstract class AbstractExpansionEntity extends AbstractEntity implements 
     builder.append("name", getName()).append("expansionName", getExpansionName())
         .append("messageCode", this.messageCode);
     appendExpansion(builder);
+    builder.append("image", this.image);
     if (this.expansion != null && Expansion.class.equals(this.expansion.getClass())) {
       builder.append("expansion", this.expansion);
     }
-    builder.append("image", this.image);
   }
 
   /**
