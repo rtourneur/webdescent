@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Utility class for database tests.
  * 
- * @author raphael.tourneur
+ * @author RAF
  */
 public final class DatabaseUtil {
 

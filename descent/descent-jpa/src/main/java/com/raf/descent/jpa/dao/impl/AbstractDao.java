@@ -384,8 +384,8 @@ public abstract class AbstractDao<E extends DomainEntity<I>, I extends Serializa
   /**
    * Set the predicate for the findByExample request.
    *
-   * @param criteriaQuery
-   *          the predicate
+   * @param root
+   *          the root type
    * @param example
    *          the example
    */

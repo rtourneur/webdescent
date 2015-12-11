@@ -1,8 +1,7 @@
 /**
+ * Package for test utils.
  * 
- */
-/**
- * @author raphael.tourneur
- *
+ * @author RAF
  */
 package com.raf.descent.test;
+

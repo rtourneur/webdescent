@@ -26,7 +26,7 @@ import com.raf.descent.util.config.UtilConfig;
 /**
  * Spring configuration class for persistence.
  * 
- * @author raphael.tourneur
+ * @author RAF
  *
  */
 @Configuration

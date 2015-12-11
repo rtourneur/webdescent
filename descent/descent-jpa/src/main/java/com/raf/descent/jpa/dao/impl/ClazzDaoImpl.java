@@ -36,8 +36,8 @@ public final class ClazzDaoImpl extends AbstractDao<Clazz, String> implements Cl
    * <li>expansion</li>
    * </ul>
    *
-   * @param criteriaQuery
-   *          the predicate
+   * @param root
+   *          the root type
    * @param example
    *          the example
    * @see AbstractDao#getPredicates(Root, Clazz)

@@ -35,8 +35,8 @@ public final class DiceDaoImpl extends AbstractDao<Dice, String> implements Dice
    * <li>dice type</li>
    * </ul>
    *
-   * @param criteriaQuery
-   *          the predicate
+   * @param root
+   *          the root type
    * @param example
    *          the example
    * @see AbstractDao#getPredicates(Root, Dice)

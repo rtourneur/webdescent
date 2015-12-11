@@ -7,7 +7,7 @@ import com.raf.descent.util.Loggable;
 /**
  * Service for testing logs (implementation).
  * 
- * @author raphael.tourneur
+ * @author RAF
  */
 @Repository
 public final class ServiceExampleImpl implements ServiceExample {

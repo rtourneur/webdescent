@@ -3,7 +3,7 @@ package com.raf.descent.util.aspect;
 /**
  * Service for testing logs.
  * 
- * @author raphael.tourneur
+ * @author RAF
  */
 public interface ServiceExample {
 

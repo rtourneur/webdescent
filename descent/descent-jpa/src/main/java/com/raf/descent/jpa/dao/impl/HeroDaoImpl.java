@@ -37,8 +37,8 @@ public final class HeroDaoImpl extends AbstractDao<Hero, NameExpansionPk> implem
    * <li>archetype</li>
    * </ul>
    *
-   * @param criteriaQuery
-   *          the predicate
+   * @param root
+   *          the root type
    * @param example
    *          the example
    * @see AbstractDao#getPredicates(Root, Hero)

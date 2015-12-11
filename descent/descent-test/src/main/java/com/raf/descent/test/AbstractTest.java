@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Abstract class for all test with datasource.
  * 
- * @author raphael.tourneur
+ * @author RAF
  */
 public abstract class AbstractTest {
 

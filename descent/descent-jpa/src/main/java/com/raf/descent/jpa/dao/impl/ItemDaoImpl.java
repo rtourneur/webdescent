@@ -39,8 +39,8 @@ public final class ItemDaoImpl extends AbstractDao<Item, String> implements Item
    * <li>class</li>
    * </ul>
    *
-   * @param criteriaQuery
-   *          the predicate
+   * @param root
+   *          the root type
    * @param example
    *          the example
    * @see AbstractDao#getPredicates(Root, Item)
@@ -51,37 +51,107 @@ public final class ItemDaoImpl extends AbstractDao<Item, String> implements Item
     if (example.getName() != null) {
       predicatesList.add(getEquals(root, "name", example.getName()));
     }
+    addExpansionFilter(root, example, predicatesList);
+    addItemTypeFilter(root, example, predicatesList);
+    addAttackTypeFilter(root, example, predicatesList);
+    addEquipmentFilter(root, example, predicatesList);
+    addClazzFilter(root, example, predicatesList);
+    return predicatesList.toArray(new Predicate[predicatesList.size()]);
+  }
+
+  /**
+   * Add expansion filter.
+   * 
+   * @param root
+   *          the root type
+   * @param example
+   *          the example
+   * @param predicatesList
+   *          the predicate list
+   */
+  private void addExpansionFilter(final Root<Item> root, final Item example, final List<Predicate> predicatesList) {
     if (example.getExpansionName() != null) {
       predicatesList.add(getEquals(root, "expansionName", example.getExpansionName()));
     }
     if (example.getExpansion() != null) {
       predicatesList.add(getEquals(root, "expansion", example.getExpansion()));
     }
+  }
+
+  /**
+   * Add item type filter.
+   * 
+   * @param root
+   *          the root type
+   * @param example
+   *          the example
+   * @param predicatesList
+   *          the predicate list
+   */
+  private void addItemTypeFilter(final Root<Item> root, final Item example, final List<Predicate> predicatesList) {
     if (example.getItemTypeName() != null) {
       predicatesList.add(getEquals(root, "itemTypeName", example.getItemTypeName()));
     }
     if (example.getItemType() != null) {
       predicatesList.add(getEquals(root, "itemType", example.getItemType()));
     }
+  }
+
+  /**
+   * Add attack type filter.
+   * 
+   * @param root
+   *          the root type
+   * @param example
+   *          the example
+   * @param predicatesList
+   *          the predicate list
+   */
+  private void addAttackTypeFilter(final Root<Item> root, final Item example, final List<Predicate> predicatesList) {
     if (example.getAttackTypeName() != null) {
       predicatesList.add(getEquals(root, "attackTypeName", example.getAttackTypeName()));
     }
     if (example.getAttackType() != null) {
       predicatesList.add(getEquals(root, "attackType", example.getAttackType()));
     }
+  }
+
+  /**
+   * Add equipment filter.
+   * 
+   * @param root
+   *          the root type
+   * @param example
+   *          the example
+   * @param predicatesList
+   *          the predicate list
+   */
+  private void addEquipmentFilter(final Root<Item> root, final Item example, final List<Predicate> predicatesList) {
     if (example.getEquipmentName() != null) {
       predicatesList.add(getEquals(root, "equipmentName", example.getEquipmentName()));
     }
     if (example.getEquipment() != null) {
       predicatesList.add(getEquals(root, "equipment", example.getEquipment()));
     }
+  }
+
+  /**
+   * Add clazz filter.
+   * 
+   * @param root
+   *          the root type
+   * @param example
+   *          the example
+   * @param predicatesList
+   *          the predicate list
+   */
+  private void addClazzFilter(final Root<Item> root, final Item example, final List<Predicate> predicatesList) {
     if (example.getClazzName() != null) {
       predicatesList.add(getEquals(root, "clazzName", example.getClazzName()));
     }
     if (example.getClazz() != null) {
       predicatesList.add(getEquals(root, "clazz", example.getClazz()));
     }
-    return predicatesList.toArray(new Predicate[predicatesList.size()]);
   }
 
   /**

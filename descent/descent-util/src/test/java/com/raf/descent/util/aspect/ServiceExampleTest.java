@@ -19,7 +19,7 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import com.raf.descent.util.config.UtilConfig;
 
 /**
- * @author raphael.tourneur
+ * @author RAF
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)

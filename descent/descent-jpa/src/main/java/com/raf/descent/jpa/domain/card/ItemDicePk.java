@@ -30,7 +30,7 @@ public class ItemDicePk implements Serializable {
 
   /** The index. */
   @Column(unique = true, nullable = false, precision = 1)
-  private long index;
+  private Integer index;
 
   /**
    * Constructor.
@@ -82,7 +82,7 @@ public class ItemDicePk implements Serializable {
    * 
    * @return the index
    */
-  public long getIndex() {
+  public Integer getIndex() {
     return this.index;
   }
 
@@ -92,7 +92,7 @@ public class ItemDicePk implements Serializable {
    * @param index
    *          the index to set
    */
-  public void setIndex(final long index) {
+  public void setIndex(final Integer index) {
     this.index = index;
   }
 

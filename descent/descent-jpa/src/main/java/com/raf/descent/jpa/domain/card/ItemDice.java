@@ -6,6 +6,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import com.raf.descent.jpa.domain.AbstractEntity;
 import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.model.Dice;
 
@@ -16,7 +19,7 @@ import com.raf.descent.jpa.domain.model.Dice;
  */
 @Entity
 @Table(name = "ITEM_DICE", schema = "DESCENT")
-public class ItemDice implements DomainEntity<ItemDicePk> {
+public class ItemDice extends AbstractEntity implements DomainEntity<ItemDicePk> {
 
   /** Serial UID. */
   private static final long serialVersionUID = -668694173537458469L;
@@ -75,6 +78,42 @@ public class ItemDice implements DomainEntity<ItemDicePk> {
   }
 
   /**
+   * Returns the item name.
+   * 
+   * @return the item name
+   */
+  public String getItemName() {
+    if (this.ident == null) {
+      this.ident = new ItemDicePk();
+    }
+    return this.ident.getItem();
+  }
+
+  /**
+   * Returns the dice name.
+   * 
+   * @return the dice name
+   */
+  public String getDiceName() {
+    if (this.ident == null) {
+      this.ident = new ItemDicePk();
+    }
+    return this.ident.getDice();
+  }
+
+  /**
+   * Returns the index.
+   * 
+   * @return the index
+   */
+  public Integer getIndex() {
+    if (this.ident == null) {
+      this.ident = new ItemDicePk();
+    }
+    return this.ident.getIndex();
+  }
+
+  /**
    * Returns the item.
    * 
    * @return the item
@@ -110,6 +149,24 @@ public class ItemDice implements DomainEntity<ItemDicePk> {
    */
   public void setDice(final Dice dice) {
     this.dice = dice;
+  }
+
+  /**
+   * Append the properties for the to string builder.
+   * 
+   * @param builder
+   *          the builder
+   * @see AbstractEntity#append(ToStringBuilder)
+   */
+  @Override
+  protected void append(final ToStringBuilder builder) {
+    builder.append("itemName", getItemName()).append("diceName", getDiceName()).append("index", getIndex());
+    if (this.item != null && Item.class.equals(this.item.getClass())) {
+      builder.append("item", this.item);
+    }
+    if (this.dice != null && Dice.class.equals(this.dice.getClass())) {
+      builder.append("dice", this.dice);
+    }
   }
 
 }

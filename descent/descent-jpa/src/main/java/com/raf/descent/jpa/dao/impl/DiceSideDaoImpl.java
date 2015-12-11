@@ -36,8 +36,8 @@ public final class DiceSideDaoImpl extends AbstractDao<DiceSide, DiceSidePk> imp
    * <li>side</li>
    * </ul>
    *
-   * @param criteriaQuery
-   *          the predicate
+   * @param root
+   *          the root type
    * @param example
    *          the example
    * @see AbstractDao#getPredicates(Root, DiceSide)

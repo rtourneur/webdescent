@@ -36,8 +36,8 @@ public final class SkillDaoImpl extends AbstractDao<Skill, SkillPk> implements S
    * <li>dice type</li>
    * </ul>
    *
-   * @param criteriaQuery
-   *          the predicate
+   * @param root
+   *          the root type
    * @param example
    *          the example
    * @see AbstractDao#getPredicates(Root, Skill)
