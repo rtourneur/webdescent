@@ -43,7 +43,7 @@ public class Item extends AbstractNamedEntity {
   private String itemTypeName;
 
   /** The attack type name. */
-  @Column(name = "ATTACK_TYPE", nullable = false, length = 30)
+  @Column(name = "ATTACK_TYPE", length = 30)
   private String attackTypeName;
 
   /** The equipmennt name. */
@@ -428,18 +428,68 @@ public class Item extends AbstractNamedEntity {
         .append("attackTypeName", this.attackTypeName).append("equipmentName", this.equipmentName)
         .append("cost", this.cost).append("ruleCode", this.ruleCode).append("count", this.count)
         .append("clazzName", this.clazzName).append("image", this.image);
+    appendExpansion(builder);
+    appendItemType(builder);
+    appendAttackType(builder);
+    appendEquipment(builder);
+    appendClazz(builder);
+  }
+
+  /**
+   * Append the expansion properties for the to string builder.
+   * 
+   * @param builder
+   *          the builder
+   */
+  private void appendExpansion(final ToStringBuilder builder) {
     if (this.expansion != null && Expansion.class.equals(this.expansion.getClass())) {
       builder.append("expansion", this.expansion);
     }
+  }
+
+  /**
+   * Append the item type properties for the to string builder.
+   * 
+   * @param builder
+   *          the builder
+   */
+  private void appendItemType(final ToStringBuilder builder) {
     if (this.itemType != null && ItemType.class.equals(this.itemType.getClass())) {
       builder.append("itemType", this.itemType);
     }
+  }
+
+  /**
+   * Append the attack type properties for the to string builder.
+   * 
+   * @param builder
+   *          the builder
+   */
+  private void appendAttackType(final ToStringBuilder builder) {
     if (this.attackType != null && AttackType.class.equals(this.attackType.getClass())) {
       builder.append("attackType", this.attackType);
     }
+  }
+
+  /**
+   * Append the equipment properties for the to string builder.
+   * 
+   * @param builder
+   *          the builder
+   */
+  private void appendEquipment(final ToStringBuilder builder) {
     if (this.equipment != null && Equipment.class.equals(this.equipment.getClass())) {
       builder.append("equipment", this.equipment);
     }
+  }
+
+  /**
+   * Append the clazz properties for the to string builder.
+   * 
+   * @param builder
+   *          the builder
+   */
+  private void appendClazz(final ToStringBuilder builder) {
     if (this.clazz != null && Clazz.class.equals(this.clazz.getClass())) {
       builder.append("clazz", this.clazz);
     }
