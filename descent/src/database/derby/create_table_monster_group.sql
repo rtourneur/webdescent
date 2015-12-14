@@ -84,3 +84,72 @@ insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_S
 values ('Ferrox', 'DCK', 'monstergroup.ferrox.dck', 'Melee', 'Small', 1, 3);
 insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
 values ('Golem', 'DCK', 'monstergroup.golem.dck', 'Melee', 'Huge', 1, 1);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Dark Priest', 'DCK', 'monstergroup.darkpriest.dck', 'Ranged', 'Small', 1, 3);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Blood Ape', 'DCK', 'monstergroup.bloodape.dck', 'Melee', 'Medium', 1, 2);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Chaos Beast', 'DCK', 'monstergroup.chaosbeast.dck', 'Ranged', 'Huge', 1, 2);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Deep Elf', 'DCK', 'monstergroup.deepelf.dck', 'Melee', 'Small', 1, 1);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Troll', 'DCK', 'monstergroup.troll.dck', 'Melee', 'Huge', 1, 1);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Shade', 'DCK', 'monstergroup.shade.dck', 'Melee', 'Small', 1, 4);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Lava Beetle', 'DCK', 'monstergroup.lavabeetle.dck', 'Ranged', 'Small', 1, 3);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Medusa', 'DCK', 'monstergroup.medusa.dck', 'Ranged', 'Small', 1, 2);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Wendigo', 'DCK', 'monstergroup.wendigo.dck', 'Melee', 'Medium', 1, 2);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Ice Wyrm', 'DCK', 'monstergroup.icewyrm.dck', 'Melee', 'Massive', 1, 1);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Beastman', 'OotO', 'monstergroup.beastman.ooto', 'Melee', 'Small', 1, 3);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Bane Spider', 'OotO', 'monstergroup.banespider.ooto', 'Ranged', 'Huge', 1, 2);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Razorwing', 'OotO', 'monstergroup.razorwing.ooto', 'Melee', 'Small', 1, 3);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Giant', 'CoD', 'monstergroup.giant.cod', 'Melee', 'Huge', 1, 1);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Chaos Beast', 'CoD', 'monstergroup.chaosbeast.cod', 'Ranged', 'Huge', 1, 2);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Lava Beetle', 'CoD', 'monstergroup.lavabeetle.cod', 'Ranged', 'Small', 1, 3);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Sorcerer', 'CotF', 'monstergroup.sorcerer.cotf', 'Ranged', 'Small', 1, 3);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Golem', 'CotF', 'monstergroup.golem.cotf', 'Melee', 'Huge', 1, 1);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Medusa', 'CotF', 'monstergroup.medusa.cotf', 'Ranged', 'Small', 1, 2);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Crypt Dragon', 'GoD', 'monstergroup.cryptdragon.god', 'Ranged', 'Massive', 1, 1);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Dark Priest', 'GoD', 'monstergroup.darkpriest.god', 'Ranged', 'Small', 1, 3);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Wendigo', 'GoD', 'monstergroup.wendigo.god', 'Melee', 'Huge', 1, 2);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Ogre', 'VoD', 'monstergroup.ogre.vod', 'Melee', 'Huge', 1, 1);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Manticore', 'VoD', 'monstergroup.manticore.vod', 'Ranged', 'Huge', 1, 1);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Troll', 'VoD', 'monstergroup.troll.vod', 'Melee', 'Huge', 1, 1);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Hell Hound', 'BotW', 'monstergroup.hellhound.botw', 'Melee', 'Medium', 1, 3);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Kobold', 'BotW', 'monstergroup.kobold.botw', 'Melee', 'Small', 3, 9);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Deep Elf', 'BotW', 'monstergroup.deepelf.botw', 'Melee', 'Small', 1, 1);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Skeleton Archer', 'ToC', 'monstergroup.skeletonarcher.toc', 'Ranged', 'Small', 1, 4);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Demon Lord', 'ToC', 'monstergroup.demonlord.toc', 'Ranged', 'Huge', 1, 1);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Crow Hag', 'ToC', 'monstergroup.crowhag.toc', 'Ranged', 'Small', 1, 3);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Naga', 'SotS', 'monstergroup.naga.sots', 'Ranged', 'Huge', 1, 2);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Ferrox', 'SotS', 'monstergroup.ferrox.sots', 'Melee', 'Small', 1, 3);
+insert into MONSTER_GROUP (NAME, EXPANSION, MESSAGE_CODE, ATTACK_TYPE, MONSTER_SIZE, MASTER, MINION)
+values ('Blood Ape', 'SotS', 'monstergroup.bloodape.sots', 'Melee', 'Medium', 1, 2);
+

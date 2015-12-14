@@ -157,3 +157,139 @@ insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
 values ('Golem', 'DCK', 'Building');
 insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
 values ('Golem', 'DCK', 'Cursed');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Dark Priest', 'DCK', 'Civilized');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Dark Priest', 'DCK', 'Cursed');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Blood Ape', 'DCK', 'Hot');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Blood Ape', 'DCK', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Chaos Beast', 'DCK', 'Dark');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Chaos Beast', 'DCK', 'Cursed');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Deep Elf', 'DCK', 'Dark');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Deep Elf', 'DCK', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Troll', 'DCK', 'Mountain');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Troll', 'DCK', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Shade', 'DCK', 'Dark');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Shade', 'DCK', 'Cursed');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Lava Beetle', 'DCK', 'Hot');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Lava Beetle', 'DCK', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Medusa', 'DCK', 'Building');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Medusa', 'DCK', 'Cursed');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Wendigo', 'DCK', 'Cold');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Wendigo', 'DCK', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Ice Wyrm', 'DCK', 'Cold');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Ice Wyrm', 'DCK', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Beastman', 'OotO', 'Mountain');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Beastman', 'OotO', 'Wilderness');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Bane Spider', 'OotO', 'Dark');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Bane Spider', 'OotO', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Razorwing', 'OotO', 'Wilderness');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Razorwing', 'OotO', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Giant', 'CoD', 'Mountain');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Giant', 'CoD', 'Wilderness');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Chaos Beast', 'CoD', 'Dark');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Chaos Beast', 'CoD', 'Cursed');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Lava Beetle', 'CoD', 'Hot');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Lava Beetle', 'CoD', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Sorcerer', 'CotF', 'Civilized');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Sorcerer', 'CotF', 'Building');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Golem', 'CotF', 'Building');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Golem', 'CotF', 'Cursed');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Medusa', 'CotF', 'Building');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Medusa', 'CotF', 'Cursed');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Crypt Dragon', 'GoD', 'Dark');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Crypt Dragon', 'GoD', 'Cursed');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Dark Priest', 'GoD', 'Civilized');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Dark Priest', 'GoD', 'Cursed');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Wendigo', 'GoD', 'Cold');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Wendigo', 'GoD', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Ogre', 'VoD', 'Building');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Ogre', 'VoD', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Manticore', 'VoD', 'Dark');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Manticore', 'VoD', 'Wilderness');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Troll', 'VoD', 'Mountain');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Troll', 'VoD', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Hell Hound', 'BotW', 'Cursed');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Hell Hound', 'BotW', 'Hot');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Kobold', 'BotW', 'Building');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Kobold', 'BotW', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Deep Elf', 'BotW', 'Dark');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Deep Elf', 'BotW', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Skeleton Archer', 'ToC', 'Civilized');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Skeleton Archer', 'ToC', 'Cursed');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Demon Lord', 'ToC', 'Cursed');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Demon Lord', 'ToC', 'Hot');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Crow Hag', 'ToC', 'Dark');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Crow Hag', 'ToC', 'Civilized');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Naga', 'SotS', 'Water');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Naga', 'SotS', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Ferrox', 'SotS', 'Water');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Ferrox', 'SotS', 'Cave');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Blood Ape', 'SotS', 'Hot');
+insert into MONSTER_GROUP_TRAIT (MONSTER_GROUP, EXPANSION, MONSTER_TRAIT)
+values ('Blood Ape', 'SotS', 'Cave');

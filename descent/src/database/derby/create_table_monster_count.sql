@@ -1,0 +1,441 @@
+CREATE TABLE DESCENT.MONSTER_COUNT (
+    MONSTER_GROUP VARCHAR(30) NOT NULL,
+    EXPANSION VARCHAR(30) NOT NULL,
+    HEROS DECIMAL(1) NOT NULL,
+    MASTER DECIMAL(1),
+    MINION DECIMAL(1),
+    CONSTRAINT FK_MONSTER_COUNTT_MONSTER_GROUP FOREIGN KEY (MONSTER_GROUP, EXPANSION) REFERENCES DESCENT.MONSTER_GROUP,
+    CONSTRAINT MONSTER_COUNT_PK PRIMARY KEY (MONSTER_GROUP, EXPANSION, HEROS));
+
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Goblin Archer', 'D2E', 2, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Goblin Archer', 'D2E', 3, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Goblin Archer', 'D2E', 4, 1, 4);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Zombie', 'D2E', 2, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Zombie', 'D2E', 3, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Zombie', 'D2E', 4, 1, 4);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Cave Spider', 'D2E', 2, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Cave Spider', 'D2E', 3, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Cave Spider', 'D2E', 4, 1, 4);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Flesh Moulders', 'D2E', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Flesh Moulders', 'D2E', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Flesh Moulders', 'D2E', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Barghest', 'D2E', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Barghest', 'D2E', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Barghest', 'D2E', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ettin', 'D2E', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ettin', 'D2E', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ettin', 'D2E', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Elemental', 'D2E', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Elemental', 'D2E', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Elemental', 'D2E', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Merriod', 'D2E', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Merriod', 'D2E', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Merriod', 'D2E', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Shadow Dragon', 'D2E', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Shadow Dragon', 'D2E', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Shadow Dragon', 'D2E', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Fire Imp', 'LotW', 2, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Fire Imp', 'LotW', 3, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Fire Imp', 'LotW', 4, 2, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Hybrid Sentinel', 'LotW', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Hybrid Sentinel', 'LotW', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Hybrid Sentinel', 'LotW', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Goblin Witcher', 'LoR', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Goblin Witcher', 'LoR', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Goblin Witcher', 'LoR', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Volucrix Reaver', 'LoR', 2, 0, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Volucrix Reaver', 'LoR', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Volucrix Reaver', 'LoR', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Arachyura', 'LoR', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Arachyura', 'LoR', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Arachyura', 'LoR', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Carrion Drake', 'LoR', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Carrion Drake', 'LoR', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Carrion Drake', 'LoR', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Harpy', 'TT', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Harpy', 'TT', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Harpy', 'TT', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Plague Worm', 'TT', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Plague Worm', 'TT', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Plague Worm', 'TT', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Rat Swarm', 'SoN', 2, 0, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Rat Swarm', 'SoN', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Rat Swarm', 'SoN', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Changelin', 'SoN', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Changelin', 'SoN', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Changelin', 'SoN', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ironbound', 'SoN', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ironbound', 'SoN', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ironbound', 'SoN', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ynfernael Hulk', 'SoN', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ynfernael Hulk', 'SoN', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ynfernael Hulk', 'SoN', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Bandit', 'MoR', 2, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Bandit', 'MoR', 3, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Bandit', 'MoR', 4, 1, 4);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Wraith', 'MoR', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Wraith', 'MoR', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Wraith', 'MoR', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Beastman', 'DCK', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Beastman', 'DCK', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Beastman', 'DCK', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Skeleton Archer', 'DCK', 2, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Skeleton Archer', 'DCK', 3, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Skeleton Archer', 'DCK', 4, 1, 4);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Bane Spider', 'DCK', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Bane Spider', 'DCK', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Bane Spider', 'DCK', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Razorwing', 'DCK', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Razorwing', 'DCK', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Razorwing', 'DCK', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Hell Hound', 'DCK', 2, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Hell Hound', 'DCK', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Hell Hound', 'DCK', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Sorcerer', 'DCK', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Sorcerer', 'DCK', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Sorcerer', 'DCK', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ogre', 'DCK', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ogre', 'DCK', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ogre', 'DCK', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Manticore', 'DCK', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Manticore', 'DCK', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Manticore', 'DCK', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Naga', 'DCK', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Naga', 'DCK', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Naga', 'DCK', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Giant', 'DCK', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Giant', 'DCK', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Giant', 'DCK', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Crypt Dragon', 'DCK', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Crypt Dragon', 'DCK', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Crypt Dragon', 'DCK', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Demon Lord', 'DCK', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Demon Lord', 'DCK', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Demon Lord', 'DCK', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Kobold', 'DCK', 2, 2, 4);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Kobold', 'DCK', 3, 2, 8);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Kobold', 'DCK', 4, 3, 9);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ferrox', 'DCK', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ferrox', 'DCK', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ferrox', 'DCK', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Golem', 'DCK', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Golem', 'DCK', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Golem', 'DCK', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Dark Priest', 'DCK', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Dark Priest', 'DCK', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Dark Priest', 'DCK', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Blood Ape', 'DCK', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Blood Ape', 'DCK', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Blood Ape', 'DCK', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Chaos Beast', 'DCK', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Chaos Beast', 'DCK', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Chaos Beast', 'DCK', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Deep Elf', 'DCK', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Deep Elf', 'DCK', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Deep Elf', 'DCK', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Troll', 'DCK', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Troll', 'DCK', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Troll', 'DCK', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Shade', 'DCK', 2, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Shade', 'DCK', 3, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Shade', 'DCK', 4, 1, 4);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Lava Beetle', 'DCK', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Lava Beetle', 'DCK', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Lava Beetle', 'DCK', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Medusa', 'DCK', 2, 0, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Medusa', 'DCK', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Medusa', 'DCK', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Wendigo', 'DCK', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Wendigo', 'DCK', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Wendigo', 'DCK', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ice Wyrm', 'DCK', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ice Wyrm', 'DCK', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ice Wyrm', 'DCK', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Beastman', 'OotO', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Beastman', 'OotO', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Beastman', 'OotO', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Bane Spider', 'OotO', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Bane Spider', 'OotO', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Bane Spider', 'OotO', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Razorwing', 'OotO', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Razorwing', 'OotO', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Razorwing', 'OotO', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Giant', 'CoD', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Giant', 'CoD', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Giant', 'CoD', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Chaos Beast', 'CoD', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Chaos Beast', 'CoD', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Chaos Beast', 'CoD', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Lava Beetle', 'CoD', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Lava Beetle', 'CoD', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Lava Beetle', 'CoD', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Sorcerer', 'CotF', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Sorcerer', 'CotF', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Sorcerer', 'CotF', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Golem', 'CotF', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Golem', 'CotF', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Golem', 'CotF', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Medusa', 'CotF', 2, 0, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Medusa', 'CotF', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Medusa', 'CotF', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Crypt Dragon', 'GoD', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Crypt Dragon', 'GoD', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Crypt Dragon', 'GoD', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Dark Priest', 'GoD', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Dark Priest', 'GoD', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Dark Priest', 'GoD', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Wendigo', 'GoD', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Wendigo', 'GoD', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Wendigo', 'GoD', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ogre', 'VoD', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ogre', 'VoD', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ogre', 'VoD', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Manticore', 'VoD', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Manticore', 'VoD', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Manticore', 'VoD', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Troll', 'VoD', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Troll', 'VoD', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Troll', 'VoD', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Hell Hound', 'BotW', 2, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Hell Hound', 'BotW', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Hell Hound', 'BotW', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Kobold', 'BotW', 2, 2, 4);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Kobold', 'BotW', 3, 2, 8);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Kobold', 'BotW', 4, 3, 9);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Deep Elf', 'BotW', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Deep Elf', 'BotW', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Deep Elf', 'BotW', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Skeleton Archer', 'ToC', 2, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Skeleton Archer', 'ToC', 3, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Skeleton Archer', 'ToC', 4, 1, 4);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Demon Lord', 'ToC', 2, 0, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Demon Lord', 'ToC', 3, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Demon Lord', 'ToC', 4, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Crow Hag', 'ToC', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Crow Hag', 'ToC', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Crow Hag', 'ToC', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Naga', 'SotS', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Naga', 'SotS', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Naga', 'SotS', 4, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ferrox', 'SotS', 2, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ferrox', 'SotS', 3, 1, 2);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Ferrox', 'SotS', 4, 1, 3);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Blood Ape', 'SotS', 2, 1, 0);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Blood Ape', 'SotS', 3, 1, 1);
+insert into MONSTER_COUNT (MONSTER_GROUP, EXPANSION, HEROS, MASTER, MINION)
+values ('Blood Ape', 'SotS', 4, 1, 2);
