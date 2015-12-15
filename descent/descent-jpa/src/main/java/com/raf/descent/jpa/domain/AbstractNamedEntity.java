@@ -45,7 +45,7 @@ public abstract class AbstractNamedEntity extends AbstractEntity implements Doma
   }
 
   /**
-   * Define the identifier.
+   * Defines the identifier.
    *
    * @param ident
    *          the identifier to set

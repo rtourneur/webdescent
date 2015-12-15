@@ -94,7 +94,7 @@ public class Dice extends AbstractNamedEntity {
   }
 
   /**
-   * Define the dice sides.
+   * Defines the dice sides.
    * 
    * @param diceSides
    *          the diceSides to set

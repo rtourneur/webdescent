@@ -19,7 +19,7 @@ public interface DomainIconEntity<I extends Serializable> extends DomainNamedEnt
   String getIcon();
 
   /**
-   * Define the icon.
+   * Defines the icon.
    *
    * @param icon
    *          the icon to set

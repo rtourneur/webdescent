@@ -13,7 +13,6 @@ import org.junit.Test;
 
 import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.model.Ability;
-import com.raf.descent.jpa.domain.model.Expansion;
 import com.raf.descent.util.Paged;
 
 /**

@@ -39,7 +39,7 @@ public abstract class AbstractIconEntity extends AbstractNamedEntity implements 
   }
 
   /**
-   * Define the icon.
+   * Defines the icon.
    *
    * @param icon
    *          the icon to set

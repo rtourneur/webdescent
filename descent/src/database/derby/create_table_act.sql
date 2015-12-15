@@ -1,0 +1,8 @@
+CREATE TABLE DESCENT.ACT (
+    NAME VARCHAR(30) NOT NULL CONSTRAINT DESCENT.ACT_PK PRIMARY KEY,
+    MESSAGE_CODE VARCHAR(30) NOT NULL);
+
+insert into ACT (NAME, MESSAGE_CODE)
+values ('Act1', 'act.act1');
+insert into ACT (NAME, MESSAGE_CODE)
+values ('Act2', 'act.act2');
