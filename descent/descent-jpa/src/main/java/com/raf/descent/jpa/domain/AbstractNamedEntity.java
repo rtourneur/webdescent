@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 public abstract class AbstractNamedEntity extends AbstractEntity implements DomainNamedEntity<String> {
 
   /** Serial UID. */
-  private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 5184417285823279212L;
 
   /** The name. */
   @Id

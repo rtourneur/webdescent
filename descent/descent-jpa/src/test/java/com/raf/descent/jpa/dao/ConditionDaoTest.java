@@ -28,9 +28,6 @@ public class ConditionDaoTest extends AbstractDaoTest {
   private ConditionDao conditionDao;
 
   @Resource
-  private ArchetypeDao archetypeDao;
-
-  @Resource
   private ExpansionDao expansionDao;
 
   /**

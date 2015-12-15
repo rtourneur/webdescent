@@ -99,13 +99,13 @@ public class MonsterGroupDaoTest extends AbstractDaoTest {
     list = this.monsterGroupDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
-    assertEquals(14, list.size());
+    assertEquals(30, list.size());
     example.setAttackType(null);
     example.setMonsterSize(this.monsterSizeDao.getById("Small"));
     list = this.monsterGroupDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
-    assertEquals(20, list.size());
+    assertEquals(36, list.size());
     example.setMonsterSize(null);
     example.setExpansionName("D2E");
     example.setAttackTypeName("Ranged");
