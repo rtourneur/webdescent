@@ -11,12 +11,12 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
- * The primary key class for the MONSTER_DEFENSE and MONSTER_ATTACK database tables.
+ * The primary key class for the MONSTER_SURGE database table.
  * 
  * @author RAF
  */
 @Embeddable
-public class MonsterStatDicePk implements Serializable {
+public class MonsterAbilityPk implements Serializable {
 
   /** Serial UID. */
   private static final long serialVersionUID = 1316750280181193506L;
@@ -25,18 +25,14 @@ public class MonsterStatDicePk implements Serializable {
   @Embedded
   private MonsterStatPk monsterStatPk;
 
-  /** The dice. */
+  /** The ability. */
   @Column(unique = true, nullable = false, length = 30)
-  private String dice;
-
-  /** The index. */
-  @Column(unique = true, nullable = false, precision = 1)
-  private Integer index;
+  private String ability;
 
   /**
    * Constructor.
    */
-  public MonsterStatDicePk() {
+  public MonsterAbilityPk() {
     super();
   }
 
@@ -160,41 +156,22 @@ public class MonsterStatDicePk implements Serializable {
   }
 
   /**
-   * Returns the dice.
+   * Returns the ability.
    *
-   * @return the dice
+   * @return the ability
    */
-  public String getDice() {
-    return this.dice;
+  public String getAbility() {
+    return this.ability;
   }
 
   /**
-   * Defines the dice.
+   * Defines the ability.
    *
-   * @param dice
-   *          the dice to set
+   * @param ability
+   *          the ability to set
    */
-  public void setDice(final String dice) {
-    this.dice = dice;
-  }
-
-  /**
-   * Returns the index.
-   * 
-   * @return the index
-   */
-  public Integer getIndex() {
-    return this.index;
-  }
-
-  /**
-   * Defines the index.
-   * 
-   * @param index
-   *          the index to set
-   */
-  public void setIndex(final Integer index) {
-    this.index = index;
+  public void setAbility(final String surge) {
+    this.ability = surge;
   }
 
   /**
@@ -204,7 +181,7 @@ public class MonsterStatDicePk implements Serializable {
    */
   @Override
   public int hashCode() {
-    return new HashCodeBuilder().append(this.monsterStatPk).append(this.dice).append(this.index).toHashCode();
+    return new HashCodeBuilder().append(this.monsterStatPk).append(this.ability).toHashCode();
   }
 
   /**
@@ -219,9 +196,9 @@ public class MonsterStatDicePk implements Serializable {
       equals = true;
     } else {
       if (obj != null && getClass().equals(obj.getClass())) {
-        final MonsterStatDicePk other = (MonsterStatDicePk) obj;
-        equals = new EqualsBuilder().append(this.monsterStatPk, other.monsterStatPk).append(this.dice, other.dice)
-            .append(this.index, other.index).isEquals();
+        final MonsterAbilityPk other = (MonsterAbilityPk) obj;
+        equals = new EqualsBuilder().append(this.monsterStatPk, other.monsterStatPk)
+            .append(this.ability, other.ability).isEquals();
       } else {
         equals = false;
       }

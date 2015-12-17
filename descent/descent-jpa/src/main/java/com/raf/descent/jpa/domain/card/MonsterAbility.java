@@ -1,32 +1,43 @@
 package com.raf.descent.jpa.domain.card;
 
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import com.raf.descent.jpa.domain.AbstractEntity;
 import com.raf.descent.jpa.domain.DomainEntity;
-import com.raf.descent.jpa.domain.model.Dice;
+import com.raf.descent.jpa.domain.model.Ability;
 
 /**
- * The super class for the MONSTER_DEFENSE and MONSTER_ATTACK database tables..
+ * The persistent class for the MONSTER_ABILITY database table.
  * 
  * @author RAF
  */
-@MappedSuperclass
-public class MonsterStatDice extends AbstractEntity implements DomainEntity<MonsterStatDicePk> {
+@Entity
+@Table(name = "MONSTER_ABILITY", schema = "DESCENT")
+public class MonsterAbility extends AbstractEntity implements DomainEntity<MonsterAbilityPk> {
 
   /** Serial UID. */
-  private static final long serialVersionUID = 7727090188217071509L;
+  private static final long serialVersionUID = -2042593353573284690L;
 
   /** The identifier. */
   @EmbeddedId
-  private MonsterStatDicePk ident;
+  private MonsterAbilityPk ident;
+
+  /** The ability value. */
+  @Column(precision = 1)
+  private Integer value;
+
+  /** The action indicator. */
+  @Column
+  private Boolean action;
 
   /** The monster stat. */
   @ManyToOne(fetch = FetchType.LAZY)
@@ -37,15 +48,15 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
       @JoinColumn(name = "MONSTER_TYPE", referencedColumnName = "MONSTER_TYPE", nullable = false, insertable = false, updatable = false) })
   private MonsterStat monsterStat;
 
-  /** The dice. */
+  /** The ability. */
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "DICE", insertable = false, updatable = false)
-  private Dice dice;
+  @JoinColumn(name = "ABILITY", insertable = false, updatable = false)
+  private Ability ability;
 
   /**
    * Constructor.
    */
-  public MonsterStatDice() {
+  public MonsterAbility() {
     super();
   }
 
@@ -56,7 +67,7 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    * @see DomainEntity#getId()
    */
   @Override
-  public MonsterStatDicePk getId() {
+  public MonsterAbilityPk getId() {
     return getIdent();
   }
 
@@ -65,7 +76,7 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    * 
    * @return the ident
    */
-  public MonsterStatDicePk getIdent() {
+  public MonsterAbilityPk getIdent() {
     return this.ident;
   }
 
@@ -74,10 +85,10 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    * 
    * @param ident
    *          the ident to set
-   * @see DomainEntity#setIdent(MonsterStatDicePk)
+   * @see DomainEntity#setIdent(MonsterAbilityPk)
    */
   @Override
-  public void setIdent(final MonsterStatDicePk ident) {
+  public void setIdent(final MonsterAbilityPk ident) {
     this.ident = ident;
   }
 
@@ -88,7 +99,7 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    */
   public String getMonsterGroupName() {
     if (this.ident == null) {
-      this.ident = new MonsterStatDicePk();
+      this.ident = new MonsterAbilityPk();
     }
     return this.ident.getName();
   }
@@ -100,7 +111,7 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    */
   public String getExpansionName() {
     if (this.ident == null) {
-      this.ident = new MonsterStatDicePk();
+      this.ident = new MonsterAbilityPk();
     }
     return this.ident.getExpansionName();
   }
@@ -112,7 +123,7 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    */
   public String getActName() {
     if (this.ident == null) {
-      this.ident = new MonsterStatDicePk();
+      this.ident = new MonsterAbilityPk();
     }
     return this.ident.getActName();
   }
@@ -124,34 +135,61 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    */
   public String getMonsterTypeName() {
     if (this.ident == null) {
-      this.ident = new MonsterStatDicePk();
+      this.ident = new MonsterAbilityPk();
     }
     return this.ident.getMonsterTypeName();
   }
 
   /**
-   * Returns the dice name.
+   * Returns the ability name.
    *
-   * @return the dice name
+   * @return the ability name
    */
-  public String getDiceName() {
+  public String getAbilityName() {
     if (this.ident == null) {
-      this.ident = new MonsterStatDicePk();
+      this.ident = new MonsterAbilityPk();
     }
-    return this.ident.getDice();
+    return this.ident.getAbility();
   }
 
   /**
-   * Returns the index.
-   *
-   * @return the index
+   * Returns the value.
+   * 
+   * @return the value
    */
-  public Integer getIndex() {
-    if (this.ident == null) {
-      this.ident = new MonsterStatDicePk();
-    }
-    return this.ident.getIndex();
+  public Integer getValue() {
+    return this.value;
   }
+
+  /**
+   * Returns the value.
+   * 
+   * @param value
+   *          the value to set
+   */
+  public void setValue(final Integer value) {
+    this.value = value;
+  }
+
+  /**
+   * Returns the action.
+   * 
+   * @return the action
+   */
+  public Boolean getAction() {
+    return this.action;
+  }
+
+  /**
+   * Returns the action.
+   * 
+   * @param action
+   *          the action to set
+   */
+  public void setAction(final Boolean action) {
+    this.action = action;
+  }
+
   /**
    * Returns the monster stat.
    * 
@@ -172,22 +210,22 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
   }
 
   /**
-   * Returns the dice.
+   * Returns the ability.
    * 
-   * @return the dice
+   * @return the ability
    */
-  public Dice getDice() {
-    return this.dice;
+  public Ability getAbility() {
+    return this.ability;
   }
 
   /**
-   * Defines the dice.
+   * Defines the ability.
    * 
-   * @param dice
-   *          the dice to set
+   * @param ability
+   *          the ability to set
    */
-  public void setDice(final Dice dice) {
-    this.dice = dice;
+  public void setAbility(final Ability ability) {
+    this.ability = ability;
   }
 
   /**
@@ -202,13 +240,14 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
     if (this.ident != null) {
       builder.append("monsterGroupName", this.ident.getName()).append("expansionName", this.ident.getExpansionName())
           .append("actName", this.ident.getActName()).append("monsterTypeName", this.ident.getMonsterTypeName())
-          .append("diceName", this.ident.getDice()).append("index", this.ident.getIndex());
+          .append("abilityName", this.ident.getAbility());
     }
+    builder.append("value", this.value).append("action", this.action);
     if (this.monsterStat != null && MonsterStat.class.equals(this.monsterStat.getClass())) {
       builder.append("monsterStat", this.monsterStat);
     }
-    if (this.dice != null && Dice.class.equals(this.dice.getClass())) {
-      builder.append("dice", this.dice);
+    if (this.ability != null && Ability.class.equals(this.ability.getClass())) {
+      builder.append("ability", this.ability);
     }
   }
 

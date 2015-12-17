@@ -1,32 +1,34 @@
 package com.raf.descent.jpa.domain.card;
 
 import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import com.raf.descent.jpa.domain.AbstractEntity;
 import com.raf.descent.jpa.domain.DomainEntity;
-import com.raf.descent.jpa.domain.model.Dice;
+import com.raf.descent.jpa.domain.model.Surge;
 
 /**
- * The super class for the MONSTER_DEFENSE and MONSTER_ATTACK database tables..
+ * The persistent class for the MONSTER_SURGE database table.
  * 
  * @author RAF
  */
-@MappedSuperclass
-public class MonsterStatDice extends AbstractEntity implements DomainEntity<MonsterStatDicePk> {
+@Entity
+@Table(name = "MONSTER_SURGE", schema = "DESCENT")
+public class MonsterSurge extends AbstractEntity implements DomainEntity<MonsterSurgePk> {
 
   /** Serial UID. */
-  private static final long serialVersionUID = 7727090188217071509L;
+  private static final long serialVersionUID = -3937369406455990732L;
 
   /** The identifier. */
   @EmbeddedId
-  private MonsterStatDicePk ident;
+  private MonsterSurgePk ident;
 
   /** The monster stat. */
   @ManyToOne(fetch = FetchType.LAZY)
@@ -37,15 +39,15 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
       @JoinColumn(name = "MONSTER_TYPE", referencedColumnName = "MONSTER_TYPE", nullable = false, insertable = false, updatable = false) })
   private MonsterStat monsterStat;
 
-  /** The dice. */
+  /** The surge. */
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "DICE", insertable = false, updatable = false)
-  private Dice dice;
+  @JoinColumn(name = "SURGE", insertable = false, updatable = false)
+  private Surge surge;
 
   /**
    * Constructor.
    */
-  public MonsterStatDice() {
+  public MonsterSurge() {
     super();
   }
 
@@ -56,7 +58,7 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    * @see DomainEntity#getId()
    */
   @Override
-  public MonsterStatDicePk getId() {
+  public MonsterSurgePk getId() {
     return getIdent();
   }
 
@@ -65,7 +67,7 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    * 
    * @return the ident
    */
-  public MonsterStatDicePk getIdent() {
+  public MonsterSurgePk getIdent() {
     return this.ident;
   }
 
@@ -74,10 +76,10 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    * 
    * @param ident
    *          the ident to set
-   * @see DomainEntity#setIdent(MonsterStatDicePk)
+   * @see DomainEntity#setIdent(MonsterSurgePk)
    */
   @Override
-  public void setIdent(final MonsterStatDicePk ident) {
+  public void setIdent(final MonsterSurgePk ident) {
     this.ident = ident;
   }
 
@@ -88,7 +90,7 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    */
   public String getMonsterGroupName() {
     if (this.ident == null) {
-      this.ident = new MonsterStatDicePk();
+      this.ident = new MonsterSurgePk();
     }
     return this.ident.getName();
   }
@@ -100,7 +102,7 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    */
   public String getExpansionName() {
     if (this.ident == null) {
-      this.ident = new MonsterStatDicePk();
+      this.ident = new MonsterSurgePk();
     }
     return this.ident.getExpansionName();
   }
@@ -112,7 +114,7 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    */
   public String getActName() {
     if (this.ident == null) {
-      this.ident = new MonsterStatDicePk();
+      this.ident = new MonsterSurgePk();
     }
     return this.ident.getActName();
   }
@@ -124,21 +126,21 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    */
   public String getMonsterTypeName() {
     if (this.ident == null) {
-      this.ident = new MonsterStatDicePk();
+      this.ident = new MonsterSurgePk();
     }
     return this.ident.getMonsterTypeName();
   }
 
   /**
-   * Returns the dice name.
+   * Returns the surge name.
    *
-   * @return the dice name
+   * @return the surge name
    */
-  public String getDiceName() {
+  public Integer getSurgeId() {
     if (this.ident == null) {
-      this.ident = new MonsterStatDicePk();
+      this.ident = new MonsterSurgePk();
     }
-    return this.ident.getDice();
+    return this.ident.getSurge();
   }
 
   /**
@@ -148,10 +150,11 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
    */
   public Integer getIndex() {
     if (this.ident == null) {
-      this.ident = new MonsterStatDicePk();
+      this.ident = new MonsterSurgePk();
     }
     return this.ident.getIndex();
   }
+
   /**
    * Returns the monster stat.
    * 
@@ -172,22 +175,22 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
   }
 
   /**
-   * Returns the dice.
+   * Returns the surge.
    * 
-   * @return the dice
+   * @return the surge
    */
-  public Dice getDice() {
-    return this.dice;
+  public Surge getSurge() {
+    return this.surge;
   }
 
   /**
-   * Defines the dice.
+   * Defines the surge.
    * 
-   * @param dice
-   *          the dice to set
+   * @param surge
+   *          the surge to set
    */
-  public void setDice(final Dice dice) {
-    this.dice = dice;
+  public void setSurge(final Surge surge) {
+    this.surge = surge;
   }
 
   /**
@@ -202,13 +205,13 @@ public class MonsterStatDice extends AbstractEntity implements DomainEntity<Mons
     if (this.ident != null) {
       builder.append("monsterGroupName", this.ident.getName()).append("expansionName", this.ident.getExpansionName())
           .append("actName", this.ident.getActName()).append("monsterTypeName", this.ident.getMonsterTypeName())
-          .append("diceName", this.ident.getDice()).append("index", this.ident.getIndex());
+          .append("surgeId", this.ident.getSurge()).append("index", this.ident.getIndex());
     }
     if (this.monsterStat != null && MonsterStat.class.equals(this.monsterStat.getClass())) {
       builder.append("monsterStat", this.monsterStat);
     }
-    if (this.dice != null && Dice.class.equals(this.dice.getClass())) {
-      builder.append("dice", this.dice);
+    if (this.surge != null && Surge.class.equals(this.surge.getClass())) {
+      builder.append("surge", this.surge);
     }
   }
 
