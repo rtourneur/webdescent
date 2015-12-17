@@ -42,7 +42,7 @@ public class MonsterGroupAct extends AbstractEntity implements DomainEntity<Mons
       @JoinColumn(name = "MONSTER_GROUP", referencedColumnName = "NAME", nullable = false, insertable = false, updatable = false) })
   private MonsterGroup monsterGroup;
 
-  /** The monster size. */
+  /** The act. */
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "ACT", insertable = false, updatable = false)
   private Act act;
@@ -84,6 +84,42 @@ public class MonsterGroupAct extends AbstractEntity implements DomainEntity<Mons
   @Override
   public void setIdent(final MonsterGroupActPk ident) {
     this.ident = ident;
+  }
+
+  /**
+   * Returns the monster group name.
+   *
+   * @return the monster group name
+   */
+  public String getMonsterGroupName() {
+    if (this.ident == null) {
+      this.ident = new MonsterGroupActPk();
+    }
+    return this.ident.getName();
+  }
+
+  /**
+   * Returns the expansion name.
+   *
+   * @return the expansion name
+   */
+  public String getExpansionName() {
+    if (this.ident == null) {
+      this.ident = new MonsterGroupActPk();
+    }
+    return this.ident.getExpansionName();
+  }
+
+  /**
+   * Returns the act name.
+   *
+   * @return the act name
+   */
+  public String getActName() {
+    if (this.ident == null) {
+      this.ident = new MonsterGroupActPk();
+    }
+    return this.ident.getAct();
   }
 
   /**

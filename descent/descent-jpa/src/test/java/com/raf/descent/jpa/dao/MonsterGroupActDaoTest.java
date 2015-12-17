@@ -40,17 +40,18 @@ public class MonsterGroupActDaoTest extends AbstractDaoTest {
   @Transactional
   public final void testGetById() {
     MonsterGroupActPk monsterGroupActPk = new MonsterGroupActPk();
-    NameExpansionPk nameExpansionPk = new NameExpansionPk();
-    nameExpansionPk.setName("Bane Spider");
-    nameExpansionPk.setExpansion("DCK");
-    monsterGroupActPk.setNameExpansionPk(nameExpansionPk);
+    monsterGroupActPk.setName("Bane Spider");
+    monsterGroupActPk.setExpansionName("DCK");
     monsterGroupActPk.setAct("Act1");
     MonsterGroupAct example = this.monsterGroupActDao.getById(monsterGroupActPk);
     assertNotNull(example);
     assertEquals(monsterGroupActPk, example.getId());
     assertEquals("Bane Spider", example.getIdent().getName());
+    assertEquals("Bane Spider", example.getMonsterGroupName());
     assertEquals("DCK", example.getIdent().getExpansionName());
+    assertEquals("DCK", example.getExpansionName());
     assertEquals("Act1", example.getIdent().getAct());
+    assertEquals("Act1", example.getActName());
     assertEquals("banespideract1.png", example.getImage());
     MonsterGroup monsterGroup = example.getMonsterGroup();
     assertNotNull(monsterGroup);
@@ -71,10 +72,8 @@ public class MonsterGroupActDaoTest extends AbstractDaoTest {
     assertNotNull(list);
     assertFalse(list.isEmpty());
     MonsterGroupActPk monsterGroupActPk = new MonsterGroupActPk();
-    NameExpansionPk nameExpansionPk = new NameExpansionPk();
-    nameExpansionPk.setName("Bane Spider");
-    nameExpansionPk.setExpansion("DCK");
-    monsterGroupActPk.setNameExpansionPk(nameExpansionPk);
+    monsterGroupActPk.setName("Bane Spider");
+    monsterGroupActPk.setExpansionName("DCK");
     monsterGroupActPk.setAct("Act1");
     example.setIdent(monsterGroupActPk);
     list = this.monsterGroupActDao.findByExample(example);
@@ -82,7 +81,7 @@ public class MonsterGroupActDaoTest extends AbstractDaoTest {
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
     example.setIdent(null);
-    nameExpansionPk = new NameExpansionPk();
+    NameExpansionPk nameExpansionPk = new NameExpansionPk();
     nameExpansionPk.setName("Goblin Archer");
     nameExpansionPk.setExpansion("D2E");
     MonsterGroup monsterGroup = this.monsterGroupDao.getById(nameExpansionPk);

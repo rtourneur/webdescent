@@ -39,10 +39,8 @@ public class MonsterCountDaoTest extends AbstractDaoTest {
   @Transactional
   public final void testGetById() {
     MonsterCountPk monsterCountPk = new MonsterCountPk();
-    NameExpansionPk nameExpansionPk = new NameExpansionPk();
-    nameExpansionPk.setName("Bane Spider");
-    nameExpansionPk.setExpansion("DCK");
-    monsterCountPk.setNameExpansionPk(nameExpansionPk);
+    monsterCountPk.setName("Bane Spider");
+    monsterCountPk.setExpansionName("DCK");
     monsterCountPk.setHeros(Integer.valueOf(2));
     MonsterCount example = this.monsterCountDao.getById(monsterCountPk);
     assertNotNull(example);
@@ -68,10 +66,8 @@ public class MonsterCountDaoTest extends AbstractDaoTest {
     assertNotNull(list);
     assertFalse(list.isEmpty());
     MonsterCountPk monsterCountPk = new MonsterCountPk();
-    NameExpansionPk nameExpansionPk = new NameExpansionPk();
-    nameExpansionPk.setName("Bane Spider");
-    nameExpansionPk.setExpansion("DCK");
-    monsterCountPk.setNameExpansionPk(nameExpansionPk);
+    monsterCountPk.setName("Bane Spider");
+    monsterCountPk.setExpansionName("DCK");
     monsterCountPk.setHeros(Integer.valueOf(2));
     example.setIdent(monsterCountPk);
     list = this.monsterCountDao.findByExample(example);
@@ -79,7 +75,7 @@ public class MonsterCountDaoTest extends AbstractDaoTest {
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
     example.setIdent(null);
-    nameExpansionPk = new NameExpansionPk();
+    NameExpansionPk nameExpansionPk = new NameExpansionPk();
     nameExpansionPk.setName("Goblin Archer");
     nameExpansionPk.setExpansion("D2E");
     MonsterGroup monsterGroup = this.monsterGroupDao.getById(nameExpansionPk);

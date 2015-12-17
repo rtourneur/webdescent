@@ -72,6 +72,19 @@ public class MonsterCountPk implements Serializable {
   }
 
   /**
+   * Defines the name.
+   *
+   * @param name
+   *          the name to set
+   */
+  public void setName(final String name) {
+    if (this.nameExpansionPk == null) {
+      this.nameExpansionPk = new NameExpansionPk();
+    }
+    this.nameExpansionPk.setName(name);
+  }
+
+  /**
    * Returns the expansion name.
    *
    * @return the expansion name
@@ -81,6 +94,19 @@ public class MonsterCountPk implements Serializable {
       this.nameExpansionPk = new NameExpansionPk();
     }
     return this.nameExpansionPk.getExpansion();
+  }
+
+  /**
+   * Defines the expansion name.
+   *
+   * @param expansionName
+   *          the expansionName to set
+   */
+  public void setExpansionName(final String expansionName) {
+    if (this.nameExpansionPk == null) {
+      this.nameExpansionPk = new NameExpansionPk();
+    }
+    this.nameExpansionPk.setExpansion(expansionName);
   }
 
   /**
