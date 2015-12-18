@@ -27,7 +27,6 @@ import com.raf.descent.util.config.UtilConfig;
  * Spring configuration class for persistence.
  * 
  * @author RAF
- *
  */
 @Configuration
 @Import(value = { UtilConfig.class })

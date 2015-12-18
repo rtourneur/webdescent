@@ -10,6 +10,7 @@
     <module>descent-util</module>
     <module>descent-jpa</module>
     <module>descent-test</module>
+    <module>descent-rule</module>
   </modules>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

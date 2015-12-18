@@ -9,5 +9,20 @@ import com.raf.descent.jpa.domain.card.MonsterStatPk;
  * @author RAF
  */
 public interface MonsterStatDao extends EntityDao<MonsterStat, MonsterStatPk> {
-  // RAS
+
+  /**
+   * Returns the monster stat.
+   * 
+   * @param monster
+   *          the monster
+   * @param expansion
+   *          the expansion
+   * @param act
+   *          the act
+   * @param type
+   *          the type
+   * @return the monster stat
+   */
+  MonsterStat getMonsterStat(String monster, String expansion, String act, String type);
+
 }

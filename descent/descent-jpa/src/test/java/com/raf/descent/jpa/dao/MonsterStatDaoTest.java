@@ -12,10 +12,14 @@ import javax.transaction.Transactional;
 import org.junit.Test;
 
 import com.raf.descent.jpa.domain.DomainEntity;
+import com.raf.descent.jpa.domain.card.MonsterAbility;
+import com.raf.descent.jpa.domain.card.MonsterAttack;
+import com.raf.descent.jpa.domain.card.MonsterDefense;
 import com.raf.descent.jpa.domain.card.MonsterGroupAct;
 import com.raf.descent.jpa.domain.card.MonsterGroupActPk;
 import com.raf.descent.jpa.domain.card.MonsterStat;
 import com.raf.descent.jpa.domain.card.MonsterStatPk;
+import com.raf.descent.jpa.domain.card.MonsterSurge;
 import com.raf.descent.jpa.domain.model.MonsterType;
 import com.raf.descent.util.Paged;
 
@@ -65,6 +69,18 @@ public class MonsterStatDaoTest extends AbstractDaoTest {
     MonsterType monsterType = example.getMonsterType();
     assertNotNull(monsterType);
     assertEquals("Master", monsterType.getName());
+    List<MonsterDefense> defenses = example.getDefenses();
+    assertNotNull(defenses);
+    assertFalse(defenses.isEmpty());
+    List<MonsterAttack> attacks = example.getAttacks();
+    assertNotNull(attacks);
+    assertFalse(attacks.isEmpty());
+    List<MonsterAbility> abilities = example.getAbilities();
+    assertNotNull(abilities);
+    assertFalse(abilities.isEmpty());
+    List<MonsterSurge> surges = example.getSurges();
+    assertNotNull(surges);
+    assertFalse(surges.isEmpty());
   }
 
   /**

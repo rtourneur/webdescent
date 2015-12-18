@@ -20,14 +20,37 @@ import com.raf.descent.jpa.domain.card.MonsterStatPk;
  * @author RAF
  */
 @Repository
-public final class MonsterStatDaoImpl extends AbstractDao<MonsterStat, MonsterStatPk> implements
-    MonsterStatDao {
+public final class MonsterStatDaoImpl extends AbstractDao<MonsterStat, MonsterStatPk> implements MonsterStatDao {
 
   /**
    * Constructor.
    */
   public MonsterStatDaoImpl() {
     super(MonsterStat.class);
+  }
+
+  /**
+   * Returns the monster stat.
+   * 
+   * @param monster
+   *          the monster
+   * @param expansion
+   *          the expansion
+   * @param act
+   *          the act
+   * @param type
+   *          the type
+   * @return the monster stat
+   * @see MonsterStatDao#getMonsterStat(String, String, String, String)
+   */
+  @Override
+  public MonsterStat getMonsterStat(final String monster, final String expansion, final String act, final String type) {
+    final MonsterStatPk ident = new MonsterStatPk();
+    ident.setName(monster);
+    ident.setExpansionName(expansion);
+    ident.setActName(act);
+    ident.setMonsterType(type);
+    return getById(ident);
   }
 
   /**

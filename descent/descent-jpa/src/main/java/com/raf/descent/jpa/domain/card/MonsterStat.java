@@ -1,5 +1,7 @@
 package com.raf.descent.jpa.domain.card;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -7,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,6 +54,22 @@ public class MonsterStat extends AbstractEntity implements DomainEntity<MonsterS
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "MONSTER_TYPE", insertable = false, updatable = false)
   private MonsterType monsterType;
+
+  /** The monster defences dices. */
+  @OneToMany(mappedBy = "monsterStat")
+  private List<MonsterDefense> defenses;
+
+  /** The monster attack dices. */
+  @OneToMany(mappedBy = "monsterStat")
+  private List<MonsterAttack> attacks;
+
+  /** The monster abilities. */
+  @OneToMany(mappedBy = "monsterStat")
+  private List<MonsterAbility> abilities;
+
+  /** The monster surges. */
+  @OneToMany(mappedBy = "monsterStat")
+  private List<MonsterSurge> surges;
 
   /**
    * Constructor.
@@ -213,6 +232,82 @@ public class MonsterStat extends AbstractEntity implements DomainEntity<MonsterS
    */
   public void setMonsterType(final MonsterType monsterType) {
     this.monsterType = monsterType;
+  }
+
+  /**
+   * Returns the monster defences dices.
+   * 
+   * @return the defenses
+   */
+  public List<MonsterDefense> getDefenses() {
+    return this.defenses;
+  }
+
+  /**
+   * Defines the monster defences dices.
+   * 
+   * @param defenses
+   *          the defenses to set
+   */
+  public void setDefenses(final List<MonsterDefense> defenses) {
+    this.defenses = defenses;
+  }
+
+  /**
+   * Returns the monster attack dices.
+   * 
+   * @return the attacks
+   */
+  public List<MonsterAttack> getAttacks() {
+    return this.attacks;
+  }
+
+  /**
+   * Defines the monster attacks dices.
+   * 
+   * @param attacks
+   *          the attacks to set
+   */
+  public void setAttacks(final List<MonsterAttack> attacks) {
+    this.attacks = attacks;
+  }
+
+  /**
+   * Returns the monster abilities.
+   * 
+   * @return the abilities
+   */
+  public List<MonsterAbility> getAbilities() {
+    return this.abilities;
+  }
+
+  /**
+   * Defines the monster abilities.
+   * 
+   * @param abilities
+   *          the abilities to set
+   */
+  public void setAbilities(final List<MonsterAbility> abilities) {
+    this.abilities = abilities;
+  }
+
+  /**
+   * Returns the monster surges.
+   * 
+   * @return the surges
+   */
+  public List<MonsterSurge> getSurges() {
+    return this.surges;
+  }
+
+  /**
+   * Defines the monster surges.
+   * 
+   * @param surges
+   *          the surges to set
+   */
+  public void setSurges(final List<MonsterSurge> surges) {
+    this.surges = surges;
   }
 
   /**
