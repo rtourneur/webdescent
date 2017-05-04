@@ -3,7 +3,6 @@ package com.raf.descent.jpa.dao;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -12,12 +11,11 @@ import javax.annotation.Resource;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.model.Expansion;
-import com.raf.descent.util.Paged;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
- * 
  * Test class for {@link ExpansionDao}.
  * 
  * @author RAF
@@ -35,10 +33,10 @@ public class ExpansionDaoTest extends AbstractDaoTest {
     String name = "D2E";
     Expansion example = this.expansionDao.getById(name);
     assertNotNull(example);
-    assertEquals(name, example.getId());
+    assertEquals(name, example.getIdentifier());
     assertEquals(name, example.getName());
     assertEquals("expansion.d2e", example.getMessageCode());
-    assertNull(example.getIcon());
+    assertNotNull(example.getIcon());
   }
 
   /**
@@ -57,7 +55,7 @@ public class ExpansionDaoTest extends AbstractDaoTest {
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
-    example.setIdent("Test");
+    example.setIdentifier("Test");
     list = this.expansionDao.findByExample(example);
     assertNotNull(list);
     assertTrue(list.isEmpty());

@@ -1,0 +1,23 @@
+NAME|MESSAGE_CODE|ARCHETYPE|EXPANSION
+Berserker|class.berserker|Warrior|D2E
+Disciple|class.disciple|Healer|D2E
+Knight|class.knight|Warrior|D2E
+Necromancer|class.necromancer|Mage|D2E
+Runemaster|class.runemaster|Mage|D2E
+Spiritspeaker|class.spiritspeaker|Healer|D2E
+Thief|class.thief|Scout|D2E
+Wildlander|class.wildlander|Scout|D2E
+Champion|class.champion|Warrior|LotW
+Geomancer|class.geomancer|Mage|LotW
+Apothecary|class.apothecary|Healer|LoR
+Beastmaster|class.beastmaster|Warrior|LoR
+Hexer|class.hexer|Mage|LoR
+Treasure Hunter|class.treasurehunter|Scout|LoR
+Prophet|class.prophet|Healer|TT
+Stalker|class.stalker|Scout|TT
+Bard|class.bard|Healer|SoN
+Conjurer|class.conjurer|Mage|SoN
+Shadow Walker|class.shadowwalker|Scout|SoN
+Skirmisher|class.skirmisher|Warrior|SoN
+Bounty Hunter|class.bountyhunter|Scout|MoR
+Marshal|class.marshal|Warrior|MoR

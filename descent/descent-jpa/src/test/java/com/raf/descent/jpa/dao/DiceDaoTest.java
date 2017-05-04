@@ -11,11 +11,11 @@ import javax.transaction.Transactional;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.model.Dice;
 import com.raf.descent.jpa.domain.model.DiceSide;
 import com.raf.descent.jpa.domain.model.DiceType;
-import com.raf.descent.util.Paged;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
  * 
@@ -40,7 +40,7 @@ public class DiceDaoTest extends AbstractDaoTest {
     String name = "Blue";
     Dice example = this.diceDao.getById(name);
     assertNotNull(example);
-    assertEquals(name, example.getId());
+    assertEquals(name, example.getIdentifier());
     assertEquals(name, example.getName());
     assertEquals("dice.blue", example.getMessageCode());
     DiceType diceType = example.getDiceType();
@@ -66,7 +66,7 @@ public class DiceDaoTest extends AbstractDaoTest {
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
-    example.setIdent(null);
+    example.setIdentifier(null);
     example.setDiceType(this.diceTypeDao.getById("Power"));
     list = this.diceDao.findByExample(example);
     assertNotNull(list);

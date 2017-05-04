@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.raf.descent.jpa.dao.SkillDao;
 import com.raf.descent.jpa.domain.card.Skill;
-import com.raf.descent.jpa.domain.card.SkillPk;
+import com.raf.fwk.jpa.dao.AbstractDao;
 
 /**
  * Implementation DAO for {@link Skill}.
@@ -20,7 +20,7 @@ import com.raf.descent.jpa.domain.card.SkillPk;
  * @author RAF
  */
 @Repository
-public final class SkillDaoImpl extends AbstractDao<Skill, SkillPk> implements SkillDao {
+public final class SkillDaoImpl extends AbstractDao<Skill, String> implements SkillDao {
 
   /**
    * Constructor.
@@ -44,12 +44,12 @@ public final class SkillDaoImpl extends AbstractDao<Skill, SkillPk> implements S
    */
   @Override
   protected Predicate[] getPredicates(final Root<Skill> root, final Skill example) {
-    final List<Predicate> predicatesList = new ArrayList<Predicate>();
+    final List<Predicate> predicatesList = new ArrayList<>();
     if (example.getName() != null) {
-      predicatesList.add(getEquals(root, IDENT, "name", example.getName()));
+      predicatesList.add(getEquals(root, NAME, example.getName()));
     }
-    if (example.getClazzName() != null) {
-      predicatesList.add(getEquals(root, IDENT, "clazz", example.getClazzName()));
+    if (example.getClassName() != null) {
+      predicatesList.add(getEquals(root, "className", example.getClassName()));
     }
     if (example.getClazz() != null) {
       predicatesList.add(getEquals(root, "clazz", example.getClazz()));
@@ -69,9 +69,8 @@ public final class SkillDaoImpl extends AbstractDao<Skill, SkillPk> implements S
    */
   @Override
   protected List<Order> getOrder(final CriteriaBuilder builder, final Root<Skill> root) {
-    final List<Order> orders = new ArrayList<Order>();
-    orders.add(builder.asc(root.get(IDENT).get("name")));
-    orders.add(builder.asc(root.get(IDENT).get("clazz")));
+    final List<Order> orders = new ArrayList<>();
+    orders.add(builder.asc(root.get(NAME)));
     return orders;
   }
 

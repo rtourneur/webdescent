@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.raf.descent.jpa.dao.MonsterGroupDao;
 import com.raf.descent.jpa.domain.card.MonsterGroup;
 import com.raf.descent.jpa.domain.model.NameExpansionPk;
+import com.raf.fwk.jpa.dao.AbstractDao;
 
 /**
  * Implementation DAO for {@link MonsterGroup}.
@@ -46,7 +47,7 @@ public final class MonsterGroupDaoImpl extends AbstractDao<MonsterGroup, NameExp
    */
   @Override
   protected Predicate[] getPredicates(final Root<MonsterGroup> root, final MonsterGroup example) {
-    final List<Predicate> predicatesList = new ArrayList<Predicate>();
+    final List<Predicate> predicatesList = new ArrayList<>();
     if (example.getName() != null) {
       predicatesList.add(getEquals(root, IDENT, "name", example.getName()));
     }
@@ -128,7 +129,7 @@ public final class MonsterGroupDaoImpl extends AbstractDao<MonsterGroup, NameExp
    */
   @Override
   protected List<Order> getOrder(final CriteriaBuilder builder, final Root<MonsterGroup> root) {
-    final List<Order> orders = new ArrayList<Order>();
+    final List<Order> orders = new ArrayList<>();
     orders.add(builder.asc(root.get(IDENT).get("name")));
     orders.add(builder.asc(root.get(IDENT).get("expansion")));
     return orders;

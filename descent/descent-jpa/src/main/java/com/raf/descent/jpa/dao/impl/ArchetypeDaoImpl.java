@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import com.raf.descent.jpa.dao.ArchetypeDao;
 import com.raf.descent.jpa.domain.model.Archetype;
+import com.raf.fwk.jpa.dao.AbstractNamedDao;
 
 /**
  * Implementation DAO for {@link Archetype}.
@@ -11,7 +12,7 @@ import com.raf.descent.jpa.domain.model.Archetype;
  * @author RAF
  */
 @Repository
-public final class ArchetypeDaoImpl extends AbstractNamedDao<Archetype, String> implements ArchetypeDao {
+public final class ArchetypeDaoImpl extends AbstractNamedDao<Archetype> implements ArchetypeDao {
 
   /**
    * Constructor.

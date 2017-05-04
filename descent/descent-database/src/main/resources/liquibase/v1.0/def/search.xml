@@ -1,0 +1,93 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-descent-search-1">
+    <createTable tableName="SEARCH" schemaName="DESCENT" remarks="Table for searches">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the search">
+        <constraints nullable="false" />
+      </column>
+      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the search">
+        <constraints nullable="false" foreignKeyName="FK_SEARCH_EXPANSION" references="DESCENT.EXPANSION(NAME)" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Message code of the search">
+        <constraints nullable="false" />
+      </column>
+      <column name="ABILITY_CODE" type="VARCHAR(40)" remarks="Ability code of the search">
+        <constraints nullable="false" />
+      </column>
+      <column name="ATTACK_TYPE" type="VARCHAR(30)" remarks="Attack type of the search">
+        <constraints foreignKeyName="FK_SEARCH_ATTACK_TYPE" references="DESCENT.ATTACK_TYPE(NAME)" />
+      </column>
+      <column name="GOLD" type="INT" remarks="Gold reward of the search" />
+      <column name="COUNT" type="INT" remarks="Count of search cards">
+        <constraints nullable="false" />
+      </column>
+      <column name="IMAGE" type="VARCHAR(30)" remarks="Image of the search">
+        <constraints nullable="false" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addPrimaryKey columnNames="NAME, EXPANSION" constraintName="SEARCH_PK" schemaName="DESCENT" tableName="SEARCH" />
+  </changeSet>
+  <changeSet author="RAF" id="table-descent-search_dice-1">
+    <createTable tableName="SEARCH_DICE" schemaName="DESCENT" remarks="Table for search dices">
+      <column name="SEARCH" type="VARCHAR(30)" remarks="Name of the search">
+        <constraints nullable="false" />
+      </column>
+      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the search">
+        <constraints nullable="false" foreignKeyName="FK_SEARCH_DICE_EXPANSION" references="DESCENT.EXPANSION(NAME)" />
+      </column>
+      <column name="DICE" type="VARCHAR(30)" remarks="Dice of the search">
+        <constraints nullable="false" foreignKeyName="FK_SEARCH_DICE_DICE" references="DESCENT.DICE(NAME)" />
+      </column>
+      <column name="INDEX" type="INT" remarks="Index of the dice">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <createIndex schemaName="DESCENT" indexName="IDX_SEARCH_DICE" tableName="SEARCH_DICE" unique="true">
+      <column name="SEARCH" />
+      <column name="EXPANSION" />
+      <column name="DICE" />
+      <column name="INDEX" />
+    </createIndex>
+    <addForeignKeyConstraint constraintName="FK_SEARCH_DICE_SEARCH" baseTableSchemaName="DESCENT" baseTableName="SEARCH_DICE" baseColumnNames="SEARCH,EXPANSION"
+      referencedTableSchemaName="DESCENT" referencedTableName="SEARCH" referencedColumnNames="NAME, EXPANSION" />
+  </changeSet>
+  <changeSet author="RAF" id="table-descent-search_trait-1">
+    <createTable tableName="SEARCH_TRAIT" schemaName="DESCENT" remarks="Table for search traits">
+      <column name="SEARCH" type="VARCHAR(30)" remarks="Name of the search">
+        <constraints nullable="false" />
+      </column>
+      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the search">
+        <constraints nullable="false" foreignKeyName="FK_SEARCH_TRAIT_EXPANSION" references="DESCENT.EXPANSION(NAME)" />
+      </column>
+      <column name="TRAIT" type="VARCHAR(30)" remarks="Trait of the search">
+        <constraints nullable="false" foreignKeyName="FK_SEARCH_TRAIT_TRAIT" references="DESCENT.TRAIT(NAME)" />
+      </column>
+    </createTable>
+    <createIndex schemaName="DESCENT" indexName="IDX_SEARCH_TRAIT" tableName="SEARCH_TRAIT" unique="true">
+      <column name="SEARCH" />
+      <column name="EXPANSION" />
+      <column name="TRAIT" />
+    </createIndex>
+    <addForeignKeyConstraint constraintName="FK_SEARCH_TRAIT_SEARCH" baseTableSchemaName="DESCENT" baseTableName="SEARCH_TRAIT" baseColumnNames="SEARCH,EXPANSION"
+      referencedTableSchemaName="DESCENT" referencedTableName="SEARCH" referencedColumnNames="NAME, EXPANSION" />
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-search-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/search.csv" separator="|" tableName="SEARCH">
+      <column name="GOLD" type="NUMERIC" />
+      <column name="COUNT" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-search_dice-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/search_dice.csv" separator="|" tableName="SEARCH_DICE">
+      <column name="INDEX" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-search_trait-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/search_trait.csv" separator="|" tableName="SEARCH_TRAIT" />
+  </changeSet>
+</databaseChangeLog>

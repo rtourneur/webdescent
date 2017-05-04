@@ -1,14 +1,14 @@
 package com.raf.descent.jpa.dao;
 
 import com.raf.descent.jpa.domain.card.MonsterStat;
-import com.raf.descent.jpa.domain.card.MonsterStatPk;
+import com.raf.fwk.jpa.dao.EntityIdDao;
 
 /**
  * Interface DAO for {@link MonsterStat}.
  * 
  * @author RAF
  */
-public interface MonsterStatDao extends EntityDao<MonsterStat, MonsterStatPk> {
+public interface MonsterStatDao extends EntityIdDao<MonsterStat> {
 
   /**
    * Returns the monster stat.

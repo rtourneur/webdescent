@@ -1,0 +1,11 @@
+NAME|EXPANSION|MESSAGE_CODE|ABILITY_CODE|ATTACK_TYPE|GOLD|COUNT|IMAGE
+Curse Doll|D2E|search.cursedoll.d2e|search.cursedoll.d2e.ability|null|50|1|cursedoll.d2e.jpg
+Fire Flask|D2E|search.fireflask.d2e|search.fireflask.d2e.ability|Ranged|50|1|fireflask.d2e.jpg
+Health Potion|D2E|search.healthpotion.d2e|search.healthpotion.d2e.ability|null|25|3|healthpotion.d2e.jpg
+Nothing|D2E|search.nothing.d2e|search.nothing.d2e.ability|null|0|1|nothing.d2e.jpg
+Power Potion|D2E|search.powerpotion.d2e|search.powerpotion.d2e.ability|null|50|1|powerpotion.d2e.jpg
+Stamina Potion|D2E|search.staminapotion.d2e|search.staminapotion.d2e.ability|null|25|3|staminapotion.d2e.jpg
+Treasure Chest|D2E|search.treasurechest.d2e|search.treasurechest.d2e.ability|null|0|1|treasurechest.d2e.jpg
+Warding Talisman|D2E|search.wardingtalisman.d2e|search.wardingtalisman.d2e.ability|null|50|1|wardingtalisman.d2e.jpg
+Secret Passage|LotW|search.secretpassage.lotw|search.secretpassage.lotw.ability|null|0|1|secretpassage.lotw.jpg
+Secret Passage|TT|search.secretpassage.tt|search.secretpassage.tt.ability|null|0|1|secretpassage.tt.jpg

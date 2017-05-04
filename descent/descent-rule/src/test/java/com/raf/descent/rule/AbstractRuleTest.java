@@ -5,8 +5,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
+import com.raf.descent.database.config.DatasourceConfig;
 import com.raf.descent.rule.config.RuleConfig;
-import com.raf.descent.test.AbstractTest;
 
 /**
  * 
@@ -15,8 +15,9 @@ import com.raf.descent.test.AbstractTest;
  * @author RAF
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { RuleConfig.class }, loader = AnnotationConfigContextLoader.class)
-public abstract class AbstractRuleTest extends AbstractTest {
+@ContextConfiguration(classes = { RuleConfig.class,
+    DatasourceConfig.class }, loader = AnnotationConfigContextLoader.class)
+public abstract class AbstractRuleTest {
 
   /**
    * Constructor.

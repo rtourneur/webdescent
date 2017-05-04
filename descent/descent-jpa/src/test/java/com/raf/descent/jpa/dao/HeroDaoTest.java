@@ -11,12 +11,12 @@ import javax.transaction.Transactional;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.card.Hero;
 import com.raf.descent.jpa.domain.model.Archetype;
 import com.raf.descent.jpa.domain.model.Dice;
 import com.raf.descent.jpa.domain.model.NameExpansionPk;
-import com.raf.descent.util.Paged;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
  * 
@@ -46,7 +46,7 @@ public class HeroDaoTest extends AbstractDaoTest {
     nameExpansionPk.setExpansion("D2E");
     Hero example = this.heroDao.getById(nameExpansionPk);
     assertNotNull(example);
-    assertEquals(nameExpansionPk, example.getId());
+    assertEquals(nameExpansionPk, example.getIdentifier());
     assertEquals("Ashrian", example.getName());
     assertEquals("D2E", example.getExpansionName());
     assertEquals("hero.ashrian.d2e", example.getMessageCode());
@@ -85,21 +85,22 @@ public class HeroDaoTest extends AbstractDaoTest {
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
-    example.setIdent(null);
+    example.setIdentifier(null);
     example.setExpansion(this.expansionDao.getById("D2E"));
     list = this.heroDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(8, list.size());
     example.setExpansion(null);
+    example.setExpansionName(null);
     example.setArchetype(this.archetypeDao.getById("Warrior"));
     list = this.heroDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
-    assertEquals(29, list.size());
+    assertEquals(30, list.size());
     example.setArchetype(null);
     example.setExpansionName("LoR");
-    example.setArchetypeName("Warrior");
+    example.setArchetypeName("Mage");
     list = this.heroDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
@@ -122,6 +123,10 @@ public class HeroDaoTest extends AbstractDaoTest {
   @Test
   public final void testList() {
     Paged<Hero> list = this.heroDao.list(10, 0);
+    assertNotNull(list);
+    assertFalse(list.isEmpty());
+    Hero example = new Hero();
+    list = this.heroDao.list(example, 10, 1);
     assertNotNull(list);
     assertFalse(list.isEmpty());
   }

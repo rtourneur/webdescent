@@ -1,0 +1,39 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-descent-surge-1">
+    <createTable tableName="SURGE" schemaName="DESCENT" remarks="Table for surges">
+      <column name="ID" type="INT" autoIncrement="true" remarks="Identifier of the surge ">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="SURGE_PK" />
+      </column>
+      <column name="RULE_CODE" type="VARCHAR(30)" remarks="Rule code of the surge">
+        <constraints nullable="false" />
+      </column>
+      <column name="SURGE" type="INT" remarks="Required surges count">
+        <constraints nullable="false" />
+      </column>
+      <column name="DAMAGE" type="INT" remarks="Damage increment" />
+      <column name="RANGE" type="INT" remarks="Range increment" />
+      <column name="ABILITY" type="VARCHAR(30)" remarks="Trigerred ability" >
+        <constraints foreignKeyName="FK_SURGE_ABILITY" references="DESCENT.ABILITY(NAME)" />
+      </column>
+      <column name="ABILITY_VALUE" type="INT" remarks="Ability value" />
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-surge-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/surge.csv" separator="|" tableName="SURGE" >
+      <column name="ID" type="NUMERIC" />
+      <column name="RULE_CODE" type="STRING" />
+      <column name="SURGE" type="NUMERIC" />
+      <column name="DAMAGE" type="NUMERIC"/>
+      <column name="RANGE" type="NUMERIC"/>
+      <column name="ABILITY" type="STRING"/>
+      <column name="ABILITY_VALUE" type="NUMERIC"/>
+    </loadData>
+  </changeSet>
+
+</databaseChangeLog>

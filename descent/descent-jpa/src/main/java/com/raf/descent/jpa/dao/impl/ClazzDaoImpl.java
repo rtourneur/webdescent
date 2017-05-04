@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.raf.descent.jpa.dao.ClazzDao;
 import com.raf.descent.jpa.domain.model.Clazz;
+import com.raf.fwk.jpa.dao.AbstractDao;
 
 /**
  * Implementation DAO for {@link Clazz}.
@@ -44,7 +45,7 @@ public final class ClazzDaoImpl extends AbstractDao<Clazz, String> implements Cl
    */
   @Override
   protected Predicate[] getPredicates(final Root<Clazz> root, final Clazz example) {
-    final List<Predicate> predicatesList = new ArrayList<Predicate>();
+    final List<Predicate> predicatesList = new ArrayList<>();
     if (example.getName() != null) {
       predicatesList.add(getEquals(root, "name", example.getName()));
     }
@@ -75,7 +76,7 @@ public final class ClazzDaoImpl extends AbstractDao<Clazz, String> implements Cl
    */
   @Override
   protected List<Order> getOrder(final CriteriaBuilder builder, final Root<Clazz> root) {
-    final List<Order> orders = new ArrayList<Order>();
+    final List<Order> orders = new ArrayList<>();
     orders.add(builder.asc(root.get("name")));
     return orders;
   }

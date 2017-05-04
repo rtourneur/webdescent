@@ -1,0 +1,73 @@
+NAME|CLASS|MESSAGE_CODE|EXPERIENCE|RULE_CODE|COST
+Rage|Berserker|name.berserker.rage|0|name.berserker.rage.rule|1
+Brute|Berserker|name.berserker.brute|1|name.berserker.brute.rule|0
+Counter Attack|Berserker|name.berserker.counterattack|1|name.berserker.counterattack.rule|1
+Cripple|Berserker|name.berserker.cripple|1|name.berserker.cripple.rule|2
+Charge|Berserker|name.berserker.charge|2|name.berserker.charge.rule|2
+Weapon Mastery|Berserker|name.berserker.weaponmastery|2|name.berserker.weaponmastery.rule|0
+Whirlwind|Berserker|name.berserker.whirlwind|2|name.berserker.whirlwind.rule|1
+Death Rage|Berserker|name.berserker.deathrage|3|name.berserker.deathrage.rule|2
+Execute|Berserker|name.berserker.execute|3|name.berserker.execute.rule|X
+Oath of Honor|Knight|name.knight.oathofhonor|0|name.knight.oathofhonor.rule|1
+Advance|Knight|name.knight.advance|1|name.knight.advance.rule|1
+Challenge|Knight|name.knight.challenge|1|name.knight.challenge.rule|0
+Defend|Knight|name.knight.defend|1|name.knight.defend.rule|1
+Defense Training|Knight|name.knight.defensetraining|2|name.knight.defensetraining.rule|0
+Guard|Knight|name.knight.guard|2|name.knight.guard.rule|2
+Shield Slam|Knight|name.knight.shieldslam|2|name.knight.shieldslam.rule|0
+Inspiration|Knight|name.knight.inspiration|3|name.knight.inspiration.rule|0
+Stalwart|Knight|name.knight.stalwart|3|name.knight.stalwart.rule|0
+Greedy|Thief|name.thief.greedy|0|name.thief.greedy.rule|1
+Appraisal|Thief|name.thief.appraisal|1|name.thief.appraisal.rule|0
+Dirty Tricks|Thief|name.thief.dirtytricks|1|name.thief.dirtytricks.rule|1
+Sneakly|Thief|name.thief.sneakly|1|name.thief.sneakly.rule|0
+Caltrops|Thief|name.thief.caltrops|2|name.thief.caltrops.rule|1
+Tumble|Thief|name.thief.tumble|2|name.thief.tumble.rule|1
+Unseen|Thief|name.thief.unseen|2|name.thief.unseen.rule|2
+Bushwhack|Thief|name.thief.bushwhack|3|name.thief.bushwhack.rule|1
+Lurk|Thief|name.thief.lurk|3|name.thief.lurk.rule|1
+Nimble|Wildlander|name.wildlander.nimble|0|name.wildlander.nimble.rule|1
+Accurate|Wildlander|name.wildlander.accurate|1|name.wildlander.accurate.rule|0
+Danger Sense|Wildlander|name.wildlander.dangersense|1|name.wildlander.dangersense.rule|2
+Eagle Eyes|Wildlander|name.wildlander.eagleeyes|1|name.wildlander.eagleeyes.rule|0
+Bow Mastery|Wildlander|name.wildlander.bowmastery|2|name.wildlander.bowmastery.rule|0
+First Strike|Wildlander|name.wildlander.firststrike|2|name.wildlander.firststrike.rule|2
+Fleet of Foot|Wildlander|name.wildlander.fleetoffoot|2|name.wildlander.fleetoffoot.rule|0
+Black Arrow|Wildlander|name.wildlander.blackarrow|3|name.wildlander.blackarrow.rule|1
+Running Shot|Wildlander|name.wildlander.runningshot|3|name.wildlander.runningshot.rule|0
+Runic Knowledge|Runemaster|name.runemaster.runicknowledge|0|name.runemaster.runicknowledge.rule|0
+Exploding Rune|Runemaster|name.runemaster.explodingrune|1|name.runemaster.explodingrune.rule|1
+Ghost Armor|Runemaster|name.runemaster.ghostarmor|1|name.runemaster.ghostarmor.rule|1
+Inscribe Rune|Runemaster|name.runemaster.inscriberune|1|name.runemaster.inscriberune.rule|0
+Iron Will|Runemaster|name.runemaster.ironwill|2|name.runemaster.ironwill.rule|0
+Rune Mastery|Runemaster|name.runemaster.runemastery|2|name.runemaster.runemastery.rule|0
+Runic Sorcery|Runemaster|name.runemaster.runicsorcery|2|name.runemaster.runicsorcery.rule|1
+Break the Rune|Runemaster|name.runemaster.breaktherune|3|name.runemaster.breaktherune.rule|4
+Quick Casting|Runemaster|name.runemaster.quickcasting|3|name.runemaster.quickcasting.rule|2
+Raise Dead|Necromancer|name.necromancer.raisedead|0|name.necromancer.raisedead.rule|1
+Corpse Blast|Necromancer|name.necromancer.corpseblast|1|name.necromancer.corpseblast.rule|1
+Deathly Haste|Necromancer|name.necromancer.deathlyhaste|1|name.necromancer.deathlyhaste.rule|0
+Fury of Undeath|Necromancer|name.necromancer.furyofundeath|1|name.necromancer.furyofundeath.rule|1
+Dark Pact|Necromancer|name.necromancer.darkpact|2|name.necromancer.darkpact.rule|0
+Undead Might|Necromancer|name.necromancer.undeadmight|2|name.necromancer.undeadmight.rule|1
+Vampiric Blood|Necromancer|name.necromancer.vampiricblood|2|name.necromancer.vampiricblood.rule|0
+Army of Death|Necromancer|name.necromancer.armyofdeath|3|name.necromancer.armyofdeath.rule|2
+Dying Command|Necromancer|name.necromancer.dyingcommand|3|name.necromancer.dyingcommand.rule|2
+Prayer of Healing|Disciple|name.disciple.prayerofhealing|0|name.disciple.prayerofhealing.rule|1
+Armor of Faith|Disciple|name.disciple.armoroffaith|1|name.disciple.armoroffaith.rule|0
+Blessed Strike|Disciple|name.disciple.blessedstrike|1|name.disciple.blessedstrike.rule|1
+Cleansing Touch|Disciple|name.disciple.cleansingtouch|1|name.disciple.cleansingtouch.rule|0
+Divine Fury|Disciple|name.disciple.divinefury|2|name.disciple.divinefury.rule|0
+Prayer of Peace|Disciple|name.disciple.prayerofpeace|2|name.disciple.prayerofpeace.rule|2
+Time of Need|Disciple|name.disciple.timeofneed|2|name.disciple.timeofneed.rule|0
+Holy Power|Disciple|name.disciple.holypower|3|name.disciple.holypower.rule|0
+Radiant Light|Disciple|name.disciple.radiantlight|3|name.disciple.radiantlight.rule|3
+Stoneskin|Spiritspeaker|name.spiritspeaker.stoneskin|0|name.spiritspeaker.stoneskin.rule|1
+Drain Spirit|Spiritspeaker|name.spiritspeaker.drainspirit|1|name.spiritspeaker.drainspirit.rule|1
+Healing Rain|Spiritspeaker|name.spiritspeaker.healingrain|1|name.spiritspeaker.healingrain.rule|2
+Shared Pain|Spiritspeaker|name.spiritspeaker.sharedpain|1|name.spiritspeaker.sharedpain.rule|1
+Cloud of Mist|Spiritspeaker|name.spiritspeaker.cloudofmist|2|name.spiritspeaker.cloudofmist.rule|1
+Nature's Bounty|Spiritspeaker|name.spiritspeaker.naturesbounty|2|name.spiritspeaker.naturesbounty.rule|0
+Tempest|Spiritspeaker|name.spiritspeaker.tempest|2|name.spiritspeaker.tempest.rule|2
+Ancestor Spirits|Spiritspeaker|name.spiritspeaker.ancestorspirits|3|name.spiritspeaker.ancestorspirits.rule|1
+Vigor|Spiritspeaker|name.spiritspeaker.vigor|3|name.spiritspeaker.vigor.rule|0

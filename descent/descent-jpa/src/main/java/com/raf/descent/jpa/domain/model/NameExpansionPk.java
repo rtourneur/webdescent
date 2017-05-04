@@ -9,69 +9,31 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  * The primary key class for database table with NAME and EXPANSION as PRIMARY KEY.
  * 
  * @author RAF
  */
 @Embeddable
+@Getter
+@Setter
+@NoArgsConstructor
 public class NameExpansionPk implements Serializable {
 
   /** Serial UID. */
   private static final long serialVersionUID = 6187498875500516420L;
 
   /** The name. */
-  @Column(unique = true, nullable = false, length = 30)
+  @Column(name = "NAME", nullable = false, length = 30)
   private String name;
 
   /** The expansion. */
-  @Column(insertable = false, updatable = false, unique = true, nullable = false, length = 30)
+  @Column(name = "EXPANSION", nullable = false, length = 30)
   private String expansion;
-
-  /**
-   * Constructor.
-   */
-  public NameExpansionPk() {
-    super();
-  }
-
-  /**
-   * Returns the name.
-   *
-   * @return the name
-   */
-  public String getName() {
-    return this.name;
-  }
-
-  /**
-   * Defines the name.
-   *
-   * @param name
-   *          the name to set
-   */
-  public void setName(final String name) {
-    this.name = name;
-  }
-
-  /**
-   * Returns the expansion.
-   * 
-   * @return the expansion
-   */
-  public String getExpansion() {
-    return this.expansion;
-  }
-
-  /**
-   * Defines the expansion.
-   * 
-   * @param expansion
-   *          the expansion to set
-   */
-  public void setExpansion(final String expansion) {
-    this.expansion = expansion;
-  }
 
   /**
    * Implementation for hashCode.
@@ -79,7 +41,7 @@ public class NameExpansionPk implements Serializable {
    * @see Object#hashCode()
    */
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return new HashCodeBuilder().append(this.name).append(this.expansion).toHashCode();
   }
 
@@ -89,8 +51,8 @@ public class NameExpansionPk implements Serializable {
    * @see Object#equals(Object)
    */
   @Override
-  public boolean equals(final Object obj) {
-    boolean equals;
+  public final boolean equals(final Object obj) {
+    final boolean equals;
     if (this == obj) {
       equals = true;
     } else {
@@ -110,7 +72,7 @@ public class NameExpansionPk implements Serializable {
    * @see Object#toString()
    */
   @Override
-  public String toString() {
+  public final String toString() {
     return ToStringBuilder.reflectionToString(this);
   }
 }

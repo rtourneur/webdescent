@@ -1,0 +1,25 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-descent-monster_trait-1">
+    <createTable tableName="MONSTER_TRAIT" schemaName="DESCENT" remarks="Table for monster traits">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the monster trait">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="MONSTER_TRAIT_PK" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Message code of the monster trait">
+        <constraints nullable="false" />
+      </column>
+      <column name="ICON" type="VARCHAR(30)" remarks="Icon of the monster trait">
+        <constraints nullable="false" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-monster_trait-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/monster_trait.csv" separator="|" tableName="MONSTER_TRAIT" />
+  </changeSet>
+
+</databaseChangeLog>

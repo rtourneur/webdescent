@@ -12,10 +12,10 @@ import javax.transaction.Transactional;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.model.Ability;
 import com.raf.descent.jpa.domain.model.Surge;
-import com.raf.descent.util.Paged;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
  * 
@@ -37,7 +37,7 @@ public class SurgeDaoTest extends AbstractDaoTest {
     Integer ident = Integer.valueOf(17);
     Surge example = this.surgeDao.getById(ident);
     assertNotNull(example);
-    assertEquals(ident, example.getId());
+    assertEquals(ident, example.getIdentifier());
     assertEquals(ident, example.getIdent());
     assertEquals("surge.17", example.getRuleCode());
     assertEquals(Integer.valueOf(1), example.getSurgeCount());
@@ -59,7 +59,7 @@ public class SurgeDaoTest extends AbstractDaoTest {
     List<Surge> list = this.surgeDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
-    example.setIdent(Integer.valueOf(11));
+    example.setIdentifier(Integer.valueOf(11));
     list = this.surgeDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());

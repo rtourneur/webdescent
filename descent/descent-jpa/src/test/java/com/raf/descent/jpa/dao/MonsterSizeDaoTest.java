@@ -11,9 +11,9 @@ import javax.annotation.Resource;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.model.MonsterSize;
-import com.raf.descent.util.Paged;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
  * 
@@ -34,7 +34,7 @@ public class MonsterSizeDaoTest extends AbstractDaoTest {
     String name = "Small";
     MonsterSize example = this.monsterSizeDao.getById(name);
     assertNotNull(example);
-    assertEquals(name, example.getId());
+    assertEquals(name, example.getIdentifier());
     assertEquals(name, example.getName());
     assertEquals("monstersize.small", example.getMessageCode());
   }
@@ -54,7 +54,7 @@ public class MonsterSizeDaoTest extends AbstractDaoTest {
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
-    example.setIdent("Test");
+    example.setIdentifier("Test");
     list = this.monsterSizeDao.findByExample(example);
     assertNotNull(list);
     assertTrue(list.isEmpty());

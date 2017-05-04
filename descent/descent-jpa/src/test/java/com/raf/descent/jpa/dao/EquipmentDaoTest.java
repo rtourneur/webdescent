@@ -11,9 +11,9 @@ import javax.annotation.Resource;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.model.Equipment;
-import com.raf.descent.util.Paged;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
  * 
@@ -34,7 +34,7 @@ public class EquipmentDaoTest extends AbstractDaoTest {
     String name = "One Hand";
     Equipment example = this.equipmentDao.getById(name);
     assertNotNull(example);
-    assertEquals(name, example.getId());
+    assertEquals(name, example.getIdentifier());
     assertEquals(name, example.getName());
     assertEquals("equipment.onehand", example.getMessageCode());
     assertEquals("onehand.png", example.getIcon());
@@ -55,7 +55,7 @@ public class EquipmentDaoTest extends AbstractDaoTest {
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
-    example.setIdent("Test");
+    example.setIdentifier("Test");
     list = this.equipmentDao.findByExample(example);
     assertNotNull(list);
     assertTrue(list.isEmpty());

@@ -1,0 +1,28 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-descent-class-1">
+    <createTable tableName="CLASS" schemaName="DESCENT" remarks="Table for classes">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the class">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="CLASS_PK" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Message code of the class">
+        <constraints nullable="false" />
+      </column>
+      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the class">
+        <constraints nullable="false" foreignKeyName="FK_CLASS_EXPANSION" references="DESCENT.EXPANSION(NAME)" />
+      </column>
+      <column name="ARCHETYPE" type="VARCHAR(30)" remarks="Archetype of the class">
+        <constraints nullable="false" foreignKeyName="FK_CLASS_ARCHETYPE" references="DESCENT.ARCHETYPE(NAME)" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-class-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/class.csv" separator="|" tableName="CLASS" />
+  </changeSet>
+
+</databaseChangeLog>

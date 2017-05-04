@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.raf.descent.jpa.dao.SearchDao;
 import com.raf.descent.jpa.domain.card.Search;
 import com.raf.descent.jpa.domain.model.NameExpansionPk;
+import com.raf.fwk.jpa.dao.AbstractDao;
 
 /**
  * Implementation DAO for {@link Search}.
@@ -45,7 +46,7 @@ public final class SearchDaoImpl extends AbstractDao<Search, NameExpansionPk> im
    */
   @Override
   protected Predicate[] getPredicates(final Root<Search> root, final Search example) {
-    final List<Predicate> predicatesList = new ArrayList<Predicate>();
+    final List<Predicate> predicatesList = new ArrayList<>();
     if (example.getName() != null) {
       predicatesList.add(getEquals(root, IDENT, "name", example.getName()));
     }
@@ -83,7 +84,8 @@ public final class SearchDaoImpl extends AbstractDao<Search, NameExpansionPk> im
    * @param predicatesList
    *          the predicate list
    */
-  private void addAttackTypeFilter(final Root<Search> root, final Search example, final List<Predicate> predicatesList) {
+  private void addAttackTypeFilter(final Root<Search> root, final Search example,
+      final List<Predicate> predicatesList) {
     if (example.getAttackTypeName() != null) {
       predicatesList.add(getEquals(root, "attackTypeName", example.getAttackTypeName()));
     }
@@ -104,7 +106,7 @@ public final class SearchDaoImpl extends AbstractDao<Search, NameExpansionPk> im
    */
   @Override
   protected List<Order> getOrder(final CriteriaBuilder builder, final Root<Search> root) {
-    final List<Order> orders = new ArrayList<Order>();
+    final List<Order> orders = new ArrayList<>();
     orders.add(builder.asc(root.get(IDENT).get("name")));
     orders.add(builder.asc(root.get(IDENT).get("expansion")));
     return orders;

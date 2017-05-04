@@ -11,11 +11,11 @@ import javax.transaction.Transactional;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.model.Archetype;
 import com.raf.descent.jpa.domain.model.Clazz;
 import com.raf.descent.jpa.domain.model.Expansion;
-import com.raf.descent.util.Paged;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
  * 
@@ -43,7 +43,7 @@ public class ClazzDaoTest extends AbstractDaoTest {
     String name = "Berserker";
     Clazz example = this.clazzDao.getById(name);
     assertNotNull(example);
-    assertEquals(name, example.getId());
+    assertEquals(name, example.getIdentifier());
     assertEquals(name, example.getName());
     assertEquals("class.berserker", example.getMessageCode());
     assertEquals("Warrior", example.getArchetypeName());
@@ -70,13 +70,14 @@ public class ClazzDaoTest extends AbstractDaoTest {
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
-    example.setIdent(null);
+    example.setIdentifier(null);
     example.setExpansion(this.expansionDao.getById("D2E"));
     list = this.clazzDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(8, list.size());
     example.setExpansion(null);
+    example.setExpansionName(null);
     example.setArchetype(this.archetypeDao.getById("Warrior"));
     list = this.clazzDao.findByExample(example);
     assertNotNull(list);
@@ -84,7 +85,7 @@ public class ClazzDaoTest extends AbstractDaoTest {
     assertEquals(6, list.size());
     example.setArchetype(null);
     example.setExpansionName("D2E");
-    example.setArchetypeName("Warrior");
+    example.setArchetypeName("Mage");
     list = this.clazzDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());

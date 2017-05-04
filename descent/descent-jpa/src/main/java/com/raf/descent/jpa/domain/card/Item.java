@@ -2,25 +2,30 @@ package com.raf.descent.jpa.domain.card;
 
 import java.util.List;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.Index;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import com.raf.descent.jpa.domain.AbstractNamedEntity;
 import com.raf.descent.jpa.domain.model.AttackType;
 import com.raf.descent.jpa.domain.model.Clazz;
 import com.raf.descent.jpa.domain.model.Equipment;
 import com.raf.descent.jpa.domain.model.Expansion;
 import com.raf.descent.jpa.domain.model.ItemType;
-import com.raf.descent.jpa.domain.model.Trait;
+import com.raf.descent.jpa.domain.model.ObjectTrait;
+import com.raf.descent.jpa.domain.model.StatDiceName;
+import com.raf.fwk.jpa.domain.AbstractNamedEntity;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * The persistent class for the ITEM database table.
@@ -29,6 +34,9 @@ import com.raf.descent.jpa.domain.model.Trait;
  */
 @Entity
 @Table(name = "ITEM", schema = "DESCENT")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Item extends AbstractNamedEntity {
 
   /** Serial UID. */
@@ -51,7 +59,7 @@ public class Item extends AbstractNamedEntity {
   private String equipmentName;
 
   /** The cost. */
-  @Column(precision = 3)
+  @Column(name = "COST", precision = 3)
   private Integer cost;
 
   /** The rule code. */
@@ -64,10 +72,10 @@ public class Item extends AbstractNamedEntity {
 
   /** The class name. */
   @Column(name = "CLASS", length = 30)
-  private String clazzName;
+  private String className;
 
   /** The image. */
-  @Column(nullable = false, length = 30)
+  @Column(name = "IMAGE", nullable = false, length = 30)
   private String image;
 
   /** The expansion. */
@@ -96,200 +104,16 @@ public class Item extends AbstractNamedEntity {
   private Clazz clazz;
 
   /** The list of dices. */
-  @OneToMany(mappedBy = "item", fetch = FetchType.LAZY)
-  private List<ItemDice> dices;
+  @ElementCollection
+  @CollectionTable(name = "ITEM_DICE", schema = "DESCENT", joinColumns = { @JoinColumn(name = "ITEM") }, indexes = {
+      @Index(name = "IDX_ITEM_DICE", columnList = "ITEM, DICE, INDEX", unique = true) })
+  private List<StatDiceName> diceNames;
 
   /** The list of traits. */
-  @ManyToMany(fetch = FetchType.LAZY)
-  @JoinTable(name = "ITEM_TRAIT", schema = "DESCENT", joinColumns = { @JoinColumn(name = "ITEM", nullable = false) }, inverseJoinColumns = { @JoinColumn(name = "TRAIT", nullable = false) })
-  private List<Trait> traits;
-
-  /**
-   * Constructor.
-   */
-  public Item() {
-    super();
-  }
-
-  /**
-   * Returns the expansion name.
-   * 
-   * @return the expansionName
-   */
-  public String getExpansionName() {
-    return this.expansionName;
-  }
-
-  /**
-   * Defines the expansion name.
-   * 
-   * @param expansionName
-   *          the expansionName to set
-   */
-  public void setExpansionName(final String expansionName) {
-    this.expansionName = expansionName;
-  }
-
-  /**
-   * Returns the item type name.
-   * 
-   * @return the itemTypeName
-   */
-  public String getItemTypeName() {
-    return this.itemTypeName;
-  }
-
-  /**
-   * Defines the item type name.
-   * 
-   * @param itemTypeName
-   *          the itemTypeName to set
-   */
-  public void setItemTypeName(final String itemTypeName) {
-    this.itemTypeName = itemTypeName;
-  }
-
-  /**
-   * Returns the attack type name.
-   * 
-   * @return the attackTypeName
-   */
-  public String getAttackTypeName() {
-    return this.attackTypeName;
-  }
-
-  /**
-   * Defines the attack type name.
-   * 
-   * @param attackTypeName
-   *          the attackTypeName to set
-   */
-  public void setAttackTypeName(final String attackTypeName) {
-    this.attackTypeName = attackTypeName;
-  }
-
-  /**
-   * Returns the equipment name.
-   * 
-   * @return the equipmentName
-   */
-  public String getEquipmentName() {
-    return this.equipmentName;
-  }
-
-  /**
-   * Defines the equipment name.
-   * 
-   * @param equipmentName
-   *          the equipmentName to set
-   */
-  public void setEquipmentName(final String equipmentName) {
-    this.equipmentName = equipmentName;
-  }
-
-  /**
-   * Returns the cost.
-   * 
-   * @return the cost
-   */
-  public Integer getCost() {
-    return this.cost;
-  }
-
-  /**
-   * Defines the cost.
-   * 
-   * @param cost
-   *          the cost to set
-   */
-  public void setCost(final Integer cost) {
-    this.cost = cost;
-  }
-
-  /**
-   * Returns the rule code.
-   * 
-   * @return the ruleCode
-   */
-  public String getRuleCode() {
-    return this.ruleCode;
-  }
-
-  /**
-   * Defines the rule code.
-   * 
-   * @param ruleCode
-   *          the ruleCode to set
-   */
-  public void setRuleCode(final String ruleCode) {
-    this.ruleCode = ruleCode;
-  }
-
-  /**
-   * Returns the count.
-   * 
-   * @return the count
-   */
-  public Integer getCount() {
-    return this.count;
-  }
-
-  /**
-   * Defines the count.
-   * 
-   * @param count
-   *          the count to set
-   */
-  public void setCount(final Integer count) {
-    this.count = count;
-  }
-
-  /**
-   * Returns the class name.
-   * 
-   * @return the clazzName
-   */
-  public String getClazzName() {
-    return this.clazzName;
-  }
-
-  /**
-   * Defines the class name.
-   * 
-   * @param clazzName
-   *          the clazzName to set
-   */
-  public void setClazzName(final String clazzName) {
-    this.clazzName = clazzName;
-  }
-
-  /**
-   * Returns the image.
-   * 
-   * @return the image
-   */
-  public String getImage() {
-    return this.image;
-  }
-
-  /**
-   * Defines the image.
-   * 
-   * @param image
-   *          the image to set
-   */
-  public void setImage(final String image) {
-    this.image = image;
-  }
-
-  /**
-   * Returns the expansion.
-   * 
-   * @return the expansion
-   */
-  public Expansion getExpansion() {
-    return this.expansion;
-  }
+  @ElementCollection
+  @CollectionTable(name = "ITEM_TRAIT", schema = "DESCENT", joinColumns = { @JoinColumn(name = "ITEM") }, indexes = {
+      @Index(name = "IDX_ITEM_TRAIT", columnList = "ITEM, TRAIT", unique = true) })
+  private List<ObjectTrait> traits;
 
   /**
    * Defines the expansion.
@@ -299,15 +123,9 @@ public class Item extends AbstractNamedEntity {
    */
   public void setExpansion(final Expansion expansion) {
     this.expansion = expansion;
-  }
-
-  /**
-   * Returns the item type.
-   * 
-   * @return the itemType
-   */
-  public ItemType getItemType() {
-    return this.itemType;
+    if (this.expansion != null) {
+      this.expansionName = this.expansion.getName();
+    }
   }
 
   /**
@@ -318,15 +136,9 @@ public class Item extends AbstractNamedEntity {
    */
   public void setItemType(final ItemType itemType) {
     this.itemType = itemType;
-  }
-
-  /**
-   * Returns the attack type.
-   * 
-   * @return the attackType
-   */
-  public AttackType getAttackType() {
-    return this.attackType;
+    if (this.itemType != null) {
+      this.itemTypeName = this.itemType.getName();
+    }
   }
 
   /**
@@ -337,15 +149,9 @@ public class Item extends AbstractNamedEntity {
    */
   public void setAttackType(final AttackType attackType) {
     this.attackType = attackType;
-  }
-
-  /**
-   * Returns the equipment.
-   * 
-   * @return the equipment
-   */
-  public Equipment getEquipment() {
-    return this.equipment;
+    if (this.attackType != null) {
+      this.attackTypeName = this.attackType.getName();
+    }
   }
 
   /**
@@ -356,15 +162,9 @@ public class Item extends AbstractNamedEntity {
    */
   public void setEquipment(final Equipment equipment) {
     this.equipment = equipment;
-  }
-
-  /**
-   * Returns the clazz.
-   * 
-   * @return the clazz
-   */
-  public Clazz getClazz() {
-    return this.clazz;
+    if (this.equipment != null) {
+      this.equipmentName = this.equipment.getName();
+    }
   }
 
   /**
@@ -375,44 +175,9 @@ public class Item extends AbstractNamedEntity {
    */
   public void setClazz(final Clazz clazz) {
     this.clazz = clazz;
-  }
-
-  /**
-   * Returns the list of dices.
-   * 
-   * @return the dices
-   */
-  public List<ItemDice> getDices() {
-    return this.dices;
-  }
-
-  /**
-   * Defines the list of dices.
-   * 
-   * @param dices
-   *          the dices to set
-   */
-  public void setDices(final List<ItemDice> dices) {
-    this.dices = dices;
-  }
-
-  /**
-   * Returns the list of traits.
-   * 
-   * @return the traits
-   */
-  public List<Trait> getTraits() {
-    return this.traits;
-  }
-
-  /**
-   * Defines the list of traits.
-   * 
-   * @param traits
-   *          the traits to set
-   */
-  public void setTraits(final List<Trait> traits) {
-    this.traits = traits;
+    if (this.clazz != null) {
+      this.className = this.clazz.getName();
+    }
   }
 
   /**
@@ -423,11 +188,12 @@ public class Item extends AbstractNamedEntity {
    * @see AbstractNamedEntity#appendNamed(ToStringBuilder)
    */
   @Override
-  protected void appendNamed(final ToStringBuilder builder) {
+  protected final void appendNamed(final ToStringBuilder builder) {
     builder.append("expansionName", this.expansionName).append("itemTypeName", this.itemTypeName)
         .append("attackTypeName", this.attackTypeName).append("equipmentName", this.equipmentName)
         .append("cost", this.cost).append("ruleCode", this.ruleCode).append("count", this.count)
-        .append("clazzName", this.clazzName).append("image", this.image);
+        .append("className", this.className).append("image", this.image).append("diceNames", this.diceNames)
+        .append("traits", this.traits);
     appendExpansion(builder);
     appendItemType(builder);
     appendAttackType(builder);

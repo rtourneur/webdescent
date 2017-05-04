@@ -1,0 +1,99 @@
+NAME|EXPANSION|ARCHETYPE|MESSAGE_CODE|SPEED|HEALTH|STAMINA|DEFENSE|MIGHT|KNOWLEDGE|WILLPOWER|AWARENESS|ABILITY_CODE|FEAT_CODE|IMAGE
+Ashrian|D2E|Healer|hero.ashrian.d2e|5|10|4|Grey|2|2|3|4|hero.ashrian.d2e.ability|hero.ashrian.d2e.feat|ashrian.d2e.jpg
+Avric Albright|D2E|Healer|hero.avric.d2e|4|12|4|Grey|2|3|4|2|hero.avric.d2e.ability|hero.avric.d2e.feat|avric.d2e.jpg
+Grisban the Thirsty|D2E|Warrior|hero.grisban.d2e|3|14|4|Grey|5|2|3|1|hero.grisban.d2e.ability|hero.grisban.d2e.feat|grisban.d2e.jpg
+Jain Fairwood|D2E|Scout|hero.jain.d2e|5|8|5|Grey|2|3|2|4|hero.jain.d2e.ability|hero.jain.d2e.feat|jain.d2e.jpg
+Leoric of the Book|D2E|Mage|hero.leoric.d2e|4|8|5|Grey|1|5|2|3|hero.leoric.d2e.ability|hero.leoric.d2e.feat|leoric.d2e.jpg
+Syndrael|D2E|Warrior|hero.syndrael.d2e|4|12|4|Grey|4|3|2|2|hero.syndrael.d2e.ability|hero.syndrael.d2e.feat|syndrael.d2e.jpg
+Tomble Burrowell|D2E|Scout|hero.tomble.d2e|4|8|5|Grey|1|2|3|5|hero.tomble.d2e.ability|hero.tomble.d2e.feat|tomble.d2e.jpg
+Widow Tarha|D2E|Mage|hero.tarha.d2e|4|10|4|Grey|2|4|3|2|hero.tarha.d2e.ability|hero.tarha.d2e.feat|tarha.d2e.jpg
+High Mage Quellen|LotW|Mage|hero.quellen.lotw|4|10|4|Grey|1|5|3|2|hero.quellen.lotw.ability|hero.quellen.lotw.feat|quellen.lotw.jpg
+Reynhart the Worthy|LotW|Warrior|hero.reynhart.lotw|4|12|4|Grey|3|1|4|3|hero.reynhart.lotw.ability|hero.reynhart.lotw.feat|reynhart.lotw.jpg
+Dezra the Vile|LoR|Mage|hero.dezra.lor|5|8|4|Grey|2|4|2|3|hero.dezra.lor.ability|hero.dezra.lor.feat|dezra.lor.jpg
+Logan Lashley|LoR|Scout|hero.logan.lor|4|10|4|Grey|3|2|2|4|hero.logan.lor.ability|hero.logan.lor.feat|logan.lor.jpg
+Pathfinder Durik|LoR|Warrior|hero.durik.lor|5|10|4|Grey|3|2|2|4|hero.durik.lor.ability|hero.durik.lor.feat|durik.lor.jpg
+Ulma Grimstone|LoR|Healer|hero.ulma.lor|4|8|5|Grey|2|4|3|2|hero.ulma.lor.ability|hero.ulma.lor.feat|ulma.lor.jpg
+Augur Grison|TT|Healer|hero.augur.tt|3|12|5|Grey|4|2|3|2|hero.augur.tt.ability|hero.augur.tt.feat|augur.tt.jpg
+Roganna the Shade|TT|Scout|hero.roganna.tt|5|10|4|Grey|2|2|4|3|hero.roganna.tt.ability|hero.roganna.tt.feat|roganna.tt.jpg
+Orkell the Swift|SoN|Warrior|hero.orkell.son|5|10|5|Brown|4|1|2|4|hero.orkell.son.ability|hero.orkell.son.feat|orkell.son.jpg
+Ravaella Lightfoot|SoN|Mage|hero.ravaella.son|4|8|5|Black|1|4|2|4|hero.ravaella.son.ability|hero.ravaella.son.feat|ravaella.son.jpg
+Rendiel|SoN|Healer|hero.rendiel.son|5|10|4|Grey|2|3|5|1|hero.rendiel.son.ability|hero.rendiel.son.feat|rendiel.son.jpg
+Tinashi the Wanderer|SoN|Scout|hero.tinashi.son|4|12|4|Grey|3|2|3|3|hero.tinashi.son.ability|hero.tinashi.son.feat|tinashi.son.jpg
+Alys Raine|MoR|Warrior|hero.alys.mor|4|12|4|Grey|3|4|3|1|hero.alys.mor.ability|hero.alys.mor.feat|alys.mor.jpg
+Thaiden Mistpeak|MoR|Scout|hero.thaiden.mor|4|10|5|Grey|3|1|2|5|hero.thaiden.mor.ability|hero.thaiden.mor.feat|thaiden.mor.jpg
+Elder Mok|OotO|Healer|hero.mok.ooto|4|10|4|Grey|2|3|4|2|hero.mok.ooto.ability|hero.mok.ooto.feat|mok.ooto.jpg
+Laurel of Bloodwood|OotO|Scout|hero.laurel.ooto|4|8|5|Grey|2|3|2|4|hero.laurel.ooto.ability|hero.laurel.ooto.feat|laurel.ooto.jpg
+Shiver|OotO|Mage|hero.shiver.ooto|4|8|4|Grey|2|3|3|3|hero.shiver.ooto.ability|hero.shiver.ooto.feat|shiver.ooto.jpg
+Trenloe the Strong|OotO|Warrior|hero.trenloe.ooto|3|12|3|Grey|4|1|4|2|hero.trenloe.ooto.ability|hero.trenloe.ooto.feat|trenloe.ooto.jpg
+Brother Gherinn|CoD|Healer|hero.gherinn.cod|3|12|4|Grey|1|4|4|2|hero.gherinn.cod.ability|hero.gherinn.cod.feat|gherinn.cod.jpg
+Corbin|CoD|Warrior|hero.corbin.cod|3|12|5|Grey|5|2|2|2|hero.corbin.cod.ability|hero.corbin.cod.feat|corbin.cod.jpg
+Jaes the Exile|CoD|Mage|hero.jaes.cod|4|12|3|Grey|3|4|2|2|hero.jaes.cod.ability|hero.jaes.cod.feat|jaes.cod.jpg
+Lindel|CoD|Scout|hero.lindel.cod|5|10|5|Grey|3|3|3|3|hero.lindel.cod.ability|hero.lindel.cod.feat|lindel.cod.jpg
+Andira Runehand|CotF|Healer|hero.andira.cotf|4|12|4|Grey|2|3|4|2|hero.andira.cotf.ability|hero.andira.cotf.feat|andira.cotf.jpg
+Astarra|CotF|Mage|hero.astarra.cotf|4|10|5|Grey|1|4|4|2|hero.astarra.cotf.ability|hero.astarra.cotf.feat|astarra.cotf.jpg
+Tahlia|CotF|Warrior|hero.tahlia.cotf|3|14|4|Grey|3|2|3|3|hero.tahlia.cotf.ability|hero.tahlia.cotf.feat|tahlia.cotf.jpg
+Thetherys|CotF|Scout|hero.thetherys.cotf|4|10|4|Grey|3|2|1|5|hero.thetherys.cotf.ability|hero.thetherys.cotf.feat|thetherys.cotf.jpg
+Lord Hauwthorne|GoD|Warrior|hero.hauwthorne.god|4|12|3|Grey|4|3|2|2|hero.hauwthorne.god.ability|hero.hauwthorne.god.feat|hauwthorne.god.jpg
+Mordrog|GoD|Warrior|hero.mordrog.god|4|14|4|Grey|5|1|3|2|hero.mordrog.god.ability|hero.mordrog.god.feat|mordrog.god.jpg
+Sahla|GoD|Healer|hero.sahla.god|4|10|4|Grey|2|3|3|3|hero.sahla.god.ability|hero.sahla.god.feat|sahla.god.jpg
+Silhouette|GoD|Scout|hero.silhouette.god|5|10|4|Grey|3|2|1|5|hero.silhouette.god.ability|hero.silhouette.god.feat|silhouette.god.jpg
+Ispher|VoD|Healer|hero.ispher.vod|4|10|4|Grey|2|3|3|3|hero.ispher.vod.ability|hero.ispher.vod.feat|ispher.vod.jpg
+Master Thorn|VoD|Mage|hero.thorn.vod|5|8|4|Grey|1|5|3|2|hero.thorn.vod.ability|hero.thorn.vod.feat|thorn.vod.jpg
+Nara the Fang|VoD|Warrior|hero.nara.vod|5|10|4|Grey|4|1|2|4|hero.nara.vod.ability|hero.nara.vod.feat|nara.vod.jpg
+Sir Valadir|VoD|Warrior|hero.valadir.vod|4|12|4|Grey|3|3|4|1|hero.valadir.vod.ability|hero.valadir.vod.feat|valadir.vod.jpg
+Andira Runehand|DCK|Healer|hero.andira.dck|4|12|4|Grey|2|3|4|2|hero.andira.dck.ability|hero.andira.dck.feat|andira.dck.jpg
+Astarra|DCK|Mage|hero.astarra.dck|4|10|5|Grey|1|4|4|2|hero.astarra.dck.ability|hero.astarra.dck.feat|astarra.dck.jpg
+Bogran the Shadow|DCK|Scout|hero.bogran.dck|4|10|4|Grey|2|2|3|4|hero.bogran.dck.ability|hero.bogran.dck.feat|bogran.dck.jpg
+Elder Mok|DCK|Healer|hero.mok.dck|4|10|4|Grey|2|3|4|2|hero.mok.dck.ability|hero.mok.dck.feat|mok.dck.jpg
+Grey Ker|DCK|Scout|hero.ker.dck|4|10|5|Grey|2|2|3|4|hero.ker.dck.ability|hero.ker.dck.feat|ker.dck.jpg
+Ispher|DCK|Healer|hero.ispher.dck|4|8|4|Grey|2|3|3|3|hero.ispher.dck.ability|hero.ispher.dck.feat|ispher.dck.jpg
+Jaes the Exile|DCK|Mage|hero.jaes.dck|4|12|3|Grey|3|4|2|2|hero.jaes.dck.ability|hero.jaes.dck.feat|jaes.dck.jpg
+Landrec the Wise|DCK|Mage|hero.landrec.dck|3|10|4|Brown|1|5|3|2|hero.landrec.dck.ability|hero.landrec.dck.feat|landrec.dck.jpg
+Lyssa|DCK|Mage|hero.lyssa.dck|5|8|5|Grey|2|3|2|4|hero.lyssa.dck.ability|hero.lyssa.dck.feat|lyssa.dck.jpg
+Mad Carthos|DCK|Mage|hero.carthos.dck|4|8|3|Grey|1|4|4|2|hero.carthos.dck.ability|hero.carthos.dck.feat|carthos.dck.jpg
+Mordrog|DCK|Warrior|hero.mordrog.dck|3|14|3|Grey|5|1|3|2|hero.mordrog.dck.ability|hero.mordrog.dck.feat|mordrog.dck.jpg
+One Fist|DCK|Warrior|hero.onefist.dck|4|10|4|Grey|3|2|3|3|hero.onefist.dck.ability|hero.onefist.dck.feat|onefist.dck.jpg
+Red Scorpion|DCK|Scout|hero.redscorpion.dck|5|8|5|Grey|3|3|3|3|hero.redscorpion.dck.ability|hero.redscorpion.dck.feat|redscorpion.dck.jpg
+Ronan of the Wild|DCK|Scout|hero.ronan.dck|4|10|5|Grey|3|1|4|3|hero.ronan.dck.ability|hero.ronan.dck.feat|ronan.dck.jpg
+Silhouette|DCK|Scout|hero.silhouette.dck|5|10|4|Grey|3|2|1|5|hero.silhouette.dck.ability|hero.silhouette.dck.feat|silhouette.dck.jpg
+Sir Valadir|DCK|Warrior|hero.valadir.dck|4|12|3|Grey|3|3|4|1|hero.valadir.dck.ability|hero.valadir.dck.feat|valadir.dck.jpg
+Steelhorns|DCK|Warrior|hero.steelhorns.dck|4|14|3|Grey|5|1|3|2|hero.steelhorns.dck.ability|hero.steelhorns.dck.feat|steelhorns.dck.jpg
+Trenloe the Strong|DCK|Warrior|hero.trenloe.dck|3|12|3|Grey|4|1|4|2|hero.trenloe.dck.ability|hero.trenloe.dck.feat|trenloe.dck.jpg
+Varikas the Dead|DCK|Warrior|hero.varikas.dck|3|12|3|Grey|4|2|3|2|hero.varikas.dck.ability|hero.varikas.dck.feat|varikas.dck.jpg
+Vyrah the Falconer|DCK|Scout|hero.vyrah.dck|4|10|4|Grey|3|2|2|4|hero.vyrah.dck.ability|hero.vyrah.dck.feat|vyrah.dck.jpg
+Brother Glyr|DCK|Healer|hero.glyr.dck|2|12|3|Grey|4|1|3|3|hero.glyr.dck.ability|hero.glyr.dck.feat|glyr.dck.jpg
+Laurel of Bloodwood|DCK|Scout|hero.laurel.dck|4|8|3|Grey|2|3|2|4|hero.laurel.dck.ability|hero.laurel.dck.feat|laurel.dck.jpg
+Lord Hauwthorne|DCK|Warrior|hero.hauwthorne.dck|4|12|3|Grey|4|3|2|2|hero.hauwthorne.dck.ability|hero.hauwthorne.dck.feat|hauwthorne.dck.jpg
+Master Thorn|DCK|Mage|hero.thorn.dck|5|8|4|Grey|1|5|3|2|hero.thorn.dck.ability|hero.thorn.dck.feat|thorn.dck.jpg
+Nanok of the Blade|DCK|Warrior|hero.nanok.dck|4|12|4|Black|4|2|2|3|hero.nanok.dck.ability|hero.nanok.dck.feat|nanok.dck.jpg
+Thetherys|DCK|Scout|hero.thetherys.dck|4|10|4|Grey|3|2|1|5|hero.thetherys.dck.ability|hero.thetherys.dck.feat|thetherys.dck.jpg
+Aurim|DCK|Healer|hero.aurim.dck|5|8|5|Grey|2|4|3|2|hero.aurim.dck.ability|hero.aurim.dck.feat|aurim.dck.jpg
+Corbin|DCK|Warrior|hero.corbin.dck|3|12|5|Grey|5|2|2|2|hero.corbin.dck.ability|hero.corbin.dck.feat|corbin.dck.jpg
+Eliam|DCK|Warrior|hero.eliam.dck|5|12|5|Brown|3|2|3|3|hero.eliam.dck.ability|hero.eliam.dck.feat|eliam.dck.jpg
+Kirga|DCK|Scout|hero.kirga.dck|4|12|3|Grey|3|2|1|5|hero.kirga.dck.ability|hero.kirga.dck.feat|kirga.dck.jpg
+Sahla|DCK|Healer|hero.sahla.dck|4|10|4|Grey|2|3|3|3|hero.sahla.dck.ability|hero.sahla.dck.feat|sahla.dck.jpg
+Tahlia|DCK|Warrior|hero.tahlia.dck|3|14|3|Grey|3|2|3|3|hero.tahlia.dck.ability|hero.tahlia.dck.feat|tahlia.dck.jpg
+Arvel Worldwalker|DCK|Scout|hero.arvel.dck|4|10|4|Grey|3|3|3|3|hero.arvel.dck.ability|hero.arvel.dck.feat|arvel.dck.jpg
+Karnon |DCK|Warrior|hero.karnon .dck|4|14|3|Grey|6|1|2|2|hero.karnon .dck.ability|hero.karnon .dck.feat|karnon .dck.jpg
+Laughin Buldar|DCK|Warrior|hero.buldar.dck|3|14|3|Grey|4|2|2|3|hero.buldar.dck.ability|hero.buldar.dck.feat|buldar.dck.jpg
+Okaluk and Rakash|DCK|Healer|hero.okaluk.dck|2|8|3|Grey|3|2|3|3|hero.okaluk.dck.ability|hero.okaluk.dck.feat|okaluk.dck.jpg
+Shiver|DCK|Mage|hero.shiver.dck|4|8|4|Grey|2|3|3|3|hero.shiver.dck.ability|hero.shiver.dck.feat|shiver.dck.jpg
+Zyla|DCK|Mage|hero.zyla.dck|4|8|5|Grey|1|4|3|3|hero.zyla.dck.ability|hero.zyla.dck.feat|zyla.dck.jpg
+Jonas the Kind|DCK|Healer|hero.jonas.dck|4|8|4|Grey|2|3|4|2|hero.jonas.dck.ability|hero.jonas.dck.feat|jonas.dck.jpg
+Nara the Fang|DCK|Warrior|hero.nara.dck|5|10|4|Grey|4|1|2|4|hero.nara.dck.ability|hero.nara.dck.feat|nara.dck.jpg
+Tobin Farslayer|DCK|Scout|hero.tobin.dck|4|12|3|Grey|3|2|2|4|hero.tobin.dck.ability|hero.tobin.dck.feat|tobin.dck.jpg
+Truthseer Kel|DCK|Mage|hero.kel.dck|4|10|4|Grey|1|4|2|4|hero.kel.dck.ability|hero.kel.dck.feat|kel.dck.jpg
+Brother Gherinn|DCK|Healer|hero.gherinn.dck|3|12|3|Grey|1|4|4|2|hero.gherinn.dck.ability|hero.gherinn.dck.feat|gherinn.dck.jpg
+Challara|DCK|Mage|hero.challara.dck|3|10|5|Grey|3|4|3|1|hero.challara.dck.ability|hero.challara.dck.feat|challara.dck.jpg
+Hugo the Glorious|DCK|Warrior|hero.hugo.dck|3|12|3|Black|4|1|4|2|hero.hugo.dck.ability|hero.hugo.dck.feat|hugo.dck.jpg
+Krutsbeck|DCK|Warrior|hero.krutsbeck.dck|3|12|3|Grey|4|2|3|2|hero.krutsbeck.dck.ability|hero.krutsbeck.dck.feat|krutsbeck.dck.jpg
+Lindel|DCK|Scout|hero.lindel.dck|5|10|5|Grey|3|3|3|3|hero.lindel.dck.ability|hero.lindel.dck.feat|lindel.dck.jpg
+Tatianna|DCK|Scout|hero.tatianna.dck|5|12|4|Grey|2|2|2|5|hero.tatianna.dck.ability|hero.tatianna.dck.feat|tatianna.dck.jpg
+Challara|BotW|Mage|hero.challara.botw|3|10|4|Grey|3|4|3|1|hero.challara.botw.ability|hero.challara.botw.feat|challara.botw.jpg
+Lyssa|BotW|Mage|hero.lyssa.botw|5|8|5|Grey|2|3|2|4|hero.lyssa.botw.ability|hero.lyssa.botw.feat|lyssa.botw.jpg
+Ronan of the Wild|BotW|Scout|hero.ronan.botw|4|10|5|Grey|3|1|4|3|hero.ronan.botw.ability|hero.ronan.botw.feat|ronan.botw.jpg
+Vyrah the Falconer|BotW|Scout|hero.vyrah.botw|4|10|4|Grey|3|2|2|4|hero.vyrah.botw.ability|hero.vyrah.botw.feat|vyrah.botw.jpg
+Grey Ker|ToC|Scout|hero.ker.toc|4|10|5|Grey|2|2|3|4|hero.ker.toc.ability|hero.ker.toc.feat|ker.toc.jpg
+Jonas the Kind|ToC|Healer|hero.jonas.toc|4|8|4|Grey|2|3|4|2|hero.jonas.toc.ability|hero.jonas.toc.feat|jonas.toc.jpg
+Krutsbeck|ToC|Warrior|hero.krutsbeck.toc|3|12|3|Grey|4|2|3|2|hero.krutsbeck.toc.ability|hero.krutsbeck.toc.feat|krutsbeck.toc.jpg
+Zyla|ToC|Mage|hero.zyla.toc|4|8|5|Grey|1|4|3|3|hero.zyla.toc.ability|hero.zyla.toc.feat|zyla.toc.jpg

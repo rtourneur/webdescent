@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.raf.descent.jpa.dao.SurgeDao;
 import com.raf.descent.jpa.domain.model.Surge;
+import com.raf.fwk.jpa.dao.AbstractDao;
 
 /**
  * Implementation DAO for {@link Surge}.
@@ -42,7 +43,7 @@ public final class SurgeDaoImpl extends AbstractDao<Surge, Integer> implements S
    */
   @Override
   protected Predicate[] getPredicates(final Root<Surge> root, final Surge example) {
-    final List<Predicate> predicatesList = new ArrayList<Predicate>();
+    final List<Predicate> predicatesList = new ArrayList<>();
     if (example.getIdent() != null) {
       predicatesList.add(getEquals(root, "ident", example.getIdent()));
     }
@@ -61,7 +62,7 @@ public final class SurgeDaoImpl extends AbstractDao<Surge, Integer> implements S
    */
   @Override
   protected List<Order> getOrder(final CriteriaBuilder builder, final Root<Surge> root) {
-    final List<Order> orders = new ArrayList<Order>();
+    final List<Order> orders = new ArrayList<>();
     orders.add(builder.asc(root.get("ident")));
     return orders;
   }

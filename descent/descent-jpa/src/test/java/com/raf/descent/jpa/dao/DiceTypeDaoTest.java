@@ -11,9 +11,9 @@ import javax.annotation.Resource;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.model.DiceType;
-import com.raf.descent.util.Paged;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
  * 
@@ -34,7 +34,7 @@ public class DiceTypeDaoTest extends AbstractDaoTest {
     String name = "Attack";
     DiceType example = this.diceTypeDao.getById(name);
     assertNotNull(example);
-    assertEquals(name, example.getId());
+    assertEquals(name, example.getIdentifier());
     assertEquals(name, example.getName());
     assertEquals("dicetype.attack", example.getMessageCode());
   }
@@ -54,7 +54,7 @@ public class DiceTypeDaoTest extends AbstractDaoTest {
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
-    example.setIdent("Test");
+    example.setIdentifier("Test");
     list = this.diceTypeDao.findByExample(example);
     assertNotNull(list);
     assertTrue(list.isEmpty());

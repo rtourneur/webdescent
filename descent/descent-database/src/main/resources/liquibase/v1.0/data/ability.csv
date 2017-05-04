@@ -1,0 +1,47 @@
+NAME|MESSAGE_CODE|RULE_CODE
+Air|ability.air|ability.air.rule
+Aura|ability.aura|ability.aura.rule
+Blast|ability.blast|ability.blast.rule
+Burn|ability.burn|ability.burn.rule
+Cause Fear|ability.causefear|ability.causefear.rule
+Cocoon|ability.cocoon|ability.cocoon.rule
+Command|ability.command|ability.command.rule
+Combustible|ability.combustible|ability.combustible.rule
+Cowardly|ability.cowardly|ability.cowardly.rule
+Curse|ability.curse|ability.curse.rule
+Disease|ability.disease|ability.disease.rule
+Earth|ability.earth|ability.earth.rule
+Fire|ability.fire|ability.fire.rule
+Fire Breath|ability.firebreath|ability.firebreath.rule
+Flail|ability.flail|ability.flail.rule
+Flame Fiend|ability.flamefiend|ability.flamefiend.rule
+Fly|ability.fly|ability.fly.rule
+Grab|ability.grab|ability.grab.rule
+Heal|ability.heal|ability.heal.rule
+Howl|ability.howl|ability.howl.rule
+Immobilize|ability.immobilize|ability.immobilize.rule
+Ironskin|ability.ironskin|ability.ironskin.rule
+Knockback|ability.knockback|ability.knockback.rule
+Leech|ability.leech|ability.leech.rule
+Mend|ability.mend|ability.mend.rule
+Night Stalker|ability.nightstalker|ability.nightstalker.rule
+Pierce|ability.pierce|ability.pierce.rule
+Poison|ability.poison|ability.poison.rule
+Prey on the Weak|ability.preyontheweak|ability.preyontheweak.rule
+Ravage|ability.ravage|ability.ravage.rule
+Reach|ability.reach|ability.reach.rule
+Scamper|ability.scamper|ability.scamper.rule
+Shadow|ability.shadow|ability.shadow.rule
+Shambling|ability.shambling|ability.shambling.rule
+Sorcery|ability.sorcery|ability.sorcery.rule
+Split|ability.split|ability.split.rule
+Stun|ability.stun|ability.stun.rule
+Summon|ability.summon|ability.summon.rule
+Swarm|ability.swarm|ability.swarm.rule
+Sweep|ability.sweep|ability.sweep.rule
+Throw|ability.throw|ability.throw.rule
+Undying|ability.undying|ability.undying.rule
+Unmovable|ability.unmovable|ability.unmovable.rule
+Water|ability.water|ability.water.rule
+Web|ability.web|ability.web.rule
+Wither|ability.wither|ability.wither.rule

@@ -12,16 +12,16 @@ import javax.transaction.Transactional;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.card.Item;
-import com.raf.descent.jpa.domain.card.ItemDice;
 import com.raf.descent.jpa.domain.model.AttackType;
 import com.raf.descent.jpa.domain.model.Clazz;
 import com.raf.descent.jpa.domain.model.Equipment;
 import com.raf.descent.jpa.domain.model.Expansion;
 import com.raf.descent.jpa.domain.model.ItemType;
-import com.raf.descent.jpa.domain.model.Trait;
-import com.raf.descent.util.Paged;
+import com.raf.descent.jpa.domain.model.ObjectTrait;
+import com.raf.descent.jpa.domain.model.StatDiceName;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
  * 
@@ -58,7 +58,7 @@ public class ItemDaoTest extends AbstractDaoTest {
     String name = "Iron Longsword";
     Item example = this.itemDao.getById(name);
     assertNotNull(example);
-    assertEquals(name, example.getId());
+    assertEquals(name, example.getIdentifier());
     assertEquals(name, example.getName());
     assertEquals("item.ironlongsword", example.getMessageCode());
     assertEquals("D2E", example.getExpansionName());
@@ -68,7 +68,7 @@ public class ItemDaoTest extends AbstractDaoTest {
     assertNull( example.getCost());
     assertEquals("item.ironlongsword.rule", example.getRuleCode());
     assertEquals(Integer.valueOf(1), example.getCount());
-    assertEquals("Knight", example.getClazzName());
+    assertEquals("Knight", example.getClassName());
     assertEquals("ironlongsword.jpg", example.getImage());
     Expansion expansion = example.getExpansion();
     assertNotNull(expansion);
@@ -85,10 +85,10 @@ public class ItemDaoTest extends AbstractDaoTest {
     Clazz clazz = example.getClazz(); 
     assertNotNull(clazz);
     assertEquals("Knight", clazz.getName());
-    List<Trait> traits = example.getTraits();
+    List<ObjectTrait> traits = example.getTraits();
     assertNotNull(traits);
     assertFalse(traits.isEmpty());
-    List<ItemDice> itemDices = example.getDices();
+    List<StatDiceName> itemDices = example.getDiceNames();
     assertNotNull(itemDices);
     assertFalse(itemDices.isEmpty());
   }
@@ -108,31 +108,35 @@ public class ItemDaoTest extends AbstractDaoTest {
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
-    example.setIdent(null);
+    example.setIdentifier(null);
     example.setExpansion(this.expansionDao.getById("D2E"));
     list = this.itemDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(49, list.size());
     example.setExpansion(null);
+    example.setExpansionName(null);
     example.setItemType(this.itemTypeDao.getById("Class"));
     list = this.itemDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(20, list.size());
     example.setItemType(null);
+    example.setItemTypeName(null);
     example.setAttackType(this.attackTypeDao.getById("Melee"));
     list = this.itemDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(25, list.size());
     example.setAttackType(null);
+    example.setAttackTypeName(null);
     example.setEquipment(this.equipmentDao.getById("One Hand"));
     list = this.itemDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(26, list.size());
     example.setEquipment(null);
+    example.setEquipmentName(null);
     example.setClazz(this.classDao.getById("Knight"));
     list = this.itemDao.findByExample(example);
     assertNotNull(list);
@@ -143,7 +147,7 @@ public class ItemDaoTest extends AbstractDaoTest {
     example.setItemTypeName("Class");
     example.setAttackTypeName("Ranged");
     example.setEquipmentName("Two Hands");
-    example.setClazzName("Hexer");
+    example.setClassName("Hexer");
     list = this.itemDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());

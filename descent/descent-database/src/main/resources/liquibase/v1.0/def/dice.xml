@@ -1,0 +1,57 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-descent-dice-1">
+    <createTable tableName="DICE" schemaName="DESCENT" remarks="Table for dices">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the dice">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="DICE_PK" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Message code of the dice">
+        <constraints nullable="false" />
+      </column>
+      <column name="DICE_TYPE" type="VARCHAR(30)" remarks="Type of the dice">
+        <constraints nullable="false" foreignKeyName="FK_DICE_DICE_TYPE" references="DESCENT.DICE_TYPE(NAME)" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+  </changeSet>
+  <changeSet author="RAF" id="table-descent-dice_side-1">
+    <createTable tableName="DICE_SIDE" schemaName="DESCENT" remarks="Table for dice sides">
+      <column name="DICE" type="VARCHAR(30)" remarks="Name of the dice">
+        <constraints nullable="false" foreignKeyName="FK_DICE_SIDE_DICE" references="DESCENT.DICE(NAME)" />
+      </column>
+      <column name="SIDE" type="INT" remarks="Side of the dice">
+        <constraints nullable="false" />
+      </column>
+      <column name="MISS" type="BOOLEAN" remarks="Miss indicator of the dice side" />
+      <column name="RANGE" type="INT" remarks="Range value of the dice side" />
+      <column name="HEART" type="INT" remarks="Heart value of the dice side" />
+      <column name="SURGE" type="INT" remarks="Surge value of the dice side" />
+      <column name="SHIELD" type="INT" remarks="Shield value of the dice side" />
+      <column name="ICON" type="VARCHAR(30)" remarks="Icon of the dice side" />
+    </createTable>
+    <createIndex schemaName="DESCENT" indexName="IDX_DICE_SIDE" tableName="DICE_SIDE" unique="true">
+      <column name="DICE" />
+      <column name="SIDE" />
+    </createIndex>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-dice-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/dice.csv" separator="|" tableName="DICE" />
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-dice_side-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/dice_side.csv" separator="|" tableName="DICE_SIDE">
+      <column name="DICE" type="STRING" />
+      <column name="SIDE" type="NUMERIC" />
+      <column name="MISS" type="BOOLEAN" />
+      <column name="RANGE" type="NUMERIC" />
+      <column name="HEART" type="NUMERIC" />
+      <column name="SURGE" type="NUMERIC" />
+      <column name="SHIELD" type="NUMERIC" />
+      <column name="ICON" type="STRING" />
+    </loadData>
+  </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,89 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-descent-item-1">
+    <createTable tableName="ITEM" schemaName="DESCENT" remarks="Table for items">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the item">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="ITEM_PK" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Message code of the item">
+        <constraints nullable="false" />
+      </column>
+      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the item">
+        <constraints nullable="false" foreignKeyName="FK_ITEM_EXPANSION" references="DESCENT.EXPANSION(NAME)" />
+      </column>
+      <column name="ITEM_TYPE" type="VARCHAR(30)" remarks="Type of the item">
+        <constraints nullable="false" foreignKeyName="FK_ITEM_ITEM_TYPE" references="DESCENT.ITEM_TYPE(NAME)" />
+      </column>
+      <column name="ATTACK_TYPE" type="VARCHAR(30)" remarks="Attack type of the item">
+        <constraints foreignKeyName="FK_ITEM_ATTACK_TYPE" references="DESCENT.ATTACK_TYPE(NAME)" />
+      </column>
+      <column name="EQUIPMENT" type="VARCHAR(30)" remarks="Equipment type of the item">
+        <constraints nullable="false" foreignKeyName="FK_ITEM_EQUIPMENT" references="DESCENT.EQUIPMENT(NAME)" />
+      </column>
+      <column name="COST" type="INT" remarks="Cost of the item" />
+      <column name="RULE_CODE" type="VARCHAR(30)">
+        <constraints nullable="false" />
+      </column>
+      <column name="COUNT" type="INT" remarks="Count of item cards">
+        <constraints nullable="false" />
+      </column>
+      <column name="CLASS" type="VARCHAR(30)" remarks="Class of the item">
+        <constraints foreignKeyName="FK_ITEM_CLASS" references="DESCENT.CLASS(NAME)" />
+      </column>
+      <column name="IMAGE" type="VARCHAR(30)" remarks="Image of the item">
+        <constraints nullable="false" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+  </changeSet>
+  <changeSet author="RAF" id="table-descent-item_dice-1">
+    <createTable tableName="ITEM_DICE" schemaName="DESCENT" remarks="Table for item dices">
+      <column name="ITEM" type="VARCHAR(30)" remarks="Name of the item">
+        <constraints nullable="false" foreignKeyName="FK_ITEM_DICE_ITEM" references="DESCENT.ITEM(NAME)" />
+      </column>
+      <column name="DICE" type="VARCHAR(30)" remarks="Dice of the item">
+        <constraints nullable="false" foreignKeyName="FK_ITEM_DICE_DICE" references="DESCENT.DICE(NAME)" />
+      </column>
+      <column name="INDEX" type="INT" remarks="Index of the dice" >
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <createIndex schemaName="DESCENT" indexName="IDX_ITEM_DICE" tableName="ITEM_DICE" unique="true">
+      <column name="ITEM" />
+      <column name="DICE" />
+      <column name="INDEX" />
+    </createIndex>
+  </changeSet>
+  <changeSet author="RAF" id="table-descent-item_trait-1">
+    <createTable tableName="ITEM_TRAIT" schemaName="DESCENT" remarks="Table for item traits">
+      <column name="ITEM" type="VARCHAR(30)" remarks="Name of the item">
+        <constraints nullable="false" foreignKeyName="FK_ITEM_TRAIT_ITEM" references="DESCENT.ITEM(NAME)" />
+      </column>
+      <column name="TRAIT" type="VARCHAR(30)" remarks="Trait of the item">
+        <constraints nullable="false" foreignKeyName="FK_ITEM_TRAIT_TRAIT" references="DESCENT.TRAIT(NAME)" />
+      </column>
+    </createTable>
+    <createIndex schemaName="DESCENT" indexName="IDX_ITEM_TRAIT" tableName="ITEM_TRAIT" unique="true">
+      <column name="ITEM" />
+      <column name="TRAIT" />
+    </createIndex>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-item-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/item.csv" separator="|" tableName="ITEM">
+      <column name="COST" type="NUMERIC" />
+      <column name="COUNT" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-item_dice-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/item_dice.csv" separator="|" tableName="ITEM_DICE">
+      <column name="INDEX" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-item_trait-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/item_trait.csv" separator="|" tableName="ITEM_TRAIT" />
+  </changeSet>
+</databaseChangeLog>

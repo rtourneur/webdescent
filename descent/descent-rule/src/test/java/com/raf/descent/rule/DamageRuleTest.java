@@ -3,7 +3,8 @@
  */
 package com.raf.descent.rule;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
@@ -54,9 +55,9 @@ public class DamageRuleTest extends AbstractRuleTest {
     List<MonsterStat> monsters = this.monsterStatDao.listAll();
     Damages damages;
     for (MonsterStat monster : monsters) {
-      damages = this.damageRule.getDamages(monster.getMonsterGroupName(), monster.getExpansionName(),
+      damages = this.damageRule.getDamages(monster.getName(), monster.getExpansionName(),
           monster.getActName(), monster.getMonsterTypeName());
-      LOGGER.info(monster.getMonsterTypeName() + " Monster " + monster.getMonsterGroupName() + " ("
+      LOGGER.info(monster.getMonsterTypeName() + " Monster " + monster.getName() + " ("
           + monster.getExpansionName() + ") " + monster.getActName() + " : min (" + damages.getMin() + ") max ("
           + damages.getMax() + ") moyenne (" + damages.getMoy() + ")");
     }

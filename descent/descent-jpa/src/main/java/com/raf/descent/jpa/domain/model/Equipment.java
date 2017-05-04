@@ -3,7 +3,8 @@ package com.raf.descent.jpa.domain.model;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.raf.descent.jpa.domain.AbstractIconEntity;
+import com.raf.fwk.jpa.domain.AbstractIconEntity;
+
 
 /**
  * The persistent class for the EQUIPMENT database table.

@@ -11,11 +11,10 @@ import javax.transaction.Transactional;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.card.Skill;
-import com.raf.descent.jpa.domain.card.SkillPk;
 import com.raf.descent.jpa.domain.model.Clazz;
-import com.raf.descent.util.Paged;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
  * 
@@ -37,14 +36,10 @@ public class SkillDaoTest extends AbstractDaoTest {
   @Test
   @Transactional
   public final void testGetById() {
-    SkillPk skillPk = new SkillPk();
-    skillPk.setName("Rage");
-    skillPk.setClazz("Berserker");
-    Skill example = this.skillDao.getById(skillPk);
+    Skill example = this.skillDao.getById("Rage");
     assertNotNull(example);
-    assertEquals(skillPk, example.getId());
     assertEquals("Rage", example.getName());
-    assertEquals("Berserker", example.getClazzName());
+    assertEquals("Berserker", example.getClassName());
     assertEquals("name.berserker.rage", example.getMessageCode());
     assertEquals(Integer.valueOf(0), example.getExperience());
     assertEquals("name.berserker.rage.rule", example.getRuleCode());
@@ -68,14 +63,14 @@ public class SkillDaoTest extends AbstractDaoTest {
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
-    example.setIdent(null);
+    example.setIdentifier(null);
     example.setClazz(this.clazzDao.getById("Berserker"));
     list = this.skillDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(9, list.size());
     example.setClazz(null);
-    example.setClazzName("Knight");
+    example.setClassName("Knight");
     list = this.skillDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());

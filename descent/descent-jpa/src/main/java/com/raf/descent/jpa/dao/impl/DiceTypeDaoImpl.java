@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import com.raf.descent.jpa.dao.DiceTypeDao;
 import com.raf.descent.jpa.domain.model.DiceType;
+import com.raf.fwk.jpa.dao.AbstractNamedDao;
 
 /**
  * Implementation DAO for {@link DiceTypeImpl}.
@@ -11,7 +12,7 @@ import com.raf.descent.jpa.domain.model.DiceType;
  * @author RAF
  */
 @Repository
-public final class DiceTypeDaoImpl extends AbstractNamedDao<DiceType, String> implements DiceTypeDao {
+public final class DiceTypeDaoImpl extends AbstractNamedDao<DiceType> implements DiceTypeDao {
 
   /**
    * Constructor.

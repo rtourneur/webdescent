@@ -1,0 +1,94 @@
+NAME|MESSAGE_CODE|EXPANSION|ITEM_TYPE|ATTACK_TYPE|EQUIPMENT|COST|RULE_CODE|COUNT|CLASS|IMAGE
+Iron Longsword|item.ironlongsword|D2E|Class|Melee|One Hand|null|item.ironlongsword.rule|1|Knight|ironlongsword.jpg
+Knight Wooden Shield|item.knightwoodenshield|D2E|Class|null|One Hand|null|item.knightwoodenshield.rule|1|Knight|knightwoodenshield.jpg
+Chipped Greataxe|item.chippedgreataxe|D2E|Class|Melee|Two Hands|null|item.chippedgreataxe.rule|1|Berserker|chippedgreataxe.jpg
+Iron Mace|item.ironmace|D2E|Class|Melee|One Hand|null|item.ironmace.rule|1|Disciple|ironmace.jpg
+Disciple Wooden Shield|item.disciplewoodenshield|D2E|Class|null|One Hand|null|item.disciplewoodenshield.rule|1|Disciple|disciplewoodenshield.jpg
+Oak Staff|item.oakstaff|D2E|Class|Melee|Two Hands|null|item.oakstaff.rule|1|Spiritspeaker|oakstaff.jpg
+Arcane Bolt|item.arcanebolt|D2E|Class|Ranged|Two Hands|null|item.arcanebolt.rule|1|Runemaster|arcanebolt.jpg
+Reaper''s Scythe|item.reapersscythe|D2E|Class|Ranged|Two Hands|null|item.reapersscythe.rule|1|Necromancer|reapersscythe.jpg
+Yew Shortbow|item.yewshortbow|D2E|Class|Ranged|Two Hands|null|item.yewshortbow.rule|1|Wildlander|yewshortbow.jpg
+Throwing Knives|item.throwingknives|D2E|Class|Ranged|One Hand|null|item.throwingknives.rule|1|Thief|throwingknives.jpg
+Thief Lucky Charm|item.thiefluckycharm|D2E|Class|null|Other|null|item.thiefluckycharm.rule|1|Thief|thiefluckycharm.jpg
+Worn Greatsword|item.worngreatsword|LotW|Class|Melee|Two Hands|null|item.worngreatsword.rule|1|Champion|worngreatsword.jpg
+Horn of Courage|item.hornofcourage|LotW|Class|null|Other|null|item.hornofcourage.rule|1|Champion|hornofcourage.jpg
+Stasis Rune|item.stasisrune|LotW|Class|Ranged|Two Hands|null|item.stasisrune.rule|1|Geomancer|stasisrune.jpg
+The Dead Man''s Compass|item.thedeadmanscompass|LoR|Class|null|Other|null|item.thedeadmanscompass.rule|1|Treasure Hunter|thedeadmanscompass.jpg
+Leather Whip|item.leatherwhip|LoR|Class|Melee|One Hand|null|item.leatherwhip.rule|1|Treasure Hunter|leatherwhip.jpg
+Smoking Vials|item.smokingvials|LoR|Class|Ranged|One Hand|null|item.smokingvials.rule|1|Apothecary|smokingvials.jpg
+Hunting Spear|item.huntingspear|LoR|Class|Melee|One Hand|null|item.huntingspear.rule|1|Beastmaster|huntingspear.jpg
+Skinning Knife|item.skinningknife|LoR|Class|Melee|One Hand|null|item.skinningknife.rule|1|Beastmaster|skinningknife.jpg
+Staff of the Grave|item.staffofthegrave|LoR|Class|Ranged|Two Hands|null|item.staffofthegrave.rule|1|Hexer|staffofthegrave.jpg
+Iron Battleaxe|item.ironbattleaxe|D2E|Act1|Melee|Two Hands|100|item.ironbattleaxe.rule|1|null|ironbattleaxe.jpg
+Steel Broadsword|item.steelbroadsword|D2E|Act1|Melee|One Hand|100|item.steelbroadsword.rule|1|null|steelbroadsword.jpg
+Light Hammer|item.lighthammer|D2E|Act1|Melee|One Hand|75|item.lighthammer.rule|1|null|lighthammer.jpg
+Iron Spear|item.ironspear|D2E|Act1|Melee|One Hand|75|item.ironspear.rule|1|null|ironspear.jpg
+Magic Staff|item.magicstaff|D2E|Act1|Ranged|Two Hands|150|item.magicstaff.rule|1|null|magicstaff.jpg
+Immolation|item.immolation|D2E|Act1|Ranged|Two Hands|150|item.immolation.rule|1|null|immolation.jpg
+Sunburst|item.sunburst|D2E|Act1|Ranged|Two Hands|125|item.sunburst.rule|1|null|sunburst.jpg
+Elm Greatbow|item.elmgreatbow|D2E|Act1|Ranged|Two Hands|100|item.elmgreatbow.rule|1|null|elmgreatbow.jpg
+Crossbow|item.crossbow|D2E|Act1|Ranged|One Hand|175|item.crossbow.rule|1|null|crossbow.jpg
+Sling|item.sling|D2E|Act1|Ranged|One Hand|75|item.sling.rule|1|null|sling.jpg
+Iron Shield|item.ironshield|D2E|Act1|null|One Hand|50|item.ironshield.rule|2|null|ironshield.jpg
+Heavy Cloak|item.heavycloak|D2E|Act1|null|Armor|75|item.heavycloak.rule|1|null|heavycloak.jpg
+Leather Armor|item.leatherarmor|D2E|Act1|null|Armor|75|item.leatherarmor.rule|2|null|leatherarmor.jpg
+Chainmail|item.chainmail|D2E|Act1|null|Armor|150|item.chainmail.rule|1|null|chainmail.jpg
+Scorpion Helm|item.scorpionhelm|D2E|Act1|null|Other|75|item.scorpionhelm.rule|1|null|scorpionhelm.jpg
+Lucky Charm|item.luckycharm|D2E|Act1|null|Other|100|item.luckycharm.rule|1|null|luckycharm.jpg
+Mana Weave|item.manaweave|D2E|Act1|null|Other|125|item.manaweave.rule|1|null|manaweave.jpg
+Ring of Power|item.ringofpower|D2E|Act1|null|Other|100|item.ringofpower.rule|1|null|ringofpower.jpg
+Halberd|item.halberd|LotW|Act1|Melee|Two Hands|125|item.halberd.rule|1|null|halberd.jpg
+Magma Wave|item.magmawave|LotW|Act1|Ranged|Two Hands|150|item.magmawave.rule|1|null|magmawave.jpg
+Handbow|item.handbow|LotW|Act1|Ranged|Other|150|item.handbow.rule|1|null|handbow.jpg
+Flash Powder|item.flashpowder|LotW|Act1|null|Other|100|item.flashpowder.rule|1|null|flashpowder.jpg
+Bearded Axe|item.beardedaxe|LoR|Act1|Melee|Two Hands|175|item.beardedaxe.rule|1|null|beardedaxe.jpg
+Mace of Aver|item.maceofaver|LoR|Act1|Melee|Two Hands|150|item.maceofaver.rule|1|null|maceofaver.jpg
+Serpet Dagger|item.serpetdagger|LoR|Act1|Melee|One Hand|125|item.serpetdagger.rule|1|null|serpetdagger.jpg
+Bow of Bone|item.bowofbone|LoR|Act1|Ranged|Two Hands|125|item.bowofbone.rule|1|null|bowofbone.jpg
+Teleportation Rune|item.teleportationrune|LoR|Act1|Ranged|Two Hands|125|item.teleportationrune.rule|1|null|teleportationrune.jpg
+Poisoned Blowgun|item.poisonedblowgun|LoR|Act1|Ranged|One Hand|100|item.poisonedblowgun.rule|1|null|poisonedblowgun.jpg
+Shield of Light|item.shieldoflight|LoR|Act1|null|One Hand|75|item.shieldoflight.rule|1|null|shieldoflight.jpg
+Thief''s Vest|item.thiefsvest|LoR|Act1|null|Armor|100|item.thiefsvest.rule|1|null|thiefsvest.jpg
+Rune Plate|item.runeplate|LoR|Act1|null|Armor|175|item.runeplate.rule|1|null|runeplate.jpg
+Elven Boots|item.elvenboots|LoR|Act1|null|Other|50|item.elvenboots.rule|1|null|elvenboots.jpg
+Jinn''s Lamp|item.jinnslamp|LoR|Act1|null|Other|100|item.jinnslamp.rule|1|null|jinnslamp.jpg
+Steel Greatsword|item.steelgreatsword|D2E|Act2|Melee|Two Hands|200|item.steelgreatsword.rule|1|null|steelgreatsword.jpg
+Grinding Axe|item.grindingaxe|D2E|Act2|Melee|Two Hands|175|item.grindingaxe.rule|1|null|grindingaxe.jpg
+Mace of Kellos|item.maceofkellos|D2E|Act2|Melee|One Hand|175|item.maceofkellos.rule|1|null|maceofkellos.jpg
+Dragontooth Hammer|item.dragontoothhammer|D2E|Act2|Melee|One Hand|250|item.dragontoothhammer.rule|1|null|dragontoothhammer.jpg
+Latari Longbow|item.latarilongbow|D2E|Act2|Ranged|Two Hands|200|item.latarilongbow.rule|1|null|latarilongbow.jpg
+Lightning Strike|item.lightningstrike|D2E|Act2|Ranged|Two Hands|200|item.lightningstrike.rule|1|null|lightningstrike.jpg
+Ice Storm|item.icestorm|D2E|Act2|Ranged|Two Hands|150|item.icestorm.rule|1|null|icestorm.jpg
+Dwarven Firebomb|item.dwarvenfirebomb|D2E|Act2|Ranged|One Hand|175|item.dwarvenfirebomb.rule|1|null|dwarvenfirebomb.jpg
+Heavy Steel Shield|item.heavysteelshield|D2E|Act2|null|One Hand|100|item.heavysteelshield.rule|1|null|heavysteelshield.jpg
+Elven Cloack|item.elvencloack|D2E|Act2|null|Armor|225|item.elvencloack.rule|1|null|elvencloack.jpg
+Demonhide Leather|item.demonhideleather|D2E|Act2|null|Armor|200|item.demonhideleather.rule|1|null|demonhideleather.jpg
+Platemail|item.platemail|D2E|Act2|null|Armor|250|item.platemail.rule|1|null|platemail.jpg
+Iron-Bound Ring|item.ironboundring|D2E|Act2|null|Other|150|item.ironboundring.rule|1|null|ironboundring.jpg
+Tival Crystal|item.tivalcrystal|D2E|Act2|null|Other|175|item.tivalcrystal.rule|1|null|tivalcrystal.jpg
+Scalemail|item.scalemail|LotW|Act2|null|Armor|225|item.scalemail.rule|1|null|scalemail.jpg
+Bow of the Sky|item.bowofthesky|LotW|Act2|Ranged|Two Hands|225|item.bowofthesky.rule|1|null|bowofthesky.jpg
+Merciful Boots|item.mercifulboots|LotW|Act2|null|Other|100|item.mercifulboots.rule|1|null|mercifulboots.jpg
+Inscribed Robes|item.inscribedrobes|LotW|Act2|null|Armor|225|item.inscribedrobes.rule|1|null|inscribedrobes.jpg
+Staff of Kellos|item.staffofkellos|LotW|Act2|Ranged|Two Hands|175|item.staffofkellos.rule|1|null|staffofkellos.jpg
+Black Iron Helm|item.blackironhelm|LoR|Act2|null|Other|150|item.blackironhelm.rule|1|null|blackironhelm.jpg
+Bow of the Eclipse|item.bowoftheeclipse|LoR|Act2|Ranged|Two Hands|250|item.bowoftheeclipse.rule|1|null|bowoftheeclipse.jpg
+Cloak of Deception|item.cloakofdeception|LoR|Act2|null|Armor|200|item.cloakofdeception.rule|1|null|cloakofdeception.jpg
+Iron Claws|item.ironclaws|LoR|Act2|Melee|One Hand|175|item.ironclaws.rule|1|null|ironclaws.jpg
+Obsidian Greataxe|item.obsidiangreataxe|LoR|Act2|Melee|Two Hands|225|item.obsidiangreataxe.rule|1|null|obsidiangreataxe.jpg
+Obsidian Scalemail|item.obsidianscalemail|LoR|Act2|null|Armor|275|item.obsidianscalemail.rule|1|null|obsidianscalemail.jpg
+Rage Blade|item.rageblade|LoR|Act2|Melee|One Hand|200|item.rageblade.rule|1|null|rageblade.jpg
+Rune of Misery|item.runeofmisery|LoR|Act2|Ranged|Two Hands|250|item.runeofmisery.rule|1|null|runeofmisery.jpg
+Shroud of Dusk|item.shroudofdusk|LoR|Act2|null|Other|150|item.shroudofdusk.rule|1|null|shroudofdusk.jpg
+Staff of the Wild|item.staffofthewild|LoR|Act2|Ranged|Two Hands|175|item.staffofthewild.rule|1|null|staffofthewild.jpg
+Shield of the Dark God|item.shieldofthedarkgod|D2E|Relic|null|One Hand|null|item.shieldofthedarkgod.rule|1|null|shieldofthedarkgod.jpg
+Trueshot|item.trueshot|D2E|Relic|Ranged|Two Hands|null|item.trueshot.rule|1|null|trueshot.jpg
+Fortuna''s Dice|item.fortunasdice|D2E|Relic|null|Other|null|item.fortunasdice.rule|1|null|fortunasdice.jpg
+Staff of Light|item.staffoflight|D2E|Relic|Ranged|Two Hands|null|item.staffoflight.rule|1|null|staffoflight.jpg
+The Shadow Rune|item.theshadowrune|D2E|Relic|Ranged|Two Hands|null|item.theshadowrune.rule|1|null|theshadowrune.jpg
+Dawnblade|item.dawnblade|D2E|Relic|Melee|One Hand|null|item.dawnblade.rule|1|null|dawnblade.jpg
+Valyndra''s Bane|item.valyndrasbane|LotW|Relic|Melee|Two Hands|null|item.valyndrasbane.rule|1|null|valyndrasbane.jpg
+Aurium Mail|item.auriummail|LotW|Relic|null|Armor|null|item.auriummail.rule|1|null|auriummail.jpg
+Sun Stone|item.sunstone|LoR|Relic|null|Other|null|item.sunstone.rule|1|null|sunstone.jpg
+Living Heart|item.livingheart|LoR|Relic|null|Other|null|item.livingheart.rule|1|null|livingheart.jpg
+Gauntlets of Power|item.gauntletsofpower|LoR|Relic|null|Other|null|item.gauntletsofpower.rule|1|null|gauntletsofpower.jpg

@@ -2,21 +2,26 @@ package com.raf.descent.jpa.domain.card;
 
 import java.util.List;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.Index;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import com.raf.descent.jpa.domain.model.AbstractExpansionEntity;
 import com.raf.descent.jpa.domain.model.AttackType;
-import com.raf.descent.jpa.domain.model.Trait;
+import com.raf.descent.jpa.domain.model.ObjectTrait;
+import com.raf.descent.jpa.domain.model.StatDiceName;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * The persistent class for the SEARCH database table.
@@ -25,6 +30,9 @@ import com.raf.descent.jpa.domain.model.Trait;
  */
 @Entity
 @Table(name = "SEARCH", schema = "DESCENT")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Search extends AbstractExpansionEntity {
 
   /** Serial UID. */
@@ -51,108 +59,25 @@ public class Search extends AbstractExpansionEntity {
   @JoinColumn(name = "ATTACK_TYPE", insertable = false, updatable = false)
   private AttackType attackType;
 
+  /** The image. */
+  @Column(name = "IMAGE", nullable = false, length = 30)
+  private String image;
+
   /** The list of dices. */
-  @OneToMany(mappedBy = "search", fetch = FetchType.LAZY)
-  private List<SearchDice> dices;
+  @ElementCollection
+  @CollectionTable(name = "SEARCH_DICE", schema = "DESCENT", joinColumns = {
+      @JoinColumn(name = "SEARCH", referencedColumnName = "NAME"),
+      @JoinColumn(name = "EXPANSION", referencedColumnName = "EXPANSION") }, indexes = {
+          @Index(name = "IDX_SEARCH_DICE", columnList = "SEARCH, EXPANSION, DICE, INDEX", unique = true) })
+  private List<StatDiceName> diceNames;
 
   /** The list of traits. */
-  @ManyToMany(fetch = FetchType.LAZY)
-  @JoinTable(name = "SEARCH_TRAIT", schema = "DESCENT", joinColumns = {
-      @JoinColumn(name = "SEARCH", nullable = false, referencedColumnName = "NAME"),
-      @JoinColumn(name = "EXPANSION", nullable = false, referencedColumnName = "EXPANSION") }, inverseJoinColumns = { @JoinColumn(name = "TRAIT", nullable = false) })
-  private List<Trait> traits;
-
-  /**
-   * Constructor.
-   */
-  public Search() {
-    super();
-  }
-
-  /**
-   * Returns the ability code.
-   * 
-   * @return the abilityCode
-   */
-  public String getAbilityCode() {
-    return this.abilityCode;
-  }
-
-  /**
-   * Defines the ability code.
-   * 
-   * @param abilityCode
-   *          the abilityCode to set
-   */
-  public void setAbilityCode(final String abilityCode) {
-    this.abilityCode = abilityCode;
-  }
-
-  /**
-   * Returns the attack type name.
-   * 
-   * @return the attackTypeName
-   */
-  public String getAttackTypeName() {
-    return this.attackTypeName;
-  }
-
-  /**
-   * Defines the attack type name.
-   * 
-   * @param attackTypeName
-   *          the attackTypeName to set
-   */
-  public void setAttackTypeName(final String attackTypeName) {
-    this.attackTypeName = attackTypeName;
-  }
-
-  /**
-   * Returns the gold.
-   * 
-   * @return the gold
-   */
-  public Integer getGold() {
-    return this.gold;
-  }
-
-  /**
-   * Defines the gold.
-   * 
-   * @param gold
-   *          the gold to set
-   */
-  public void setGold(final Integer gold) {
-    this.gold = gold;
-  }
-
-  /**
-   * Returns the count.
-   * 
-   * @return the count
-   */
-  public Integer getCount() {
-    return this.count;
-  }
-
-  /**
-   * Defines the count.
-   * 
-   * @param count
-   *          the count to set
-   */
-  public void setCount(final Integer count) {
-    this.count = count;
-  }
-
-  /**
-   * Returns the attack type.
-   * 
-   * @return the attackType
-   */
-  public AttackType getAttackType() {
-    return this.attackType;
-  }
+  @ElementCollection
+  @CollectionTable(name = "SEARCH_TRAIT", schema = "DESCENT", joinColumns = {
+      @JoinColumn(name = "SEARCH", referencedColumnName = "NAME"),
+      @JoinColumn(name = "EXPANSION", referencedColumnName = "EXPANSION") }, indexes = {
+          @Index(name = "IDX_SEARCH_TRAIT", columnList = "SEARCH, EXPANSION, TRAIT", unique = true) })
+  private List<ObjectTrait> traits;
 
   /**
    * Defines the attack type.
@@ -162,44 +87,9 @@ public class Search extends AbstractExpansionEntity {
    */
   public void setAttackType(final AttackType attackType) {
     this.attackType = attackType;
-  }
-
-  /**
-   * Returns the list of dices.
-   * 
-   * @return the dices
-   */
-  public List<SearchDice> getDices() {
-    return this.dices;
-  }
-
-  /**
-   * Defines the list of dices.
-   * 
-   * @param dices
-   *          the dices to set
-   */
-  public void setDices(final List<SearchDice> dices) {
-    this.dices = dices;
-  }
-
-  /**
-   * Returns the list of traits.
-   * 
-   * @return the traits
-   */
-  public List<Trait> getTraits() {
-    return this.traits;
-  }
-
-  /**
-   * Defines the list of traits.
-   * 
-   * @param traits
-   *          the traits to set
-   */
-  public void setTraits(final List<Trait> traits) {
-    this.traits = traits;
+    if (this.attackType != null) {
+      this.attackTypeName = this.attackType.getName();
+    }
   }
 
   /**
@@ -210,9 +100,10 @@ public class Search extends AbstractExpansionEntity {
    * @see AbstractExpansionEntity#appendExpansion(ToStringBuilder)
    */
   @Override
-  protected void appendExpansion(final ToStringBuilder builder) {
+  protected final void appendExpansion(final ToStringBuilder builder) {
     builder.append("abilityCode", this.abilityCode).append("attackTypeName", this.attackTypeName)
-        .append("gold", this.gold).append("count", this.count);
+        .append("gold", this.gold).append("count", this.count).append("image", this.image)
+        .append("diceNames", this.diceNames).append("traits", this.traits);
   }
 
 }

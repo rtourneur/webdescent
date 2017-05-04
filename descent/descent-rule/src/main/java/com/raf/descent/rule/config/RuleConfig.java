@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 import com.raf.descent.jpa.config.PersistenceJpaConfig;
-import com.raf.descent.util.config.UtilConfig;
+import com.raf.fwk.util.config.UtilConfig;
 
 /**
  * Spring configuration class for rules.

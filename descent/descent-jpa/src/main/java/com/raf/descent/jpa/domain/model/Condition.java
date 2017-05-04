@@ -9,7 +9,11 @@ import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import com.raf.descent.jpa.domain.AbstractNamedEntity;
+import com.raf.fwk.jpa.domain.AbstractNamedEntity;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * The persistent class for the CONDITION database table.
@@ -18,6 +22,9 @@ import com.raf.descent.jpa.domain.AbstractNamedEntity;
  */
 @Entity
 @Table(name = "CONDITION", schema = "DESCENT")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Condition extends AbstractNamedEntity {
 
   /** Serial UID. */
@@ -32,86 +39,13 @@ public class Condition extends AbstractNamedEntity {
   private String expansionName;
 
   /** The image. */
-  @Column(nullable = false, length = 30)
+  @Column(name = "IMAGE", nullable = false, length = 30)
   private String image;
 
   /** The expansion. */
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "EXPANSION", nullable = false, insertable = false, updatable = false)
   private Expansion expansion;
-
-  /**
-   * Constructor.
-   */
-  public Condition() {
-    super();
-  }
-
-  /**
-   * Returns the rule code.
-   * 
-   * @return the ruleCode
-   */
-  public String getRuleCode() {
-    return this.ruleCode;
-  }
-
-  /**
-   * Defines the rule code.
-   * 
-   * @param ruleCode
-   *          the ruleCode to set
-   */
-  public void setRuleCode(final String ruleCode) {
-    this.ruleCode = ruleCode;
-  }
-
-  /**
-   * Returns the expansion name.
-   * 
-   * @return the expansionName
-   */
-  public String getExpansionName() {
-    return this.expansionName;
-  }
-
-  /**
-   * Defines the expansion name.
-   * 
-   * @param expansionName
-   *          the expansionName to set
-   */
-  public void setExpansionName(final String expansionName) {
-    this.expansionName = expansionName;
-  }
-
-  /**
-   * Returns the image.
-   * 
-   * @return the image
-   */
-  public String getImage() {
-    return this.image;
-  }
-
-  /**
-   * Defines the image.
-   * 
-   * @param image
-   *          the image to set
-   */
-  public void setImage(final String image) {
-    this.image = image;
-  }
-
-  /**
-   * Returns the expansion.
-   * 
-   * @return the expansion
-   */
-  public Expansion getExpansion() {
-    return this.expansion;
-  }
 
   /**
    * Defines the expansion.
@@ -121,6 +55,9 @@ public class Condition extends AbstractNamedEntity {
    */
   public void setExpansion(final Expansion expansion) {
     this.expansion = expansion;
+    if (this.expansion != null) {
+      this.expansionName = this.expansion.getName();
+    }
   }
 
   /**
@@ -131,7 +68,7 @@ public class Condition extends AbstractNamedEntity {
    * @see AbstractNamedEntity#appendNamed(ToStringBuilder)
    */
   @Override
-  protected void appendNamed(final ToStringBuilder builder) {
+  protected final void appendNamed(final ToStringBuilder builder) {
     builder.append("ruleCode", this.ruleCode).append("expansionName", this.expansionName).append("image", this.image);
     if (this.expansion != null && Expansion.class.equals(this.expansion.getClass())) {
       builder.append("expansion", this.expansion);

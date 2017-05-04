@@ -12,15 +12,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.raf.descent.jpa.dao.MonsterStatDao;
-import com.raf.descent.jpa.domain.card.MonsterAttack;
 import com.raf.descent.jpa.domain.card.MonsterStat;
 import com.raf.descent.jpa.domain.card.MonsterSurge;
 import com.raf.descent.jpa.domain.model.Dice;
 import com.raf.descent.jpa.domain.model.DiceSide;
+import com.raf.descent.jpa.domain.model.StatDice;
 import com.raf.descent.jpa.domain.model.Surge;
 import com.raf.descent.rule.DamageRule;
 import com.raf.descent.rule.model.Damages;
-import com.raf.descent.util.Loggable;
+import com.raf.fwk.util.aop.Loggable;
 
 /**
  * Rule for calculing damages.
@@ -65,13 +65,13 @@ public final class DamageRuleImpl implements DamageRule {
     final MonsterStat monsterStat = this.monsterStatDao.getMonsterStat(monster, expansion, act, type);
     Damages damages = null;
     if (monsterStat != null) {
-      final List<MonsterAttack> attacks = monsterStat.getAttacks();
-      final List<Dice> dices = new ArrayList<Dice>(attacks.size());
-      for (final MonsterAttack attack : attacks) {
+      final List<StatDice> attacks = monsterStat.getAttackDices();
+      final List<Dice> dices = new ArrayList<>(attacks.size());
+      for (final StatDice attack : attacks) {
         dices.add(attack.getDice());
       }
       final List<MonsterSurge> monsterSurges = monsterStat.getSurges();
-      final List<Surge> surges = new ArrayList<Surge>(monsterSurges.size());
+      final List<Surge> surges = new ArrayList<>(monsterSurges.size());
       Surge surge;
       for (final MonsterSurge monsterSurge : monsterSurges) {
         surge = monsterSurge.getSurge();
@@ -97,7 +97,7 @@ public final class DamageRuleImpl implements DamageRule {
     final Dice dice = dices.get(0);
     int[] damageSurge;
     List<Dice> subDices;
-    final List<int[]> damages = new ArrayList<int[]>((int) Math.pow(6, dices.size()));
+    final List<int[]> damages = new ArrayList<>((int) Math.pow(6, dices.size()));
     for (final DiceSide diceSide : dice.getDiceSides()) {
       damageSurge = getSideValue(diceSide);
       subDices = dices.subList(1, dices.size());
@@ -133,7 +133,7 @@ public final class DamageRuleImpl implements DamageRule {
     final Dice dice = dices.get(0);
     int[] damageSurge;
     List<Dice> subDices;
-    final List<int[]> damages = new ArrayList<int[]>();
+    final List<int[]> damages = new ArrayList<>();
     for (final DiceSide diceSide : dice.getDiceSides()) {
       damageSurge = getSideValue(diceSide, damageSurgePrev, miss);
       subDices = dices.subList(1, dices.size());
@@ -170,7 +170,7 @@ public final class DamageRuleImpl implements DamageRule {
    * @return the side values
    */
   private int[] getSideValue(final DiceSide diceSide, final int[] damageSurgePrev, final Boolean miss) {
-    int[] damageSurge;
+    final int[] damageSurge;
     damageSurge = new int[2];
     if (Boolean.TRUE.equals(miss)) {
       damageSurge[0] = damageSurgePrev[0];
@@ -190,7 +190,7 @@ public final class DamageRuleImpl implements DamageRule {
    * @return the value from the integer, or <code>0</code> if null
    */
   private int getValue(final Integer integer) {
-    int value;
+    final int value;
     if (integer == null) {
       value = 0;
     } else {
@@ -226,7 +226,7 @@ public final class DamageRuleImpl implements DamageRule {
         damage[1] = damage[1] - surge.getSurgeCount().intValue();
         LOGGER.info("Surge damages " + damage[0] + " surges " + damage[1]);
         if (damage[1] > 0 && surges.size() > 1) {
-          final List<Surge> subList = new ArrayList<Surge>(surges);
+          final List<Surge> subList = new ArrayList<>(surges);
           Collections.copy(subList, surges);
           subList.remove(surge);
           calculSurge(damage, subList);

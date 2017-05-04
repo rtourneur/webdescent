@@ -11,10 +11,10 @@ import javax.transaction.Transactional;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.model.Condition;
 import com.raf.descent.jpa.domain.model.Expansion;
-import com.raf.descent.util.Paged;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
  * 
@@ -39,7 +39,7 @@ public class ConditionDaoTest extends AbstractDaoTest {
     String name = "Diseased";
     Condition example = this.conditionDao.getById(name);
     assertNotNull(example);
-    assertEquals(name, example.getId());
+    assertEquals(name, example.getIdentifier());
     assertEquals(name, example.getName());
     assertEquals("condition.diseased", example.getMessageCode());
     assertEquals("condition.diseased.rule", example.getRuleCode());
@@ -64,7 +64,7 @@ public class ConditionDaoTest extends AbstractDaoTest {
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
-    example.setIdent(null);
+    example.setIdentifier(null);
     example.setExpansion(this.expansionDao.getById("D2E"));
     list = this.conditionDao.findByExample(example);
     assertNotNull(list);

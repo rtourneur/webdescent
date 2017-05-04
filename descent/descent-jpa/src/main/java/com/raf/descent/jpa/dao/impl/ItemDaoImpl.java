@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.raf.descent.jpa.dao.ItemDao;
 import com.raf.descent.jpa.domain.card.Item;
+import com.raf.fwk.jpa.dao.AbstractDao;
 
 /**
  * Implementation DAO for {@link Item}.
@@ -47,7 +48,7 @@ public final class ItemDaoImpl extends AbstractDao<Item, String> implements Item
    */
   @Override
   protected Predicate[] getPredicates(final Root<Item> root, final Item example) {
-    final List<Predicate> predicatesList = new ArrayList<Predicate>();
+    final List<Predicate> predicatesList = new ArrayList<>();
     if (example.getName() != null) {
       predicatesList.add(getEquals(root, "name", example.getName()));
     }
@@ -146,8 +147,8 @@ public final class ItemDaoImpl extends AbstractDao<Item, String> implements Item
    *          the predicate list
    */
   private void addClazzFilter(final Root<Item> root, final Item example, final List<Predicate> predicatesList) {
-    if (example.getClazzName() != null) {
-      predicatesList.add(getEquals(root, "clazzName", example.getClazzName()));
+    if (example.getClassName() != null) {
+      predicatesList.add(getEquals(root, "className", example.getClassName()));
     }
     if (example.getClazz() != null) {
       predicatesList.add(getEquals(root, "clazz", example.getClazz()));
@@ -166,7 +167,7 @@ public final class ItemDaoImpl extends AbstractDao<Item, String> implements Item
    */
   @Override
   protected List<Order> getOrder(final CriteriaBuilder builder, final Root<Item> root) {
-    final List<Order> orders = new ArrayList<Order>();
+    final List<Order> orders = new ArrayList<>();
     orders.add(builder.asc(root.get("name")));
     return orders;
   }

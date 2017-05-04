@@ -1,0 +1,123 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-descent-monster_group-1">
+    <createTable tableName="MONSTER_GROUP" schemaName="DESCENT" remarks="Table for monster groups">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the monster group">
+        <constraints nullable="false" />
+      </column>
+      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the monster group">
+        <constraints nullable="false" foreignKeyName="FK_MONSTER_GROUP_EXPANSION" references="DESCENT.EXPANSION(NAME)" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Message code of the monster group">
+        <constraints nullable="false" />
+      </column>
+      <column name="ATTACK_TYPE" type="VARCHAR(30)" remarks="Attack type of the monster group">
+        <constraints nullable="false" foreignKeyName="FK_MONSTER_GROUP_ATTACK_TYPE" references="DESCENT.ATTACK_TYPE(NAME)" />
+      </column>
+      <column name="MONSTER_SIZE" type="VARCHAR(30)" remarks="Monster size of the monster group">
+        <constraints nullable="false" foreignKeyName="FK_MONSTER_GROUP_MONSTER_SIZE" references="DESCENT.MONSTER_SIZE(NAME)" />
+      </column>
+      <column name="MASTER" type="INT" remarks="Master figure count of the monster group">
+        <constraints nullable="false" />
+      </column>
+      <column name="MINION" type="INT" remarks="Minion figure count of the monster group">
+        <constraints nullable="false" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addPrimaryKey columnNames="NAME, EXPANSION" constraintName="MONSTER_GROUP_PK" schemaName="DESCENT" tableName="MONSTER_GROUP" />
+  </changeSet>
+  <changeSet author="RAF" id="table-descent-monster_group_trait-1">
+    <createTable tableName="MONSTER_GROUP_TRAIT" schemaName="DESCENT" remarks="Table for monster group traits">
+      <column name="MONSTER" type="VARCHAR(30)" remarks="Name of the monster group">
+        <constraints nullable="false" />
+      </column>
+      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the monster group">
+        <constraints nullable="false" foreignKeyName="FK_MONSTER_GROUP_TRAIT_EXPANSION" references="DESCENT.EXPANSION(NAME)" />
+      </column>
+      <column name="TRAIT" type="VARCHAR(30)" remarks="Trait of the monster group">
+        <constraints nullable="false" foreignKeyName="FK_MONSTER_GROUP_TRAIT_MONSTER_TRAIT" references="DESCENT.MONSTER_TRAIT(NAME)" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint constraintName="FK_MONSTER_GROUP_TRAIT_MONSTER_GROUP" baseTableSchemaName="DESCENT" baseTableName="MONSTER_GROUP_TRAIT"
+      referencedTableSchemaName="DESCENT" baseColumnNames="MONSTER, EXPANSION" referencedTableName="MONSTER_GROUP" referencedColumnNames="NAME, EXPANSION" />
+    <createIndex schemaName="DESCENT" indexName="IDX_MONSTER_GROUP_TRAIT" tableName="MONSTER_GROUP_TRAIT" unique="true">
+      <column name="MONSTER" />
+      <column name="EXPANSION" />
+      <column name="TRAIT" />
+    </createIndex>
+  </changeSet>
+  <changeSet author="RAF" id="table-descent-monster_group_act-1">
+    <createTable tableName="MONSTER_GROUP_ACT" schemaName="DESCENT" remarks="Table for monster group act">
+      <column name="MONSTER" type="VARCHAR(30)" remarks="Name of the monster group">
+        <constraints nullable="false" />
+      </column>
+      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the monster group">
+        <constraints nullable="false" foreignKeyName="FK_MONSTER_GROUP_ACT_EXPANSION" references="DESCENT.EXPANSION(NAME)" />
+      </column>
+      <column name="ACT" type="VARCHAR(30)" remarks="Act of the monster group">
+        <constraints nullable="false" foreignKeyName="FK_MONSTER_GROUP_ACT_ACT" references="DESCENT.ACT(NAME)" />
+      </column>
+      <column name="IMAGE" type="VARCHAR(30)" remarks="Image of the monster group">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint constraintName="FK_MONSTER_GROUP_ACT_MONSTER_GROUP" baseTableSchemaName="DESCENT" baseTableName="MONSTER_GROUP_ACT"
+      baseColumnNames="MONSTER, EXPANSION" referencedTableSchemaName="DESCENT" referencedTableName="MONSTER_GROUP" referencedColumnNames="NAME, EXPANSION" />
+    <createIndex schemaName="DESCENT" indexName="IDX_MONSTER_GROUP_ACT" tableName="MONSTER_GROUP_ACT" unique="true">
+      <column name="MONSTER" />
+      <column name="EXPANSION" />
+      <column name="ACT" />
+    </createIndex>
+  </changeSet>
+  <changeSet author="RAF" id="table-descent-monster_count-1">
+    <createTable tableName="MONSTER_COUNT" schemaName="DESCENT" remarks="Table for monster counts">
+      <column name="MONSTER" type="VARCHAR(30)" remarks="Name of the monster group">
+        <constraints nullable="false" />
+      </column>
+      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the monster group">
+        <constraints nullable="false" foreignKeyName="FK_MONSTER_COUNT_EXPANSION" references="DESCENT.EXPANSION(NAME)" />
+      </column>
+      <column name="HERO" type="INT" remarks="Heroes count of the monster group">
+        <constraints nullable="false" />
+      </column>
+      <column name="MASTER" type="INT" remarks="Master count for heroes of the monster group">
+        <constraints nullable="false" />
+      </column>
+      <column name="MINION" type="INT" remarks="Minion count for heroes of the monster group">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint constraintName="FK_MONSTER_COUNT_MONSTER_GROUP" baseTableSchemaName="DESCENT" baseTableName="MONSTER_COUNT" baseColumnNames="MONSTER, EXPANSION"
+      referencedTableSchemaName="DESCENT" referencedTableName="MONSTER_GROUP" referencedColumnNames="NAME, EXPANSION" />
+    <createIndex schemaName="DESCENT" indexName="IDX_MONSTER_COUNT" tableName="MONSTER_COUNT" unique="true">
+      <column name="MONSTER" />
+      <column name="EXPANSION" />
+      <column name="HERO" />
+    </createIndex>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-monster_group-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/monster_group.csv" separator="|" tableName="MONSTER_GROUP">
+      <column name="MASTER" type="NUMERIC" />
+      <column name="MINION" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-monster_group_trait-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/monster_group_trait.csv" separator="|" tableName="MONSTER_GROUP_TRAIT" />
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-monster_group_act-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/monster_group_act.csv" separator="|" tableName="MONSTER_GROUP_ACT" />
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-monster_count-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/monster_count.csv" separator="|" tableName="MONSTER_COUNT">
+      <column name="HERO" type="NUMERIC" />
+      <column name="MASTER" type="NUMERIC" />
+      <column name="MINION" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+
+</databaseChangeLog>

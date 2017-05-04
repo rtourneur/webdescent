@@ -1,0 +1,2322 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="tourneurr (generated)" id="1493887901849-1">
+        <addUniqueConstraint columnNames="DICE, SIDE" constraintName="IDX_DICE_SIDE" tableName="DICE_SIDE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-2">
+        <addUniqueConstraint columnNames="ITEM, DICE, INDEX" constraintName="IDX_ITEM_DICE" tableName="ITEM_DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-3">
+        <addUniqueConstraint columnNames="ITEM, TRAIT" constraintName="IDX_ITEM_TRAIT" tableName="ITEM_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-4">
+        <addUniqueConstraint columnNames="ID, ABILITY" constraintName="IDX_MONSTER_ABILITY" tableName="MONSTER_ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-5">
+        <addUniqueConstraint columnNames="ID, DICE, INDEX" constraintName="IDX_MONSTER_ATTACK" tableName="MONSTER_ATTACK"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-6">
+        <addUniqueConstraint columnNames="MONSTER, EXPANSION, HERO" constraintName="IDX_MONSTER_COUNT" tableName="MONSTER_COUNT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-7">
+        <addUniqueConstraint columnNames="ID, DICE, INDEX" constraintName="IDX_MONSTER_DEFENSE" tableName="MONSTER_DEFENSE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-8">
+        <addUniqueConstraint columnNames="MONSTER, EXPANSION, ACT" constraintName="IDX_MONSTER_GROUP_ACT" tableName="MONSTER_GROUP_ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-9">
+        <addUniqueConstraint columnNames="MONSTER, EXPANSION, TRAIT" constraintName="IDX_MONSTER_GROUP_TRAIT" tableName="MONSTER_GROUP_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-10">
+        <addUniqueConstraint columnNames="NAME, EXPANSION, ACT, MONSTER_TYPE" constraintName="IDX_MONSTER_STAT" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-11">
+        <addUniqueConstraint columnNames="ID, SURGE, INDEX" constraintName="IDX_MONSTER_SURGE" tableName="MONSTER_SURGE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-12">
+        <addUniqueConstraint columnNames="SEARCH, EXPANSION, DICE, INDEX" constraintName="IDX_SEARCH_DICE" tableName="SEARCH_DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-13">
+        <addUniqueConstraint columnNames="SEARCH, EXPANSION, TRAIT" constraintName="IDX_SEARCH_TRAIT" tableName="SEARCH_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-14">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ABILITYNAME_COL" tableName="ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-15">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ACTNAME_COL" tableName="ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-16">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ARCHETYPENAME_COL" tableName="ARCHETYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-17">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ATTACK_TYPENAME_COL" tableName="ATTACK_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-18">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ATTRIBUTENAME_COL" tableName="ATTRIBUTE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-19">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_CLASSNAME_COL" tableName="CLASS"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-20">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_CONDITIONNAME_COL" tableName="CONDITION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-21">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_DICENAME_COL" tableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-22">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_DICE_TYPENAME_COL" tableName="DICE_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-23">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_EQUIPMENTNAME_COL" tableName="EQUIPMENT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-24">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_EXPANSIONNAME_COL" tableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-25">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ITEMNAME_COL" tableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-26">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ITEM_TYPENAME_COL" tableName="ITEM_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-27">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_MONSTER_SIZENAME_COL" tableName="MONSTER_SIZE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-28">
+        <addUniqueConstraint columnNames="EXPANSION" constraintName="UC_MONSTER_STATEXPANSION_COL" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-29">
+        <addUniqueConstraint columnNames="ID" constraintName="UC_MONSTER_STATID_COL" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-30">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_MONSTER_STATNAME_COL" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-31">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_MONSTER_TRAITNAME_COL" tableName="MONSTER_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-32">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_MONSTER_TYPENAME_COL" tableName="MONSTER_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-33">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_SKILLNAME_COL" tableName="SKILL"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-34">
+        <addUniqueConstraint columnNames="ID" constraintName="UC_SURGEID_COL" tableName="SURGE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-35">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_TRAITNAME_COL" tableName="TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-36">
+        <createIndex indexName="IX_HEROPK" tableName="HERO" unique="true">
+            <column name="EXPANSION"/>
+            <column name="NAME"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-37">
+        <createIndex indexName="IX_MONSTER_GROUPPK" tableName="MONSTER_GROUP" unique="true">
+            <column name="EXPANSION"/>
+            <column name="NAME"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-38">
+        <createIndex indexName="IX_SEARCHPK" tableName="SEARCH" unique="true">
+            <column name="EXPANSION"/>
+            <column name="NAME"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-39">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,MONSTER" baseTableName="MONSTER_COUNT" constraintName="FK_3b8185bpt7rspo2q3otbb8w2u" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-40">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,MONSTER" baseTableName="MONSTER_GROUP_ACT" constraintName="FK_8798u8tlwys5cttw0h468h5ad" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-41">
+        <addForeignKeyConstraint baseColumnNames="NAME,EXPANSION" baseTableName="MONSTER_STAT" constraintName="FK_g1rke0xx9vbfv8jccdbub8c6" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-42">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,SEARCH" baseTableName="SEARCH_DICE" constraintName="FK_kc36x4afle02eng55ox835ews" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="SEARCH"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-43">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,MONSTER" baseTableName="MONSTER_GROUP_TRAIT" constraintName="FK_ki97nanuv7yrsvwy23ysru192" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-44">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,SEARCH" baseTableName="SEARCH_TRAIT" constraintName="FK_mrrx155lsaf69vd1oqe0i8gkd" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="SEARCH"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-45">
+        <dropForeignKeyConstraint baseTableName="ITEM_DICE" constraintName="FK_ITEM_DICE_DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-46">
+        <dropForeignKeyConstraint baseTableName="ITEM_TRAIT" constraintName="FK_ITEM_TRAIT_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-47">
+        <dropForeignKeyConstraint baseTableName="MONSTER_ABILITY" constraintName="FK_MONSTER_ABILITY_ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-48">
+        <dropForeignKeyConstraint baseTableName="MONSTER_COUNT" constraintName="FK_MONSTER_COUNT_EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-49">
+        <dropForeignKeyConstraint baseTableName="MONSTER_COUNT" constraintName="FK_MONSTER_COUNT_MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-50">
+        <dropForeignKeyConstraint baseTableName="MONSTER_DEFENSE" constraintName="FK_MONSTER_DEFENSE_DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-51">
+        <dropForeignKeyConstraint baseTableName="MONSTER_GROUP_ACT" constraintName="FK_MONSTER_GROUP_ACT_ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-52">
+        <dropForeignKeyConstraint baseTableName="MONSTER_GROUP_ACT" constraintName="FK_MONSTER_GROUP_ACT_EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-53">
+        <dropForeignKeyConstraint baseTableName="MONSTER_GROUP_ACT" constraintName="FK_MONSTER_GROUP_ACT_MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-54">
+        <dropForeignKeyConstraint baseTableName="MONSTER_GROUP_TRAIT" constraintName="FK_MONSTER_GROUP_TRAIT_EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-55">
+        <dropForeignKeyConstraint baseTableName="MONSTER_GROUP_TRAIT" constraintName="FK_MONSTER_GROUP_TRAIT_MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-56">
+        <dropForeignKeyConstraint baseTableName="MONSTER_GROUP_TRAIT" constraintName="FK_MONSTER_GROUP_TRAIT_MONSTER_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-57">
+        <dropForeignKeyConstraint baseTableName="MONSTER_STAT" constraintName="FK_MONSTER_STAT_MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-58">
+        <dropForeignKeyConstraint baseTableName="SEARCH_DICE" constraintName="FK_SEARCH_DICE_DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-59">
+        <dropForeignKeyConstraint baseTableName="SEARCH_DICE" constraintName="FK_SEARCH_DICE_EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-60">
+        <dropForeignKeyConstraint baseTableName="SEARCH_DICE" constraintName="FK_SEARCH_DICE_SEARCH"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-61">
+        <dropForeignKeyConstraint baseTableName="SEARCH_TRAIT" constraintName="FK_SEARCH_TRAIT_EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-62">
+        <dropForeignKeyConstraint baseTableName="SEARCH_TRAIT" constraintName="FK_SEARCH_TRAIT_SEARCH"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-63">
+        <dropForeignKeyConstraint baseTableName="SEARCH_TRAIT" constraintName="FK_SEARCH_TRAIT_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-64">
+        <dropIndex indexName="SQL170504103027991" tableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-65">
+        <dropIndex indexName="SQL170504103028320" tableName="DICE_SIDE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-66">
+        <dropIndex indexName="SQL170504103029041" tableName="CONDITION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-67">
+        <dropIndex indexName="SQL170504103029571" tableName="SURGE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-68">
+        <dropIndex indexName="SQL170504103029980" tableName="HERO"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-69">
+        <dropIndex indexName="SQL170504103029981" tableName="HERO"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-70">
+        <dropIndex indexName="SQL170504103029982" tableName="HERO"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-71">
+        <dropIndex indexName="SQL170504103030340" tableName="HERO"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-72">
+        <dropIndex indexName="SQL170504103030801" tableName="CLASS"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-73">
+        <dropIndex indexName="SQL170504103030802" tableName="CLASS"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-74">
+        <dropIndex indexName="SQL170504103031121" tableName="SKILL"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-75">
+        <dropIndex indexName="SQL170504103032241" tableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-76">
+        <dropIndex indexName="SQL170504103032242" tableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-77">
+        <dropIndex indexName="SQL170504103032243" tableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-78">
+        <dropIndex indexName="SQL170504103032244" tableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-79">
+        <dropIndex indexName="SQL170504103032245" tableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-80">
+        <dropIndex indexName="SQL170504103032850" tableName="ITEM_DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-81">
+        <dropIndex indexName="SQL170504103032851" tableName="ITEM_DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-82">
+        <dropIndex indexName="SQL170504103033330" tableName="ITEM_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-83">
+        <dropIndex indexName="SQL170504103033331" tableName="ITEM_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-84">
+        <dropIndex indexName="SQL170504103034340" tableName="SEARCH"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-85">
+        <dropIndex indexName="SQL170504103034341" tableName="SEARCH"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-86">
+        <dropIndex indexName="SQL170504103034580" tableName="SEARCH"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-87">
+        <dropIndex indexName="SQL170504103034690" tableName="SEARCH_DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-88">
+        <dropIndex indexName="SQL170504103034691" tableName="SEARCH_DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-89">
+        <dropIndex indexName="SQL170504103035110" tableName="SEARCH_DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-90">
+        <dropIndex indexName="SQL170504103035230" tableName="SEARCH_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-91">
+        <dropIndex indexName="SQL170504103035231" tableName="SEARCH_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-92">
+        <dropIndex indexName="SQL170504103036510" tableName="SEARCH_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-93">
+        <dropIndex indexName="SQL170504103038210" tableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-94">
+        <dropIndex indexName="SQL170504103038211" tableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-95">
+        <dropIndex indexName="SQL170504103038212" tableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-96">
+        <dropIndex indexName="SQL170504103038620" tableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-97">
+        <dropIndex indexName="SQL170504103038720" tableName="MONSTER_GROUP_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-98">
+        <dropIndex indexName="SQL170504103038721" tableName="MONSTER_GROUP_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-99">
+        <dropIndex indexName="SQL170504103039090" tableName="MONSTER_GROUP_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-100">
+        <dropIndex indexName="SQL170504103039340" tableName="MONSTER_GROUP_ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-101">
+        <dropIndex indexName="SQL170504103039341" tableName="MONSTER_GROUP_ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-102">
+        <dropIndex indexName="SQL170504103039650" tableName="MONSTER_GROUP_ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-103">
+        <dropIndex indexName="SQL170504103040040" tableName="MONSTER_COUNT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-104">
+        <dropIndex indexName="SQL170504103040360" tableName="MONSTER_COUNT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-105">
+        <dropIndex indexName="SQL170504103041682" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-106">
+        <dropIndex indexName="SQL170504103041683" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-107">
+        <dropIndex indexName="SQL170504103042470" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-108">
+        <dropIndex indexName="SQL170504103042580" tableName="MONSTER_DEFENSE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-109">
+        <dropIndex indexName="SQL170504103042800" tableName="MONSTER_DEFENSE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-110">
+        <dropIndex indexName="SQL170504103043000" tableName="MONSTER_ATTACK"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-111">
+        <dropIndex indexName="SQL170504103043180" tableName="MONSTER_ATTACK"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-112">
+        <dropIndex indexName="SQL170504103043460" tableName="MONSTER_ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-113">
+        <dropIndex indexName="SQL170504103043650" tableName="MONSTER_ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-114">
+        <dropIndex indexName="SQL170504103044070" tableName="MONSTER_SURGE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-115">
+        <dropIndex indexName="SQL170504103044230" tableName="MONSTER_SURGE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-116">
+        <dropForeignKeyConstraint baseTableName="ITEM_TRAIT" constraintName="FK_1mj7lcgw8airm3ifi8jk0o90g"/>
+        <addForeignKeyConstraint baseColumnNames="ITEM" baseTableName="ITEM_TRAIT" constraintName="FK_1mj7lcgw8airm3ifi8jk0o90g" referencedColumnNames="NAME" referencedTableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-117">
+        <dropForeignKeyConstraint baseTableName="MONSTER_ATTACK" constraintName="FK_1v2xcgbrp6hlqjbto2424l896"/>
+        <addForeignKeyConstraint baseColumnNames="ID" baseTableName="MONSTER_ATTACK" constraintName="FK_1v2xcgbrp6hlqjbto2424l896" referencedColumnNames="ID" referencedTableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-118">
+        <dropForeignKeyConstraint baseTableName="HERO" constraintName="FK_40pkn92t78fdgqsiuwv0onm9j"/>
+        <addForeignKeyConstraint baseColumnNames="DEFENSE" baseTableName="HERO" constraintName="FK_40pkn92t78fdgqsiuwv0onm9j" referencedColumnNames="NAME" referencedTableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-119">
+        <dropForeignKeyConstraint baseTableName="HERO" constraintName="FK_43a6ysahg8b6koa6c3dmh5h9t"/>
+        <addForeignKeyConstraint baseColumnNames="ARCHETYPE" baseTableName="HERO" constraintName="FK_43a6ysahg8b6koa6c3dmh5h9t" referencedColumnNames="NAME" referencedTableName="ARCHETYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-120">
+        <dropForeignKeyConstraint baseTableName="SURGE" constraintName="FK_4pl3pn79s9jnaotxw3fnucb7v"/>
+        <addForeignKeyConstraint baseColumnNames="ABILITY" baseTableName="SURGE" constraintName="FK_4pl3pn79s9jnaotxw3fnucb7v" referencedColumnNames="NAME" referencedTableName="ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-121">
+        <dropForeignKeyConstraint baseTableName="SEARCH" constraintName="FK_522khjndss53bocpd8vchfoaq"/>
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="SEARCH" constraintName="FK_522khjndss53bocpd8vchfoaq" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-122">
+        <dropForeignKeyConstraint baseTableName="CLASS" constraintName="FK_5vkvxl85vusybhvvb389t44w0"/>
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="CLASS" constraintName="FK_5vkvxl85vusybhvvb389t44w0" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-123">
+        <dropForeignKeyConstraint baseTableName="MONSTER_ABILITY" constraintName="FK_5wm0g5i80qcdwle309c0al45k"/>
+        <addForeignKeyConstraint baseColumnNames="ID" baseTableName="MONSTER_ABILITY" constraintName="FK_5wm0g5i80qcdwle309c0al45k" referencedColumnNames="ID" referencedTableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-124">
+        <dropForeignKeyConstraint baseTableName="ITEM_DICE" constraintName="FK_6thttk8pcfhvgwp1tsr6m5a1x"/>
+        <addForeignKeyConstraint baseColumnNames="ITEM" baseTableName="ITEM_DICE" constraintName="FK_6thttk8pcfhvgwp1tsr6m5a1x" referencedColumnNames="NAME" referencedTableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-125">
+        <dropForeignKeyConstraint baseTableName="DICE_SIDE" constraintName="FK_6xojadswxgm7w9gyco0m6tnsb"/>
+        <addForeignKeyConstraint baseColumnNames="DICE" baseTableName="DICE_SIDE" constraintName="FK_6xojadswxgm7w9gyco0m6tnsb" referencedColumnNames="NAME" referencedTableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-126">
+        <dropForeignKeyConstraint baseTableName="SEARCH" constraintName="FK_78h8xaok8ipatjmemdmegd3o8"/>
+        <addForeignKeyConstraint baseColumnNames="ATTACK_TYPE" baseTableName="SEARCH" constraintName="FK_78h8xaok8ipatjmemdmegd3o8" referencedColumnNames="NAME" referencedTableName="ATTACK_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-127">
+        <dropForeignKeyConstraint baseTableName="SKILL" constraintName="FK_908n0hbgxqhvggnkemnxsc7er"/>
+        <addForeignKeyConstraint baseColumnNames="CLASS" baseTableName="SKILL" constraintName="FK_908n0hbgxqhvggnkemnxsc7er" referencedColumnNames="NAME" referencedTableName="CLASS"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-128">
+        <dropForeignKeyConstraint baseTableName="ITEM" constraintName="FK_9l1hjq97qcxrvj7usrmtionh5"/>
+        <addForeignKeyConstraint baseColumnNames="ATTACK_TYPE" baseTableName="ITEM" constraintName="FK_9l1hjq97qcxrvj7usrmtionh5" referencedColumnNames="NAME" referencedTableName="ATTACK_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-129">
+        <dropForeignKeyConstraint baseTableName="MONSTER_ATTACK" constraintName="FK_a851p41t1e8y3xqbjw84dhqok"/>
+        <addForeignKeyConstraint baseColumnNames="DICE" baseTableName="MONSTER_ATTACK" constraintName="FK_a851p41t1e8y3xqbjw84dhqok" referencedColumnNames="NAME" referencedTableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-130">
+        <dropForeignKeyConstraint baseTableName="MONSTER_DEFENSE" constraintName="FK_aivqo6a1xln0ddakno6u95it7"/>
+        <addForeignKeyConstraint baseColumnNames="ID" baseTableName="MONSTER_DEFENSE" constraintName="FK_aivqo6a1xln0ddakno6u95it7" referencedColumnNames="ID" referencedTableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-131">
+        <dropForeignKeyConstraint baseTableName="MONSTER_GROUP" constraintName="FK_dlmvwskuprk8ryfxeb5u6i88x"/>
+        <addForeignKeyConstraint baseColumnNames="ATTACK_TYPE" baseTableName="MONSTER_GROUP" constraintName="FK_dlmvwskuprk8ryfxeb5u6i88x" referencedColumnNames="NAME" referencedTableName="ATTACK_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-132">
+        <dropForeignKeyConstraint baseTableName="HERO" constraintName="FK_dtba203eumq53vsgwq7yqj5lo"/>
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="HERO" constraintName="FK_dtba203eumq53vsgwq7yqj5lo" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-133">
+        <dropForeignKeyConstraint baseTableName="ITEM" constraintName="FK_f1lhmkj3dx6v8crn855di9mhr"/>
+        <addForeignKeyConstraint baseColumnNames="CLASS" baseTableName="ITEM" constraintName="FK_f1lhmkj3dx6v8crn855di9mhr" referencedColumnNames="NAME" referencedTableName="CLASS"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-134">
+        <dropForeignKeyConstraint baseTableName="MONSTER_STAT" constraintName="FK_h67uita9qyfnfqs05wx41fqcx"/>
+        <addForeignKeyConstraint baseColumnNames="ACT" baseTableName="MONSTER_STAT" constraintName="FK_h67uita9qyfnfqs05wx41fqcx" referencedColumnNames="NAME" referencedTableName="ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-135">
+        <dropForeignKeyConstraint baseTableName="ITEM" constraintName="FK_hpfxboiiucc5ok1851batf56"/>
+        <addForeignKeyConstraint baseColumnNames="EQUIPMENT" baseTableName="ITEM" constraintName="FK_hpfxboiiucc5ok1851batf56" referencedColumnNames="NAME" referencedTableName="EQUIPMENT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-136">
+        <dropForeignKeyConstraint baseTableName="MONSTER_STAT" constraintName="FK_huwjxocq5b2am2d240s650w1b"/>
+        <addForeignKeyConstraint baseColumnNames="MONSTER_TYPE" baseTableName="MONSTER_STAT" constraintName="FK_huwjxocq5b2am2d240s650w1b" referencedColumnNames="NAME" referencedTableName="MONSTER_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-137">
+        <dropForeignKeyConstraint baseTableName="MONSTER_GROUP" constraintName="FK_hvh9wyu1txutkrj75j6wyy7mh"/>
+        <addForeignKeyConstraint baseColumnNames="MONSTER_SIZE" baseTableName="MONSTER_GROUP" constraintName="FK_hvh9wyu1txutkrj75j6wyy7mh" referencedColumnNames="NAME" referencedTableName="MONSTER_SIZE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-138">
+        <dropForeignKeyConstraint baseTableName="MONSTER_SURGE" constraintName="FK_iwsl4pedp6hq73focpuofe45"/>
+        <addForeignKeyConstraint baseColumnNames="SURGE" baseTableName="MONSTER_SURGE" constraintName="FK_iwsl4pedp6hq73focpuofe45" referencedColumnNames="ID" referencedTableName="SURGE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-139">
+        <dropForeignKeyConstraint baseTableName="DICE" constraintName="FK_jyslj46n9gea7tca5wf7q30iu"/>
+        <addForeignKeyConstraint baseColumnNames="DICE_TYPE" baseTableName="DICE" constraintName="FK_jyslj46n9gea7tca5wf7q30iu" referencedColumnNames="NAME" referencedTableName="DICE_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-140">
+        <dropForeignKeyConstraint baseTableName="CONDITION" constraintName="FK_mpatk30igo76pqieq6n6u2vnb"/>
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="CONDITION" constraintName="FK_mpatk30igo76pqieq6n6u2vnb" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-141">
+        <dropForeignKeyConstraint baseTableName="MONSTER_SURGE" constraintName="FK_mw5u7v0sset2331343k896qd8"/>
+        <addForeignKeyConstraint baseColumnNames="ID" baseTableName="MONSTER_SURGE" constraintName="FK_mw5u7v0sset2331343k896qd8" referencedColumnNames="ID" referencedTableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-142">
+        <dropForeignKeyConstraint baseTableName="MONSTER_STAT" constraintName="FK_nmgs9b9eqert6ivkmh0bmu59x"/>
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="MONSTER_STAT" constraintName="FK_nmgs9b9eqert6ivkmh0bmu59x" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-143">
+        <dropForeignKeyConstraint baseTableName="MONSTER_GROUP" constraintName="FK_no5gslxifsoqra36sf9o0idrn"/>
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="MONSTER_GROUP" constraintName="FK_no5gslxifsoqra36sf9o0idrn" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-144">
+        <dropForeignKeyConstraint baseTableName="ITEM" constraintName="FK_qfuojkfisnylttvdesw6363h4"/>
+        <addForeignKeyConstraint baseColumnNames="ITEM_TYPE" baseTableName="ITEM" constraintName="FK_qfuojkfisnylttvdesw6363h4" referencedColumnNames="NAME" referencedTableName="ITEM_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-145">
+        <dropForeignKeyConstraint baseTableName="ITEM" constraintName="FK_qgsof4pmhau4q31k0k5tlse15"/>
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="ITEM" constraintName="FK_qgsof4pmhau4q31k0k5tlse15" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-146">
+        <dropForeignKeyConstraint baseTableName="CLASS" constraintName="FK_si1hnq7gnvx4g6pgxxjo45ere"/>
+        <addForeignKeyConstraint baseColumnNames="ARCHETYPE" baseTableName="CLASS" constraintName="FK_si1hnq7gnvx4g6pgxxjo45ere" referencedColumnNames="NAME" referencedTableName="ARCHETYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-147">
+        <addNotNullConstraint columnDataType="varchar(30)" columnName="ABILITY" tableName="MONSTER_ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-148">
+        <dropDefaultValue columnDataType="int" columnName="ID" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-149">
+        <dropDefaultValue columnDataType="int" columnName="ID" tableName="SURGE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-150">
+        <dropNotNullConstraint columnDataType="varchar(30)" columnName="MONSTER_TYPE" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-151">
+        <addNotNullConstraint columnDataType="int" columnName="SURGE" tableName="MONSTER_SURGE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-152">
+        <dropPrimaryKey tableName="HERO"/>
+        <addPrimaryKey columnNames="EXPANSION, NAME" constraintName="HEROPK" tableName="HERO"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-153">
+        <dropPrimaryKey tableName="MONSTER_GROUP"/>
+        <addPrimaryKey columnNames="EXPANSION, NAME" constraintName="MONSTER_GROUPPK" tableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-154">
+        <dropPrimaryKey tableName="SEARCH"/>
+        <addPrimaryKey columnNames="EXPANSION, NAME" constraintName="SEARCHPK" tableName="SEARCH"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493887901849-155">
+        <dropUniqueConstraint constraintName="UC_MONSTER_STATEXPANSION_COL" tableName="MONSTER_STAT"/>
+        <addUniqueConstraint columnNames="EXPANSION" constraintName="UC_MONSTER_STATEXPANSION_COL" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-1">
+        <createTable tableName="ABILITY">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RULE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-2">
+        <createTable tableName="ACT">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-3">
+        <createTable tableName="ARCHETYPE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ICON" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-4">
+        <createTable tableName="ATTACK_TYPE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ICON" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-5">
+        <createTable tableName="ATTRIBUTE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ICON" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-6">
+        <createTable tableName="CLASS">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ARCHETYPE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-7">
+        <createTable tableName="CONDITION">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IMAGE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RULE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-8">
+        <createTable tableName="DICE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICE_TYPE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-9">
+        <createTable tableName="DICE_SIDE">
+            <column name="DICE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="HEART" type="INTEGER"/>
+            <column name="ICON" type="VARCHAR(30)"/>
+            <column name="MISS" type="BOOLEAN"/>
+            <column name="RANGE" type="INTEGER"/>
+            <column name="SHIELD" type="INTEGER"/>
+            <column name="SIDE" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SURGE" type="INTEGER"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-10">
+        <createTable tableName="DICE_TYPE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-11">
+        <createTable tableName="EQUIPMENT">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ICON" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-12">
+        <createTable tableName="EXPANSION">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ICON" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-13">
+        <createTable tableName="HERO">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ABILITY_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ARCHETYPE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AWARENESS" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DEFENSE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FEAT_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="HEALTH" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IMAGE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="KNOWLEDGE" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MIGHT" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SPEED" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="STAMINA" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="WILLPOWER" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-14">
+        <createTable tableName="ITEM">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ATTACK_TYPE" type="VARCHAR(30)"/>
+            <column name="CLASS" type="VARCHAR(30)"/>
+            <column name="COST" type="INTEGER"/>
+            <column name="COUNT" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EQUIPMENT" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IMAGE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ITEM_TYPE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RULE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-15">
+        <createTable tableName="ITEM_DICE">
+            <column name="ITEM" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="INDEX" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-16">
+        <createTable tableName="ITEM_TRAIT">
+            <column name="ITEM" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRAIT" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-17">
+        <createTable tableName="ITEM_TYPE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-18">
+        <createTable tableName="MONSTER_ABILITY">
+            <column name="ID" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ABILITY" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ACTION" type="BOOLEAN"/>
+            <column name="VALUE" type="INTEGER"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-19">
+        <createTable tableName="MONSTER_ATTACK">
+            <column name="ID" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="INDEX" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-20">
+        <createTable tableName="MONSTER_COUNT">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MONSTER" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="HERO" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MASTER" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MINION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-21">
+        <createTable tableName="MONSTER_DEFENSE">
+            <column name="ID" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="INDEX" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-22">
+        <createTable tableName="MONSTER_GROUP">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ATTACK_TYPE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MASTER" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MINION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MONSTER_SIZE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-23">
+        <createTable tableName="MONSTER_GROUP_ACT">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MONSTER" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ACT" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IMAGE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-24">
+        <createTable tableName="MONSTER_GROUP_TRAIT">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MONSTER" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRAIT" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-25">
+        <createTable tableName="MONSTER_SIZE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-26">
+        <createTable tableName="MONSTER_STAT">
+            <column autoIncrement="true" name="ID" type="INTEGER">
+                <constraints primaryKey="true" primaryKeyName="MONSTER_STATPK"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ACT" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="HEALTH" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MONSTER_TYPE" type="VARCHAR(30)"/>
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SPEED" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-27">
+        <createTable tableName="MONSTER_SURGE">
+            <column name="ID" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="INDEX" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SURGE" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-28">
+        <createTable tableName="MONSTER_TRAIT">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ICON" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-29">
+        <createTable tableName="MONSTER_TYPE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-30">
+        <createTable tableName="SEARCH">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ABILITY_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ATTACK_TYPE" type="VARCHAR(30)"/>
+            <column name="COUNT" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gold" type="INTEGER"/>
+            <column name="IMAGE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-31">
+        <createTable tableName="SEARCH_DICE">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SEARCH" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="INDEX" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-32">
+        <createTable tableName="SEARCH_TRAIT">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SEARCH" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRAIT" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-33">
+        <createTable tableName="SKILL">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CLASS" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COST" type="VARCHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXPERIENCE" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RULE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-34">
+        <createTable tableName="SURGE">
+            <column autoIncrement="true" name="ID" type="INTEGER">
+                <constraints primaryKey="true" primaryKeyName="SURGEPK"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ABILITY" type="VARCHAR(30)"/>
+            <column name="ABILITY_VALUE" type="INTEGER"/>
+            <column name="DAMAGE" type="INTEGER"/>
+            <column name="RANGE" type="INTEGER"/>
+            <column name="RULE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SURGE" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-35">
+        <createTable tableName="TRAIT">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-36">
+        <addPrimaryKey columnNames="NAME" constraintName="ABILITYPK" tableName="ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-37">
+        <addPrimaryKey columnNames="NAME" constraintName="ACTPK" tableName="ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-38">
+        <addPrimaryKey columnNames="NAME" constraintName="ARCHETYPEPK" tableName="ARCHETYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-39">
+        <addPrimaryKey columnNames="NAME" constraintName="ATTACK_TYPEPK" tableName="ATTACK_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-40">
+        <addPrimaryKey columnNames="NAME" constraintName="ATTRIBUTEPK" tableName="ATTRIBUTE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-41">
+        <addPrimaryKey columnNames="NAME" constraintName="CLASSPK" tableName="CLASS"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-42">
+        <addPrimaryKey columnNames="NAME" constraintName="CONDITIONPK" tableName="CONDITION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-43">
+        <addPrimaryKey columnNames="NAME" constraintName="DICEPK" tableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-44">
+        <addPrimaryKey columnNames="NAME" constraintName="DICE_TYPEPK" tableName="DICE_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-45">
+        <addPrimaryKey columnNames="NAME" constraintName="EQUIPMENTPK" tableName="EQUIPMENT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-46">
+        <addPrimaryKey columnNames="NAME" constraintName="EXPANSIONPK" tableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-47">
+        <addPrimaryKey columnNames="EXPANSION, NAME" constraintName="HEROPK" tableName="HERO"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-48">
+        <addPrimaryKey columnNames="NAME" constraintName="ITEMPK" tableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-49">
+        <addPrimaryKey columnNames="NAME" constraintName="ITEM_TYPEPK" tableName="ITEM_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-50">
+        <addPrimaryKey columnNames="EXPANSION, NAME" constraintName="MONSTER_GROUPPK" tableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-51">
+        <addPrimaryKey columnNames="NAME" constraintName="MONSTER_SIZEPK" tableName="MONSTER_SIZE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-52">
+        <addPrimaryKey columnNames="NAME" constraintName="MONSTER_TRAITPK" tableName="MONSTER_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-53">
+        <addPrimaryKey columnNames="NAME" constraintName="MONSTER_TYPEPK" tableName="MONSTER_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-54">
+        <addPrimaryKey columnNames="EXPANSION, NAME" constraintName="SEARCHPK" tableName="SEARCH"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-55">
+        <addPrimaryKey columnNames="NAME" constraintName="SKILLPK" tableName="SKILL"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-56">
+        <addPrimaryKey columnNames="NAME" constraintName="TRAITPK" tableName="TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-57">
+        <addUniqueConstraint columnNames="DICE, SIDE" constraintName="IDX_DICE_SIDE" tableName="DICE_SIDE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-58">
+        <addUniqueConstraint columnNames="ITEM, DICE, INDEX" constraintName="IDX_ITEM_DICE" tableName="ITEM_DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-59">
+        <addUniqueConstraint columnNames="ITEM, TRAIT" constraintName="IDX_ITEM_TRAIT" tableName="ITEM_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-60">
+        <addUniqueConstraint columnNames="ID, ABILITY" constraintName="IDX_MONSTER_ABILITY" tableName="MONSTER_ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-61">
+        <addUniqueConstraint columnNames="ID, DICE, INDEX" constraintName="IDX_MONSTER_ATTACK" tableName="MONSTER_ATTACK"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-62">
+        <addUniqueConstraint columnNames="MONSTER, EXPANSION, HERO" constraintName="IDX_MONSTER_COUNT" tableName="MONSTER_COUNT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-63">
+        <addUniqueConstraint columnNames="ID, DICE, INDEX" constraintName="IDX_MONSTER_DEFENSE" tableName="MONSTER_DEFENSE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-64">
+        <addUniqueConstraint columnNames="MONSTER, EXPANSION, ACT" constraintName="IDX_MONSTER_GROUP_ACT" tableName="MONSTER_GROUP_ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-65">
+        <addUniqueConstraint columnNames="MONSTER, EXPANSION, TRAIT" constraintName="IDX_MONSTER_GROUP_TRAIT" tableName="MONSTER_GROUP_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-66">
+        <addUniqueConstraint columnNames="NAME, EXPANSION, ACT, MONSTER_TYPE" constraintName="IDX_MONSTER_STAT" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-67">
+        <addUniqueConstraint columnNames="ID, SURGE, INDEX" constraintName="IDX_MONSTER_SURGE" tableName="MONSTER_SURGE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-68">
+        <addUniqueConstraint columnNames="SEARCH, EXPANSION, DICE, INDEX" constraintName="IDX_SEARCH_DICE" tableName="SEARCH_DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-69">
+        <addUniqueConstraint columnNames="SEARCH, EXPANSION, TRAIT" constraintName="IDX_SEARCH_TRAIT" tableName="SEARCH_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-70">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ABILITYNAME_COL" tableName="ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-71">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ACTNAME_COL" tableName="ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-72">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ARCHETYPENAME_COL" tableName="ARCHETYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-73">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ATTACK_TYPENAME_COL" tableName="ATTACK_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-74">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ATTRIBUTENAME_COL" tableName="ATTRIBUTE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-75">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_CLASSNAME_COL" tableName="CLASS"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-76">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_CONDITIONNAME_COL" tableName="CONDITION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-77">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_DICENAME_COL" tableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-78">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_DICE_TYPENAME_COL" tableName="DICE_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-79">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_EQUIPMENTNAME_COL" tableName="EQUIPMENT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-80">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_EXPANSIONNAME_COL" tableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-81">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ITEMNAME_COL" tableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-82">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ITEM_TYPENAME_COL" tableName="ITEM_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-83">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_MONSTER_SIZENAME_COL" tableName="MONSTER_SIZE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-84">
+        <addUniqueConstraint columnNames="EXPANSION" constraintName="UC_MONSTER_STATEXPANSION_COL" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-85">
+        <addUniqueConstraint columnNames="ID" constraintName="UC_MONSTER_STATID_COL" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-86">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_MONSTER_STATNAME_COL" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-87">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_MONSTER_TRAITNAME_COL" tableName="MONSTER_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-88">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_MONSTER_TYPENAME_COL" tableName="MONSTER_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-89">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_SKILLNAME_COL" tableName="SKILL"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-90">
+        <addUniqueConstraint columnNames="ID" constraintName="UC_SURGEID_COL" tableName="SURGE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-91">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_TRAITNAME_COL" tableName="TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-92">
+        <addForeignKeyConstraint baseColumnNames="ITEM" baseTableName="ITEM_TRAIT" constraintName="FK_1mj7lcgw8airm3ifi8jk0o90g" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-93">
+        <addForeignKeyConstraint baseColumnNames="ID" baseTableName="MONSTER_ATTACK" constraintName="FK_1v2xcgbrp6hlqjbto2424l896" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID" referencedTableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-94">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,MONSTER" baseTableName="MONSTER_COUNT" constraintName="FK_3b8185bpt7rspo2q3otbb8w2u" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-95">
+        <addForeignKeyConstraint baseColumnNames="DEFENSE" baseTableName="HERO" constraintName="FK_40pkn92t78fdgqsiuwv0onm9j" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-96">
+        <addForeignKeyConstraint baseColumnNames="ARCHETYPE" baseTableName="HERO" constraintName="FK_43a6ysahg8b6koa6c3dmh5h9t" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ARCHETYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-97">
+        <addForeignKeyConstraint baseColumnNames="ABILITY" baseTableName="SURGE" constraintName="FK_4pl3pn79s9jnaotxw3fnucb7v" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-98">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="SEARCH" constraintName="FK_522khjndss53bocpd8vchfoaq" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-99">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="CLASS" constraintName="FK_5vkvxl85vusybhvvb389t44w0" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-100">
+        <addForeignKeyConstraint baseColumnNames="ID" baseTableName="MONSTER_ABILITY" constraintName="FK_5wm0g5i80qcdwle309c0al45k" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID" referencedTableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-101">
+        <addForeignKeyConstraint baseColumnNames="ITEM" baseTableName="ITEM_DICE" constraintName="FK_6thttk8pcfhvgwp1tsr6m5a1x" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-102">
+        <addForeignKeyConstraint baseColumnNames="DICE" baseTableName="DICE_SIDE" constraintName="FK_6xojadswxgm7w9gyco0m6tnsb" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-103">
+        <addForeignKeyConstraint baseColumnNames="ATTACK_TYPE" baseTableName="SEARCH" constraintName="FK_78h8xaok8ipatjmemdmegd3o8" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ATTACK_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-104">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,MONSTER" baseTableName="MONSTER_GROUP_ACT" constraintName="FK_8798u8tlwys5cttw0h468h5ad" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-105">
+        <addForeignKeyConstraint baseColumnNames="CLASS" baseTableName="SKILL" constraintName="FK_908n0hbgxqhvggnkemnxsc7er" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="CLASS"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-106">
+        <addForeignKeyConstraint baseColumnNames="ATTACK_TYPE" baseTableName="ITEM" constraintName="FK_9l1hjq97qcxrvj7usrmtionh5" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ATTACK_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-107">
+        <addForeignKeyConstraint baseColumnNames="DICE" baseTableName="MONSTER_ATTACK" constraintName="FK_a851p41t1e8y3xqbjw84dhqok" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-108">
+        <addForeignKeyConstraint baseColumnNames="ID" baseTableName="MONSTER_DEFENSE" constraintName="FK_aivqo6a1xln0ddakno6u95it7" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID" referencedTableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-109">
+        <addForeignKeyConstraint baseColumnNames="ATTACK_TYPE" baseTableName="MONSTER_GROUP" constraintName="FK_dlmvwskuprk8ryfxeb5u6i88x" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ATTACK_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-110">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="HERO" constraintName="FK_dtba203eumq53vsgwq7yqj5lo" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-111">
+        <addForeignKeyConstraint baseColumnNames="CLASS" baseTableName="ITEM" constraintName="FK_f1lhmkj3dx6v8crn855di9mhr" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="CLASS"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-112">
+        <addForeignKeyConstraint baseColumnNames="NAME,EXPANSION" baseTableName="MONSTER_STAT" constraintName="FK_g1rke0xx9vbfv8jccdbub8c6" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-113">
+        <addForeignKeyConstraint baseColumnNames="ACT" baseTableName="MONSTER_STAT" constraintName="FK_h67uita9qyfnfqs05wx41fqcx" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-114">
+        <addForeignKeyConstraint baseColumnNames="EQUIPMENT" baseTableName="ITEM" constraintName="FK_hpfxboiiucc5ok1851batf56" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EQUIPMENT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-115">
+        <addForeignKeyConstraint baseColumnNames="MONSTER_TYPE" baseTableName="MONSTER_STAT" constraintName="FK_huwjxocq5b2am2d240s650w1b" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="MONSTER_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-116">
+        <addForeignKeyConstraint baseColumnNames="MONSTER_SIZE" baseTableName="MONSTER_GROUP" constraintName="FK_hvh9wyu1txutkrj75j6wyy7mh" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="MONSTER_SIZE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-117">
+        <addForeignKeyConstraint baseColumnNames="SURGE" baseTableName="MONSTER_SURGE" constraintName="FK_iwsl4pedp6hq73focpuofe45" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID" referencedTableName="SURGE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-118">
+        <addForeignKeyConstraint baseColumnNames="DICE_TYPE" baseTableName="DICE" constraintName="FK_jyslj46n9gea7tca5wf7q30iu" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="DICE_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-119">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,SEARCH" baseTableName="SEARCH_DICE" constraintName="FK_kc36x4afle02eng55ox835ews" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="SEARCH"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-120">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,MONSTER" baseTableName="MONSTER_GROUP_TRAIT" constraintName="FK_ki97nanuv7yrsvwy23ysru192" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-121">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="CONDITION" constraintName="FK_mpatk30igo76pqieq6n6u2vnb" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-122">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,SEARCH" baseTableName="SEARCH_TRAIT" constraintName="FK_mrrx155lsaf69vd1oqe0i8gkd" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="SEARCH"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-123">
+        <addForeignKeyConstraint baseColumnNames="ID" baseTableName="MONSTER_SURGE" constraintName="FK_mw5u7v0sset2331343k896qd8" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID" referencedTableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-124">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="MONSTER_STAT" constraintName="FK_nmgs9b9eqert6ivkmh0bmu59x" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-125">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="MONSTER_GROUP" constraintName="FK_no5gslxifsoqra36sf9o0idrn" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-126">
+        <addForeignKeyConstraint baseColumnNames="ITEM_TYPE" baseTableName="ITEM" constraintName="FK_qfuojkfisnylttvdesw6363h4" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ITEM_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-127">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="ITEM" constraintName="FK_qgsof4pmhau4q31k0k5tlse15" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890621801-128">
+        <addForeignKeyConstraint baseColumnNames="ARCHETYPE" baseTableName="CLASS" constraintName="FK_si1hnq7gnvx4g6pgxxjo45ere" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ARCHETYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-1">
+        <createTable tableName="ABILITY">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RULE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-2">
+        <createTable tableName="ACT">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-3">
+        <createTable tableName="ARCHETYPE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ICON" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-4">
+        <createTable tableName="ATTACK_TYPE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ICON" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-5">
+        <createTable tableName="ATTRIBUTE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ICON" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-6">
+        <createTable tableName="CLASS">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ARCHETYPE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-7">
+        <createTable tableName="CONDITION">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IMAGE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RULE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-8">
+        <createTable tableName="DICE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICE_TYPE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-9">
+        <createTable tableName="DICE_SIDE">
+            <column name="DICE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="HEART" type="INTEGER"/>
+            <column name="ICON" type="VARCHAR(30)"/>
+            <column name="MISS" type="BOOLEAN"/>
+            <column name="RANGE" type="INTEGER"/>
+            <column name="SHIELD" type="INTEGER"/>
+            <column name="SIDE" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SURGE" type="INTEGER"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-10">
+        <createTable tableName="DICE_TYPE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-11">
+        <createTable tableName="EQUIPMENT">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ICON" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-12">
+        <createTable tableName="EXPANSION">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ICON" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-13">
+        <createTable tableName="HERO">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ABILITY_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ARCHETYPE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AWARENESS" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DEFENSE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FEAT_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="HEALTH" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IMAGE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="KNOWLEDGE" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MIGHT" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SPEED" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="STAMINA" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="WILLPOWER" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-14">
+        <createTable tableName="ITEM">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ATTACK_TYPE" type="VARCHAR(30)"/>
+            <column name="CLASS" type="VARCHAR(30)"/>
+            <column name="COST" type="INTEGER"/>
+            <column name="COUNT" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EQUIPMENT" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IMAGE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ITEM_TYPE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RULE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-15">
+        <createTable tableName="ITEM_DICE">
+            <column name="ITEM" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="INDEX" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-16">
+        <createTable tableName="ITEM_TRAIT">
+            <column name="ITEM" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRAIT" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-17">
+        <createTable tableName="ITEM_TYPE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-18">
+        <createTable tableName="MONSTER_ABILITY">
+            <column name="ID" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ABILITY" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ACTION" type="BOOLEAN"/>
+            <column name="VALUE" type="INTEGER"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-19">
+        <createTable tableName="MONSTER_ATTACK">
+            <column name="ID" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="INDEX" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-20">
+        <createTable tableName="MONSTER_COUNT">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MONSTER" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="HERO" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MASTER" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MINION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-21">
+        <createTable tableName="MONSTER_DEFENSE">
+            <column name="ID" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="INDEX" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-22">
+        <createTable tableName="MONSTER_GROUP">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ATTACK_TYPE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MASTER" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MINION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MONSTER_SIZE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-23">
+        <createTable tableName="MONSTER_GROUP_ACT">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MONSTER" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ACT" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IMAGE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-24">
+        <createTable tableName="MONSTER_GROUP_TRAIT">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MONSTER" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRAIT" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-25">
+        <createTable tableName="MONSTER_SIZE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-26">
+        <createTable tableName="MONSTER_STAT">
+            <column autoIncrement="true" name="ID" type="INTEGER">
+                <constraints primaryKey="true" primaryKeyName="MONSTER_STATPK"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ACT" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="HEALTH" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MONSTER_TYPE" type="VARCHAR(30)"/>
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SPEED" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-27">
+        <createTable tableName="MONSTER_SURGE">
+            <column name="ID" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="INDEX" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SURGE" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-28">
+        <createTable tableName="MONSTER_TRAIT">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ICON" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-29">
+        <createTable tableName="MONSTER_TYPE">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-30">
+        <createTable tableName="SEARCH">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ABILITY_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ATTACK_TYPE" type="VARCHAR(30)"/>
+            <column name="COUNT" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gold" type="INTEGER"/>
+            <column name="IMAGE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-31">
+        <createTable tableName="SEARCH_DICE">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SEARCH" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="INDEX" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-32">
+        <createTable tableName="SEARCH_TRAIT">
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SEARCH" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRAIT" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-33">
+        <createTable tableName="SKILL">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CLASS" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COST" type="VARCHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXPERIENCE" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RULE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-34">
+        <createTable tableName="SURGE">
+            <column autoIncrement="true" name="ID" type="INTEGER">
+                <constraints primaryKey="true" primaryKeyName="SURGEPK"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ABILITY" type="VARCHAR(30)"/>
+            <column name="ABILITY_VALUE" type="INTEGER"/>
+            <column name="DAMAGE" type="INTEGER"/>
+            <column name="RANGE" type="INTEGER"/>
+            <column name="RULE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SURGE" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-35">
+        <createTable tableName="TRAIT">
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MESSAGE_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-36">
+        <addPrimaryKey columnNames="NAME" constraintName="ABILITYPK" tableName="ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-37">
+        <addPrimaryKey columnNames="NAME" constraintName="ACTPK" tableName="ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-38">
+        <addPrimaryKey columnNames="NAME" constraintName="ARCHETYPEPK" tableName="ARCHETYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-39">
+        <addPrimaryKey columnNames="NAME" constraintName="ATTACK_TYPEPK" tableName="ATTACK_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-40">
+        <addPrimaryKey columnNames="NAME" constraintName="ATTRIBUTEPK" tableName="ATTRIBUTE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-41">
+        <addPrimaryKey columnNames="NAME" constraintName="CLASSPK" tableName="CLASS"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-42">
+        <addPrimaryKey columnNames="NAME" constraintName="CONDITIONPK" tableName="CONDITION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-43">
+        <addPrimaryKey columnNames="NAME" constraintName="DICEPK" tableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-44">
+        <addPrimaryKey columnNames="NAME" constraintName="DICE_TYPEPK" tableName="DICE_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-45">
+        <addPrimaryKey columnNames="NAME" constraintName="EQUIPMENTPK" tableName="EQUIPMENT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-46">
+        <addPrimaryKey columnNames="NAME" constraintName="EXPANSIONPK" tableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-47">
+        <addPrimaryKey columnNames="EXPANSION, NAME" constraintName="HEROPK" tableName="HERO"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-48">
+        <addPrimaryKey columnNames="NAME" constraintName="ITEMPK" tableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-49">
+        <addPrimaryKey columnNames="NAME" constraintName="ITEM_TYPEPK" tableName="ITEM_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-50">
+        <addPrimaryKey columnNames="EXPANSION, NAME" constraintName="MONSTER_GROUPPK" tableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-51">
+        <addPrimaryKey columnNames="NAME" constraintName="MONSTER_SIZEPK" tableName="MONSTER_SIZE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-52">
+        <addPrimaryKey columnNames="NAME" constraintName="MONSTER_TRAITPK" tableName="MONSTER_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-53">
+        <addPrimaryKey columnNames="NAME" constraintName="MONSTER_TYPEPK" tableName="MONSTER_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-54">
+        <addPrimaryKey columnNames="EXPANSION, NAME" constraintName="SEARCHPK" tableName="SEARCH"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-55">
+        <addPrimaryKey columnNames="NAME" constraintName="SKILLPK" tableName="SKILL"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-56">
+        <addPrimaryKey columnNames="NAME" constraintName="TRAITPK" tableName="TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-57">
+        <addUniqueConstraint columnNames="DICE, SIDE" constraintName="IDX_DICE_SIDE" tableName="DICE_SIDE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-58">
+        <addUniqueConstraint columnNames="ITEM, DICE, INDEX" constraintName="IDX_ITEM_DICE" tableName="ITEM_DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-59">
+        <addUniqueConstraint columnNames="ITEM, TRAIT" constraintName="IDX_ITEM_TRAIT" tableName="ITEM_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-60">
+        <addUniqueConstraint columnNames="ID, ABILITY" constraintName="IDX_MONSTER_ABILITY" tableName="MONSTER_ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-61">
+        <addUniqueConstraint columnNames="ID, DICE, INDEX" constraintName="IDX_MONSTER_ATTACK" tableName="MONSTER_ATTACK"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-62">
+        <addUniqueConstraint columnNames="MONSTER, EXPANSION, HERO" constraintName="IDX_MONSTER_COUNT" tableName="MONSTER_COUNT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-63">
+        <addUniqueConstraint columnNames="ID, DICE, INDEX" constraintName="IDX_MONSTER_DEFENSE" tableName="MONSTER_DEFENSE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-64">
+        <addUniqueConstraint columnNames="MONSTER, EXPANSION, ACT" constraintName="IDX_MONSTER_GROUP_ACT" tableName="MONSTER_GROUP_ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-65">
+        <addUniqueConstraint columnNames="MONSTER, EXPANSION, TRAIT" constraintName="IDX_MONSTER_GROUP_TRAIT" tableName="MONSTER_GROUP_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-66">
+        <addUniqueConstraint columnNames="NAME, EXPANSION, ACT, MONSTER_TYPE" constraintName="IDX_MONSTER_STAT" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-67">
+        <addUniqueConstraint columnNames="ID, SURGE, INDEX" constraintName="IDX_MONSTER_SURGE" tableName="MONSTER_SURGE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-68">
+        <addUniqueConstraint columnNames="SEARCH, EXPANSION, DICE, INDEX" constraintName="IDX_SEARCH_DICE" tableName="SEARCH_DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-69">
+        <addUniqueConstraint columnNames="SEARCH, EXPANSION, TRAIT" constraintName="IDX_SEARCH_TRAIT" tableName="SEARCH_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-70">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ABILITYNAME_COL" tableName="ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-71">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ACTNAME_COL" tableName="ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-72">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ARCHETYPENAME_COL" tableName="ARCHETYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-73">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ATTACK_TYPENAME_COL" tableName="ATTACK_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-74">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ATTRIBUTENAME_COL" tableName="ATTRIBUTE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-75">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_CLASSNAME_COL" tableName="CLASS"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-76">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_CONDITIONNAME_COL" tableName="CONDITION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-77">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_DICENAME_COL" tableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-78">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_DICE_TYPENAME_COL" tableName="DICE_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-79">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_EQUIPMENTNAME_COL" tableName="EQUIPMENT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-80">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_EXPANSIONNAME_COL" tableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-81">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ITEMNAME_COL" tableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-82">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_ITEM_TYPENAME_COL" tableName="ITEM_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-83">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_MONSTER_SIZENAME_COL" tableName="MONSTER_SIZE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-84">
+        <addUniqueConstraint columnNames="EXPANSION" constraintName="UC_MONSTER_STATEXPANSION_COL" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-85">
+        <addUniqueConstraint columnNames="ID" constraintName="UC_MONSTER_STATID_COL" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-86">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_MONSTER_STATNAME_COL" tableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-87">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_MONSTER_TRAITNAME_COL" tableName="MONSTER_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-88">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_MONSTER_TYPENAME_COL" tableName="MONSTER_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-89">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_SKILLNAME_COL" tableName="SKILL"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-90">
+        <addUniqueConstraint columnNames="ID" constraintName="UC_SURGEID_COL" tableName="SURGE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-91">
+        <addUniqueConstraint columnNames="NAME" constraintName="UC_TRAITNAME_COL" tableName="TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-92">
+        <addForeignKeyConstraint baseColumnNames="ITEM" baseTableName="ITEM_TRAIT" constraintName="FK_1mj7lcgw8airm3ifi8jk0o90g" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-93">
+        <addForeignKeyConstraint baseColumnNames="ID" baseTableName="MONSTER_ATTACK" constraintName="FK_1v2xcgbrp6hlqjbto2424l896" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID" referencedTableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-94">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,MONSTER" baseTableName="MONSTER_COUNT" constraintName="FK_3b8185bpt7rspo2q3otbb8w2u" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-95">
+        <addForeignKeyConstraint baseColumnNames="DEFENSE" baseTableName="HERO" constraintName="FK_40pkn92t78fdgqsiuwv0onm9j" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-96">
+        <addForeignKeyConstraint baseColumnNames="ARCHETYPE" baseTableName="HERO" constraintName="FK_43a6ysahg8b6koa6c3dmh5h9t" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ARCHETYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-97">
+        <addForeignKeyConstraint baseColumnNames="ABILITY" baseTableName="SURGE" constraintName="FK_4pl3pn79s9jnaotxw3fnucb7v" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-98">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="SEARCH" constraintName="FK_522khjndss53bocpd8vchfoaq" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-99">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="CLASS" constraintName="FK_5vkvxl85vusybhvvb389t44w0" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-100">
+        <addForeignKeyConstraint baseColumnNames="ID" baseTableName="MONSTER_ABILITY" constraintName="FK_5wm0g5i80qcdwle309c0al45k" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID" referencedTableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-101">
+        <addForeignKeyConstraint baseColumnNames="ITEM" baseTableName="ITEM_DICE" constraintName="FK_6thttk8pcfhvgwp1tsr6m5a1x" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-102">
+        <addForeignKeyConstraint baseColumnNames="DICE" baseTableName="DICE_SIDE" constraintName="FK_6xojadswxgm7w9gyco0m6tnsb" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-103">
+        <addForeignKeyConstraint baseColumnNames="ATTACK_TYPE" baseTableName="SEARCH" constraintName="FK_78h8xaok8ipatjmemdmegd3o8" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ATTACK_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-104">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,MONSTER" baseTableName="MONSTER_GROUP_ACT" constraintName="FK_8798u8tlwys5cttw0h468h5ad" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-105">
+        <addForeignKeyConstraint baseColumnNames="CLASS" baseTableName="SKILL" constraintName="FK_908n0hbgxqhvggnkemnxsc7er" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="CLASS"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-106">
+        <addForeignKeyConstraint baseColumnNames="ATTACK_TYPE" baseTableName="ITEM" constraintName="FK_9l1hjq97qcxrvj7usrmtionh5" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ATTACK_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-107">
+        <addForeignKeyConstraint baseColumnNames="DICE" baseTableName="MONSTER_ATTACK" constraintName="FK_a851p41t1e8y3xqbjw84dhqok" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-108">
+        <addForeignKeyConstraint baseColumnNames="ID" baseTableName="MONSTER_DEFENSE" constraintName="FK_aivqo6a1xln0ddakno6u95it7" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID" referencedTableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-109">
+        <addForeignKeyConstraint baseColumnNames="ATTACK_TYPE" baseTableName="MONSTER_GROUP" constraintName="FK_dlmvwskuprk8ryfxeb5u6i88x" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ATTACK_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-110">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="HERO" constraintName="FK_dtba203eumq53vsgwq7yqj5lo" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-111">
+        <addForeignKeyConstraint baseColumnNames="CLASS" baseTableName="ITEM" constraintName="FK_f1lhmkj3dx6v8crn855di9mhr" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="CLASS"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-112">
+        <addForeignKeyConstraint baseColumnNames="NAME,EXPANSION" baseTableName="MONSTER_STAT" constraintName="FK_g1rke0xx9vbfv8jccdbub8c6" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-113">
+        <addForeignKeyConstraint baseColumnNames="ACT" baseTableName="MONSTER_STAT" constraintName="FK_h67uita9qyfnfqs05wx41fqcx" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ACT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-114">
+        <addForeignKeyConstraint baseColumnNames="EQUIPMENT" baseTableName="ITEM" constraintName="FK_hpfxboiiucc5ok1851batf56" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EQUIPMENT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-115">
+        <addForeignKeyConstraint baseColumnNames="MONSTER_TYPE" baseTableName="MONSTER_STAT" constraintName="FK_huwjxocq5b2am2d240s650w1b" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="MONSTER_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-116">
+        <addForeignKeyConstraint baseColumnNames="MONSTER_SIZE" baseTableName="MONSTER_GROUP" constraintName="FK_hvh9wyu1txutkrj75j6wyy7mh" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="MONSTER_SIZE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-117">
+        <addForeignKeyConstraint baseColumnNames="SURGE" baseTableName="MONSTER_SURGE" constraintName="FK_iwsl4pedp6hq73focpuofe45" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID" referencedTableName="SURGE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-118">
+        <addForeignKeyConstraint baseColumnNames="DICE_TYPE" baseTableName="DICE" constraintName="FK_jyslj46n9gea7tca5wf7q30iu" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="DICE_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-119">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,SEARCH" baseTableName="SEARCH_DICE" constraintName="FK_kc36x4afle02eng55ox835ews" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="SEARCH"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-120">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,MONSTER" baseTableName="MONSTER_GROUP_TRAIT" constraintName="FK_ki97nanuv7yrsvwy23ysru192" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="MONSTER_GROUP"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-121">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="CONDITION" constraintName="FK_mpatk30igo76pqieq6n6u2vnb" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-122">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION,SEARCH" baseTableName="SEARCH_TRAIT" constraintName="FK_mrrx155lsaf69vd1oqe0i8gkd" deferrable="false" initiallyDeferred="false" referencedColumnNames="EXPANSION,NAME" referencedTableName="SEARCH"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-123">
+        <addForeignKeyConstraint baseColumnNames="ID" baseTableName="MONSTER_SURGE" constraintName="FK_mw5u7v0sset2331343k896qd8" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID" referencedTableName="MONSTER_STAT"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-124">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="MONSTER_STAT" constraintName="FK_nmgs9b9eqert6ivkmh0bmu59x" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-125">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="MONSTER_GROUP" constraintName="FK_no5gslxifsoqra36sf9o0idrn" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-126">
+        <addForeignKeyConstraint baseColumnNames="ITEM_TYPE" baseTableName="ITEM" constraintName="FK_qfuojkfisnylttvdesw6363h4" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ITEM_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-127">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="ITEM" constraintName="FK_qgsof4pmhau4q31k0k5tlse15" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneurr (generated)" id="1493890702065-128">
+        <addForeignKeyConstraint baseColumnNames="ARCHETYPE" baseTableName="CLASS" constraintName="FK_si1hnq7gnvx4g6pgxxjo45ere" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="ARCHETYPE"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,10 @@
+NAME|MESSAGE_CODE|RULE_CODE|EXPANSION|IMAGE
+Diseased|condition.diseased|condition.diseased.rule|D2E|diseased.png
+Immobilized|condition.immobilized|condition.immobilized.rule|D2E|immobilized.png
+Poisonned|condition.poisonned|condition.poisonned.rule|D2E|poisonned.png
+Stunned|condition.stunned|condition.stunned.rule|D2E|stunned.png
+Burning|condition.burning|condition.burning.rule|LotW|burning.png
+Cursed|condition.cursed|condition.cursed.rule|LoR|cursed.png
+Weakened|condition.weakened|condition.weakened.rule|TT|weakened.png
+Bleeding|condition.bleeding|condition.bleeding.rule|SoN|bleeding.png
+Doomed|condition.doomed|condition.doomed.rule|MoR|doomed.png

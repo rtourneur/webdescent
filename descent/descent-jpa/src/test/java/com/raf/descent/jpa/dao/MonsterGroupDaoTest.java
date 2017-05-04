@@ -11,14 +11,14 @@ import javax.transaction.Transactional;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.card.MonsterGroup;
+import com.raf.descent.jpa.domain.card.MonsterGroupTrait;
 import com.raf.descent.jpa.domain.model.AttackType;
 import com.raf.descent.jpa.domain.model.Expansion;
 import com.raf.descent.jpa.domain.model.MonsterSize;
-import com.raf.descent.jpa.domain.model.MonsterTrait;
 import com.raf.descent.jpa.domain.model.NameExpansionPk;
-import com.raf.descent.util.Paged;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
  * 
@@ -51,7 +51,7 @@ public class MonsterGroupDaoTest extends AbstractDaoTest {
     nameExpansionPk.setExpansion("D2E");
     MonsterGroup example = this.monsterGroupDao.getById(nameExpansionPk);
     assertNotNull(example);
-    assertEquals(nameExpansionPk, example.getId());
+    assertEquals(nameExpansionPk, example.getIdentifier());
     assertEquals("Goblin Archer", example.getName());
     assertEquals("monstergroup.goblinarcher.d2e", example.getMessageCode());
     assertEquals("D2E", example.getExpansionName());
@@ -68,7 +68,7 @@ public class MonsterGroupDaoTest extends AbstractDaoTest {
     MonsterSize monsterSize = example.getMonsterSize();
     assertNotNull(monsterSize);
     assertEquals("Small", monsterSize.getName());
-    List<MonsterTrait> traits = example.getTraits();
+    List<MonsterGroupTrait> traits = example.getTraits();
     assertNotNull(traits);
     assertFalse(traits.isEmpty());
   }
@@ -88,19 +88,21 @@ public class MonsterGroupDaoTest extends AbstractDaoTest {
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
-    example.setIdent(null);
+    example.setIdentifier(null);
     example.setExpansion(this.expansionDao.getById("D2E"));
     list = this.monsterGroupDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(9, list.size());
     example.setExpansion(null);
+    example.setExpansionName(null);
     example.setAttackType(this.attackTypeDao.getById("Ranged"));
     list = this.monsterGroupDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(30, list.size());
     example.setAttackType(null);
+    example.setAttackTypeName(null);
     example.setMonsterSize(this.monsterSizeDao.getById("Small"));
     list = this.monsterGroupDao.findByExample(example);
     assertNotNull(list);

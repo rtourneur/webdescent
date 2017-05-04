@@ -9,7 +9,12 @@ import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import com.raf.descent.jpa.domain.AbstractNamedEntity;
+import com.raf.fwk.jpa.domain.AbstractNamedEntity;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 
 /**
  * The persistent class for the CLASS database table.
@@ -18,6 +23,9 @@ import com.raf.descent.jpa.domain.AbstractNamedEntity;
  */
 @Entity
 @Table(name = "CLASS", schema = "DESCENT")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Clazz extends AbstractNamedEntity {
 
   /** Serial UID. */
@@ -42,60 +50,6 @@ public class Clazz extends AbstractNamedEntity {
   private Expansion expansion;
 
   /**
-   * Constructor.
-   */
-  public Clazz() {
-    super();
-  }
-
-  /**
-   * Returns the archetype name.
-   * 
-   * @return the archetypeName
-   */
-  public String getArchetypeName() {
-    return this.archetypeName;
-  }
-
-  /**
-   * Defines the archetype name.
-   * 
-   * @param archetypeName
-   *          the archetypeName to set
-   */
-  public void setArchetypeName(final String archetypeName) {
-    this.archetypeName = archetypeName;
-  }
-
-  /**
-   * Returns the expansion name.
-   * 
-   * @return the expansionName
-   */
-  public String getExpansionName() {
-    return this.expansionName;
-  }
-
-  /**
-   * Defines the expansion name.
-   * 
-   * @param expansionName
-   *          the expansionName to set
-   */
-  public void setExpansionName(final String expansionName) {
-    this.expansionName = expansionName;
-  }
-
-  /**
-   * Returns the archetype.
-   * 
-   * @return the archetype
-   */
-  public Archetype getArchetype() {
-    return this.archetype;
-  }
-
-  /**
    * Defines the archetype.
    * 
    * @param archetype
@@ -103,15 +57,9 @@ public class Clazz extends AbstractNamedEntity {
    */
   public void setArchetype(final Archetype archetype) {
     this.archetype = archetype;
-  }
-
-  /**
-   * Returns the expansion.
-   * 
-   * @return the expansion
-   */
-  public Expansion getExpansion() {
-    return this.expansion;
+    if (this.archetype != null) {
+      this.archetypeName = this.archetype.getName();
+    }
   }
 
   /**
@@ -122,6 +70,9 @@ public class Clazz extends AbstractNamedEntity {
    */
   public void setExpansion(final Expansion expansion) {
     this.expansion = expansion;
+    if (this.expansion != null) {
+      this.expansionName = this.expansion.getName();
+    }
   }
 
   /**
@@ -132,7 +83,7 @@ public class Clazz extends AbstractNamedEntity {
    * @see AbstractNamedEntity#appendNamed(ToStringBuilder)
    */
   @Override
-  protected void appendNamed(final ToStringBuilder builder) {
+  protected final void appendNamed(final ToStringBuilder builder) {
     builder.append("archetypeName", this.archetypeName).append("expansionName", this.expansionName);
     if (this.archetype != null && Archetype.class.equals(this.archetype.getClass())) {
       builder.append("archetype", this.archetype);

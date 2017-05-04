@@ -1,0 +1,36 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-descent-skill-1">
+    <createTable tableName="SKILL" schemaName="DESCENT" remarks="Table for skills">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the skill">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="SKILL_PK" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Message code of the skill">
+        <constraints nullable="false" />
+      </column>
+      <column name="CLASS" type="VARCHAR(30)" remarks="Class of the skill">
+        <constraints nullable="false" foreignKeyName="FK_SKILL_CLASS" references="DESCENT.CLASS(NAME)" />
+      </column>
+      <column name="EXPERIENCE" type="INT" remarks="Experience cost of the skill">
+        <constraints nullable="false" />
+      </column>
+      <column name="RULE_CODE" type="VARCHAR(40)" remarks="Rule code of the skill">
+        <constraints nullable="false" />
+      </column>
+      <column name="COST" type="VARCHAR(1)" remarks="Cost in stamina of the skill">
+        <constraints nullable="false" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-skill-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/skill.csv" separator="|" tableName="SKILL">
+      <column name="EXPERIENCE" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+
+</databaseChangeLog>

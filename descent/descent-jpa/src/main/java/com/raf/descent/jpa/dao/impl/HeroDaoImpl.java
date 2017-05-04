@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.raf.descent.jpa.dao.HeroDao;
 import com.raf.descent.jpa.domain.card.Hero;
 import com.raf.descent.jpa.domain.model.NameExpansionPk;
+import com.raf.fwk.jpa.dao.AbstractDao;
 
 /**
  * Implementation DAO for {@link Hero}.
@@ -45,7 +46,7 @@ public final class HeroDaoImpl extends AbstractDao<Hero, NameExpansionPk> implem
    */
   @Override
   protected Predicate[] getPredicates(final Root<Hero> root, final Hero example) {
-    final List<Predicate> predicatesList = new ArrayList<Predicate>();
+    final List<Predicate> predicatesList = new ArrayList<>();
     if (example.getName() != null) {
       predicatesList.add(getEquals(root, IDENT, "name", example.getName()));
     }
@@ -76,7 +77,7 @@ public final class HeroDaoImpl extends AbstractDao<Hero, NameExpansionPk> implem
    */
   @Override
   protected List<Order> getOrder(final CriteriaBuilder builder, final Root<Hero> root) {
-    final List<Order> orders = new ArrayList<Order>();
+    final List<Order> orders = new ArrayList<>();
     orders.add(builder.asc(root.get(IDENT).get("name")));
     orders.add(builder.asc(root.get(IDENT).get("expansion")));
     return orders;

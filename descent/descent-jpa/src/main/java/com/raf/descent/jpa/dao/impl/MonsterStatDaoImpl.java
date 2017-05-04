@@ -12,7 +12,8 @@ import org.springframework.stereotype.Repository;
 
 import com.raf.descent.jpa.dao.MonsterStatDao;
 import com.raf.descent.jpa.domain.card.MonsterStat;
-import com.raf.descent.jpa.domain.card.MonsterStatPk;
+import com.raf.fwk.jpa.dao.AbstractDao;
+import com.raf.fwk.jpa.dao.AbstractIdDao;
 
 /**
  * Implementation DAO for {@link MonsterStat}.
@@ -20,7 +21,7 @@ import com.raf.descent.jpa.domain.card.MonsterStatPk;
  * @author RAF
  */
 @Repository
-public final class MonsterStatDaoImpl extends AbstractDao<MonsterStat, MonsterStatPk> implements MonsterStatDao {
+public final class MonsterStatDaoImpl extends AbstractIdDao<MonsterStat> implements MonsterStatDao {
 
   /**
    * Constructor.
@@ -45,19 +46,49 @@ public final class MonsterStatDaoImpl extends AbstractDao<MonsterStat, MonsterSt
    */
   @Override
   public MonsterStat getMonsterStat(final String monster, final String expansion, final String act, final String type) {
-    final MonsterStatPk ident = new MonsterStatPk();
-    ident.setName(monster);
-    ident.setExpansionName(expansion);
-    ident.setActName(act);
-    ident.setMonsterType(type);
-    return getById(ident);
+    final MonsterStat example = new MonsterStat();
+    example.setName(monster);
+    example.setExpansionName(expansion);
+    example.setActName(act);
+    example.setMonsterTypeName(type);
+    return getByExample(example);
+  }
+
+  /**
+   * Set the predicate for the getByExample request.
+   * <ul>
+   * <li>monster name</li>
+   * <li>expansion</li>
+   * <li>act</li>
+   * <li>type</li>
+   * </ul>
+   *
+   * @param root
+   *          the root type
+   * @param example
+   *          the example
+   * @return an array of predicates
+   * @see AbstractIdDao#getUniquePredicates(Root, MonsterStat)
+   */
+  @Override
+  protected Predicate[] getUniquePredicates(final Root<MonsterStat> root, final MonsterStat example) {
+    final List<Predicate> predicatesList = new ArrayList<>();
+    predicatesList.add(getEquals(root, NAME, example.getName()));
+    predicatesList.add(getEquals(root, "expansionName", example.getExpansionName()));
+    predicatesList.add(getEquals(root, "actName", example.getActName()));
+    predicatesList.add(getEquals(root, "monsterTypeName", example.getMonsterTypeName()));
+    return predicatesList.toArray(new Predicate[predicatesList.size()]);
+
   }
 
   /**
    * Set the predicate for the findByExample request.
    * <ul>
    * <li>ident</li>
-   * <li>monster group act</li>
+   * <li>monster name</li>
+   * <li>expansion</li>
+   * <li>act</li>
+   * <li>monsterType</li>
    * </ul>
    *
    * @param root
@@ -68,32 +99,26 @@ public final class MonsterStatDaoImpl extends AbstractDao<MonsterStat, MonsterSt
    */
   @Override
   protected Predicate[] getPredicates(final Root<MonsterStat> root, final MonsterStat example) {
-    final List<Predicate> predicatesList = new ArrayList<Predicate>();
+    final List<Predicate> predicatesList = new ArrayList<>();
     if (example.getIdent() != null) {
       predicatesList.add(getEquals(root, IDENT, example.getIdent()));
     }
-    addMonsterGroupActFilter(root, example, predicatesList);
+    if (example.getName() != null) {
+      predicatesList.add(getLike(root, NAME, example.getName()));
+    }
+    if (example.getExpansionName() != null) {
+      predicatesList.add(getEquals(root, "expansionName", example.getExpansionName()));
+    }
+    if (example.getExpansion() != null) {
+      predicatesList.add(getEquals(root, "expansion", example.getExpansion()));
+    }
+    if (example.getAct() != null) {
+      predicatesList.add(getEquals(root, "act", example.getAct()));
+    }
+    if (example.getMonsterType() != null) {
+      predicatesList.add(getEquals(root, "monsterType", example.getMonsterType()));
+    }
     return predicatesList.toArray(new Predicate[predicatesList.size()]);
-  }
-
-  /**
-   * Add monster group filter.
-   * 
-   * @param root
-   *          the root type
-   * @param example
-   *          the example
-   * @param predicatesList
-   *          the predicate list
-   */
-  private void addMonsterGroupActFilter(final Root<MonsterStat> root, final MonsterStat example,
-      final List<Predicate> predicatesList) {
-    if (example.getIdent() != null && example.getIdent().getMonsterGroupActPk() != null) {
-      predicatesList.add(getEquals(root, IDENT, "monsterGroupActPk", example.getIdent().getMonsterGroupActPk()));
-    }
-    if (example.getMonsterGroupAct() != null) {
-      predicatesList.add(getEquals(root, "monsterGroupAct", example.getMonsterGroupAct()));
-    }
   }
 
   /**
@@ -108,9 +133,8 @@ public final class MonsterStatDaoImpl extends AbstractDao<MonsterStat, MonsterSt
    */
   @Override
   protected List<Order> getOrder(final CriteriaBuilder builder, final Root<MonsterStat> root) {
-    final List<Order> orders = new ArrayList<Order>();
-    orders.add(builder.asc(root.get(IDENT).get("monsterGroupActPk")));
-    orders.add(builder.asc(root.get(IDENT).get("monsterType")));
+    final List<Order> orders = new ArrayList<>();
+    orders.add(builder.asc(root.get(IDENT)));
     return orders;
   }
 

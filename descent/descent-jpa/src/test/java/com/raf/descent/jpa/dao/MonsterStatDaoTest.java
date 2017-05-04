@@ -11,17 +11,15 @@ import javax.transaction.Transactional;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.card.MonsterAbility;
-import com.raf.descent.jpa.domain.card.MonsterAttack;
-import com.raf.descent.jpa.domain.card.MonsterDefense;
-import com.raf.descent.jpa.domain.card.MonsterGroupAct;
-import com.raf.descent.jpa.domain.card.MonsterGroupActPk;
 import com.raf.descent.jpa.domain.card.MonsterStat;
-import com.raf.descent.jpa.domain.card.MonsterStatPk;
 import com.raf.descent.jpa.domain.card.MonsterSurge;
+import com.raf.descent.jpa.domain.model.Act;
+import com.raf.descent.jpa.domain.model.Expansion;
 import com.raf.descent.jpa.domain.model.MonsterType;
-import com.raf.descent.util.Paged;
+import com.raf.descent.jpa.domain.model.StatDiceName;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
  * 
@@ -33,52 +31,76 @@ public class MonsterStatDaoTest extends AbstractDaoTest {
 
   @Resource
   private MonsterStatDao monsterStatDao;
-
+  
   @Resource
-  private MonsterGroupActDao monsterGroupActDao;
+  private ExpansionDao expansionDao;
+  
+  @Resource
+  private ActDao actDao;
+  
+  @Resource
+  private MonsterTypeDao monsterTypeDao;
 
   /**
-   * Test method for {@link MonsterStatDao#getById(String)}.
+   * Test method for {@link MonsterStatDao#getById(Integer)}.
    */
   @Test
   @Transactional
   public final void testGetById() {
-    MonsterStatPk monsterStatPk = new MonsterStatPk();
-    monsterStatPk.setName("Cave Spider");
-    monsterStatPk.setExpansionName("D2E");
-    monsterStatPk.setActName("Act1");
-    monsterStatPk.setMonsterType("Master");
-    MonsterStat example = this.monsterStatDao.getById(monsterStatPk);
-    assertNotNull(example);
-    assertEquals(monsterStatPk, example.getId());
-    assertEquals("Cave Spider", example.getIdent().getName());
-    assertEquals("Cave Spider", example.getMonsterGroupName());
-    assertEquals("D2E", example.getIdent().getExpansionName());
-    assertEquals("D2E", example.getExpansionName());
-    assertEquals("Act1", example.getIdent().getActName());
-    assertEquals("Act1", example.getActName());
-    assertEquals("Master", example.getIdent().getMonsterType());
-    assertEquals("Master", example.getMonsterTypeName());
-    assertEquals(Integer.valueOf(4), example.getSpeed());
-    assertEquals(Integer.valueOf(5), example.getHealth());
-    MonsterGroupAct monsterGroupAct = example.getMonsterGroupAct();
-    assertNotNull(monsterGroupAct);
-    assertEquals("Cave Spider", monsterGroupAct.getMonsterGroupName());
-    assertEquals("D2E", monsterGroupAct.getExpansionName());
-    assertEquals("Act1", monsterGroupAct.getActName());
-    MonsterType monsterType = example.getMonsterType();
+    Integer ident = Integer.valueOf(9);
+    MonsterStat result = this.monsterStatDao.getById(ident);
+    assertNotNull(result);
+    assertEquals(ident, result.getIdentifier());
+    assertEquals("Cave Spider", result.getName());
+    assertEquals("D2E", result.getExpansionName());
+    assertEquals("Act1", result.getActName());
+    assertEquals("Master", result.getMonsterTypeName());
+    assertEquals(Integer.valueOf(4), result.getSpeed());
+    assertEquals(Integer.valueOf(5), result.getHealth());
+    MonsterType monsterType = result.getMonsterType();
     assertNotNull(monsterType);
     assertEquals("Master", monsterType.getName());
-    List<MonsterDefense> defenses = example.getDefenses();
+    List<StatDiceName> defenses = result.getDefenseDiceNames();
     assertNotNull(defenses);
     assertFalse(defenses.isEmpty());
-    List<MonsterAttack> attacks = example.getAttacks();
+    List<StatDiceName> attacks = result.getAttackDiceNames();
     assertNotNull(attacks);
     assertFalse(attacks.isEmpty());
-    List<MonsterAbility> abilities = example.getAbilities();
+    List<MonsterAbility> abilities = result.getAbilities();
     assertNotNull(abilities);
     assertFalse(abilities.isEmpty());
-    List<MonsterSurge> surges = example.getSurges();
+    List<MonsterSurge> surges = result.getSurges();
+    assertNotNull(surges);
+    assertFalse(surges.isEmpty());
+  }
+
+  /**
+   * Test method for {@link MonsterStatDao#getMonsterStat(String, String, String, String)}.
+   */
+  @Test
+  @Transactional
+  public final void testGetMonsterStat() {
+    MonsterStat result = this.monsterStatDao.getMonsterStat("Cave Spider", "D2E", "Act1", "Master");
+    assertNotNull(result);
+    assertEquals("Cave Spider", result.getName());
+    assertEquals("D2E", result.getExpansionName());
+    assertEquals("Act1", result.getActName());
+    assertEquals("Master", result.getMonsterTypeName());
+    assertEquals(Integer.valueOf(4), result.getSpeed());
+    assertEquals(Integer.valueOf(5), result.getHealth());
+    MonsterType monsterType = result.getMonsterType();
+    assertNotNull(monsterType);
+    assertEquals("Master", monsterType.getName());
+    List<StatDiceName> defenses = result.getDefenseDiceNames();
+    assertNotNull(defenses);
+    assertFalse(defenses.isEmpty());
+    List<StatDiceName> attacks = result.getAttackDiceNames();
+    assertNotNull(attacks);
+    assertFalse(attacks.isEmpty());
+    List<MonsterAbility> abilities = result.getAbilities();
+    assertNotNull(abilities);
+    assertFalse(abilities.isEmpty());
+    List<MonsterSurge> surges = result.getSurges();
     assertNotNull(surges);
     assertFalse(surges.isEmpty());
   }
@@ -92,26 +114,22 @@ public class MonsterStatDaoTest extends AbstractDaoTest {
     List<MonsterStat> list = this.monsterStatDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
-    MonsterStatPk monsterStatPk = new MonsterStatPk();
-    monsterStatPk.setName("Cave Spider");
-    monsterStatPk.setExpansionName("D2E");
-    monsterStatPk.setActName("Act1");
-    monsterStatPk.setMonsterType("Minion");
-    example.setIdent(monsterStatPk);
+    example.setName("Cave Spider");
+    example.setExpansionName("D2E");
+    list = this.monsterStatDao.findByExample(example);
+    assertNotNull(list);
+    assertFalse(list.isEmpty());
+    assertEquals(4, list.size());
+    Expansion expansion = this.expansionDao.getById("D2E");
+    example.setExpansion(expansion);
+    Act act = this.actDao.getById("Act1");
+    example.setAct(act);
+    MonsterType monsterType = this.monsterTypeDao.getById("Minion");
+    example.setMonsterType(monsterType);
     list = this.monsterStatDao.findByExample(example);
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
-    example.setIdent(null);
-    MonsterGroupActPk monsterGroupActPk = new MonsterGroupActPk();
-    monsterGroupActPk.setName("Goblin Archer");
-    monsterGroupActPk.setExpansionName("D2E");
-    monsterGroupActPk.setAct("Act2");
-    MonsterGroupAct monsterGroupAct = this.monsterGroupActDao.getById(monsterGroupActPk);
-    example.setMonsterGroupAct(monsterGroupAct);
-    list = this.monsterStatDao.findByExample(example);
-    assertNotNull(list);
-    assertEquals(2, list.size());
   }
 
   /**

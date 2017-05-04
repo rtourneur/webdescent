@@ -1,0 +1,25 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-descent-archetype-1">
+    <createTable tableName="ARCHETYPE" schemaName="DESCENT" remarks="Table for archetypes">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the archetype">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="ARCHETYPE_PK" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Message code of the archetype">
+        <constraints nullable="false" />
+      </column>
+      <column name="ICON" type="VARCHAR(30)" remarks="Icon of the archetype">
+        <constraints nullable="false" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0" >
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-archetype-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/archetype.csv" separator="|" tableName="ARCHETYPE" />
+  </changeSet>
+
+</databaseChangeLog>

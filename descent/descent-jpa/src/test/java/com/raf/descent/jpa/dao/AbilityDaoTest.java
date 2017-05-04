@@ -11,9 +11,9 @@ import javax.transaction.Transactional;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.model.Ability;
-import com.raf.descent.util.Paged;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
  * 
@@ -38,7 +38,7 @@ public class AbilityDaoTest extends AbstractDaoTest {
     String name = "Blast";
     Ability example = this.abilityDao.getById(name);
     assertNotNull(example);
-    assertEquals(name, example.getId());
+    assertEquals(name, example.getIdentifier());
     assertEquals(name, example.getName());
     assertEquals("ability.blast", example.getMessageCode());
     assertEquals("ability.blast.rule", example.getRuleCode());

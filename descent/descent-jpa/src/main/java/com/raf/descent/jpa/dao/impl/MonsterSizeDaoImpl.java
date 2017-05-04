@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import com.raf.descent.jpa.dao.MonsterSizeDao;
 import com.raf.descent.jpa.domain.model.MonsterSize;
+import com.raf.fwk.jpa.dao.AbstractNamedDao;
 
 /**
  * Implementation DAO for {@link MonsterSize}.
@@ -11,7 +12,7 @@ import com.raf.descent.jpa.domain.model.MonsterSize;
  * @author RAF
  */
 @Repository
-public final class MonsterSizeDaoImpl extends AbstractNamedDao<MonsterSize, String> implements MonsterSizeDao {
+public final class MonsterSizeDaoImpl extends AbstractNamedDao<MonsterSize> implements MonsterSizeDao {
 
   /**
    * Constructor.

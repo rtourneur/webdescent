@@ -13,12 +13,27 @@
     <appender-ref ref="Console" />
   </logger>
 
+  <logger name="com.raf.fwk" additivity="false">
+    <level value="INFO" />
+    <appender-ref ref="Console" />
+  </logger>
+
   <logger name="org.springframework" additivity="false">
     <level value="INFO" />
     <appender-ref ref="Console" />
   </logger>
 
   <logger name="org.hibernate" additivity="false">
+    <level value="INFO" />
+    <appender-ref ref="Console" />
+  </logger>
+
+  <logger name="liquibase" additivity="false">
+    <level value="INFO" />
+    <appender-ref ref="Console" />
+  </logger>
+
+  <logger name="LiquibaseSchemaResolver" additivity="false">
     <level value="INFO" />
     <appender-ref ref="Console" />
   </logger>

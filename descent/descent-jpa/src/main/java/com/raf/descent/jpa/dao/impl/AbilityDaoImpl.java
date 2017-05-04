@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.raf.descent.jpa.dao.AbilityDao;
 import com.raf.descent.jpa.domain.model.Ability;
+import com.raf.fwk.jpa.dao.AbstractDao;
 
 /**
  * Implementation DAO for {@link Ability}.
@@ -42,7 +43,7 @@ public final class AbilityDaoImpl extends AbstractDao<Ability, String> implement
    */
   @Override
   protected Predicate[] getPredicates(final Root<Ability> root, final Ability example) {
-    final List<Predicate> predicatesList = new ArrayList<Predicate>();
+    final List<Predicate> predicatesList = new ArrayList<>();
     if (example.getName() != null) {
       predicatesList.add(getEquals(root, "name", example.getName()));
     }
@@ -61,7 +62,7 @@ public final class AbilityDaoImpl extends AbstractDao<Ability, String> implement
    */
   @Override
   protected List<Order> getOrder(final CriteriaBuilder builder, final Root<Ability> root) {
-    final List<Order> orders = new ArrayList<Order>();
+    final List<Order> orders = new ArrayList<>();
     orders.add(builder.asc(root.get("name")));
     return orders;
   }

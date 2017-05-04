@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.raf.descent.jpa.dao.DiceDao;
 import com.raf.descent.jpa.domain.model.Dice;
+import com.raf.fwk.jpa.dao.AbstractDao;
 
 /**
  * Implementation DAO for {@link Dice}.
@@ -43,7 +44,7 @@ public final class DiceDaoImpl extends AbstractDao<Dice, String> implements Dice
    */
   @Override
   protected Predicate[] getPredicates(final Root<Dice> root, final Dice example) {
-    final List<Predicate> predicatesList = new ArrayList<Predicate>();
+    final List<Predicate> predicatesList = new ArrayList<>();
     if (example.getName() != null) {
       predicatesList.add(getEquals(root, "name", example.getName()));
     }
@@ -68,7 +69,7 @@ public final class DiceDaoImpl extends AbstractDao<Dice, String> implements Dice
    */
   @Override
   protected List<Order> getOrder(final CriteriaBuilder builder, final Root<Dice> root) {
-    final List<Order> orders = new ArrayList<Order>();
+    final List<Order> orders = new ArrayList<>();
     orders.add(builder.asc(root.get("name")));
     return orders;
   }

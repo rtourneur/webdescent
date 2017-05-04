@@ -1,0 +1,152 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-descent-monster_stat-1">
+    <createTable tableName="MONSTER_STAT" schemaName="DESCENT" remarks="Table for monster stats">
+      <column name="ID" type="INT" autoIncrement="true" remarks="Identifier of the monster stat">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="MONSTER_STAT_PK" />
+      </column>
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the monster group">
+        <constraints nullable="false" />
+      </column>
+      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the monster group">
+        <constraints nullable="false" foreignKeyName="FK_MONSTER_STAT_EXPANSION" references="DESCENT.EXPANSION(NAME)" />
+      </column>
+      <column name="ACT" type="VARCHAR(30)" remarks="Act of the monster stat">
+        <constraints nullable="false" foreignKeyName="FK_MONSTER_STAT_ACT" references="DESCENT.ACT(NAME)" />
+      </column>
+      <column name="MONSTER_TYPE" type="VARCHAR(30)" remarks="Monster type of the monster stat">
+        <constraints nullable="false" foreignKeyName="FK_MONSTER_STAT_MONSTER_TYPE" references="DESCENT.MONSTER_TYPE(NAME)" />
+      </column>
+      <column name="SPEED" type="INT" remarks="Speed of the monster stat">
+        <constraints nullable="false" />
+      </column>
+      <column name="HEALTH" type="INT" remarks="Health of the monster stat">
+        <constraints nullable="false" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <createIndex schemaName="DESCENT" indexName="IDX_MONSTER_STAT" tableName="MONSTER_STAT" unique="true">
+      <column name="NAME" />
+      <column name="EXPANSION" />
+      <column name="ACT" />
+      <column name="MONSTER_TYPE" />
+    </createIndex>
+    <addForeignKeyConstraint constraintName="FK_MONSTER_STAT_MONSTER_GROUP" baseTableSchemaName="DESCENT" baseTableName="MONSTER_STAT" baseColumnNames="NAME, EXPANSION"
+      referencedTableSchemaName="DESCENT" referencedTableName="MONSTER_GROUP" referencedColumnNames="NAME, EXPANSION" />
+  </changeSet>
+  <changeSet author="RAF" id="table-descent-monster_defense-1">
+    <createTable tableName="MONSTER_DEFENSE" schemaName="DESCENT" remarks="Table for monster defense dices">
+      <column name="ID" type="INT" remarks="Identifier of the monster stat">
+        <constraints nullable="false" />
+      </column>
+      <column name="DICE" type="VARCHAR(30)" remarks="Defense Dice of the monster stat">
+        <constraints nullable="false" foreignKeyName="FK_MONSTER_DEFENSE_DICE" references="DESCENT.DICE(NAME)" />
+      </column>
+      <column name="INDEX" type="INT" remarks="Index of the dice">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint constraintName="FK_MONSTER_SURGE_MONSTER_DEFENSE" baseTableSchemaName="DESCENT" baseTableName="MONSTER_DEFENSE"
+      baseColumnNames="ID" referencedTableSchemaName="DESCENT" referencedTableName="MONSTER_STAT" referencedColumnNames="ID" />
+    <createIndex schemaName="DESCENT" indexName="IDX_MONSTER_DEFENSE" tableName="MONSTER_DEFENSE" unique="true">
+      <column name="ID" />
+      <column name="DICE" />
+      <column name="INDEX" />
+    </createIndex>
+  </changeSet>
+  <changeSet author="RAF" id="table-descent-monster_attack-1">
+    <createTable tableName="MONSTER_ATTACK" schemaName="DESCENT" remarks="Table for monster attack dices">
+      <column name="ID" type="INT" remarks="Identifier of the monster stat">
+        <constraints nullable="false" />
+      </column>
+      <column name="DICE" type="VARCHAR(30)" remarks="Attack Dice of the monster stat">
+        <constraints nullable="false" foreignKeyName="FK_MONSTER_ATTACK_DICE" references="DESCENT.DICE(NAME)" />
+      </column>
+      <column name="INDEX" type="INT" remarks="Index of the dice">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint constraintName="FK_MONSTER_SURGE_MONSTER_ATTACK" baseTableSchemaName="DESCENT" baseTableName="MONSTER_ATTACK" baseColumnNames="ID"
+      referencedTableSchemaName="DESCENT" referencedTableName="MONSTER_STAT" referencedColumnNames="ID" />
+    <createIndex schemaName="DESCENT" indexName="IDX_MONSTER_ATTACK" tableName="MONSTER_ATTACK" unique="true">
+      <column name="ID" />
+      <column name="DICE" />
+      <column name="INDEX" />
+    </createIndex>
+  </changeSet>
+  <changeSet author="RAF" id="table-descent-monster_ability-1">
+    <createTable tableName="MONSTER_ABILITY" schemaName="DESCENT" remarks="Table for monster abilities">
+      <column name="ID" type="INT" remarks="Identifier of the monster stat">
+        <constraints nullable="false" />
+      </column>
+      <column name="ABILITY" type="VARCHAR(30)" remarks="Trigerred ability">
+        <constraints foreignKeyName="FK_MONSTER_ABILITY_ABILITY" references="DESCENT.ABILITY(NAME)" />
+      </column>
+      <column name="VALUE" type="INT" remarks="Ability value" />
+      <column name="ACTION" type="BOOLEAN" remarks="Ability action indicator" />
+    </createTable>
+    <addForeignKeyConstraint constraintName="FK_MONSTER_SURGE_MONSTER_ABILITY" baseTableSchemaName="DESCENT" baseTableName="MONSTER_ABILITY"
+      baseColumnNames="ID" referencedTableSchemaName="DESCENT" referencedTableName="MONSTER_STAT" referencedColumnNames="ID" />
+    <createIndex schemaName="DESCENT" indexName="IDX_MONSTER_ABILITY" tableName="MONSTER_ABILITY" unique="true">
+      <column name="ID" />
+      <column name="ABILITY" />
+    </createIndex>
+  </changeSet>
+  <changeSet author="RAF" id="table-descent-monster_surge-1">
+    <createTable tableName="MONSTER_SURGE" schemaName="DESCENT" remarks="Table for monster surges">
+      <column name="ID" type="INT" remarks="Identifier of the monster stat">
+        <constraints nullable="false" />
+      </column>
+      <column name="SURGE" type="INT" remarks="Surge of the monster stat">
+        <constraints foreignKeyName="FK_MONSTER_SURGE_SURGE" references="DESCENT.SURGE(ID)" />
+      </column>
+      <column name="INDEX" type="INT" remarks="Index of the surge">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint constraintName="FK_MONSTER_SURGE_MONSTER_STAT" baseTableSchemaName="DESCENT" baseTableName="MONSTER_SURGE" baseColumnNames="ID"
+      referencedTableSchemaName="DESCENT" referencedTableName="MONSTER_STAT" referencedColumnNames="ID" />
+    <createIndex schemaName="DESCENT" indexName="IDX_MONSTER_SURGE" tableName="MONSTER_SURGE" unique="true">
+      <column name="ID" />
+      <column name="SURGE" />
+      <column name="INDEX" />
+    </createIndex>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-monster_stat-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/monster_stat.csv" separator="|" tableName="MONSTER_STAT">
+      <column name="ID" type="NUMERIC" />
+      <column name="SPEED" type="NUMERIC" />
+      <column name="HEALTH" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-monster_defense-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/monster_defense.csv" separator="|" tableName="MONSTER_DEFENSE">
+      <column name="ID" type="NUMERIC" />
+      <column name="INDEX" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-monster_attack-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/monster_attack.csv" separator="|" tableName="MONSTER_ATTACK">
+      <column name="ID" type="NUMERIC" />
+      <column name="INDEX" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-monster_ability-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/monster_ability.csv" separator="|" tableName="MONSTER_ABILITY">
+      <column name="ID" type="NUMERIC" />
+      <column name="VALUE" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-monster_surge-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/monster_surge.csv" separator="|" tableName="MONSTER_SURGE">
+      <column name="ID" type="NUMERIC" />
+      <column name="SURGE" type="NUMERIC" />
+      <column name="INDEX" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+
+</databaseChangeLog>

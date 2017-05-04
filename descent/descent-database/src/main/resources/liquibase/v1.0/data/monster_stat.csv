@@ -1,0 +1,45 @@
+ID|NAME|EXPANSION|ACT|MONSTER_TYPE|SPEED|HEALTH
+1|Goblin Archer|D2E|Act1|Master|5|4
+2|Goblin Archer|D2E|Act1|Minion|5|2
+3|Goblin Archer|D2E|Act2|Master|5|6
+4|Goblin Archer|D2E|Act2|Minion|5|4
+5|Zombie|D2E|Act1|Master|3|6
+6|Zombie|D2E|Act1|Minion|3|3
+7|Zombie|D2E|Act2|Master|3|9
+8|Zombie|D2E|Act2|Minion|3|5
+9|Cave Spider|D2E|Act1|Master|4|5
+10|Cave Spider|D2E|Act1|Minion|4|3
+11|Cave Spider|D2E|Act2|Master|4|7
+12|Cave Spider|D2E|Act2|Minion|4|5
+13|Flesh Moulders|D2E|Act1|Master|4|5
+14|Flesh Moulders|D2E|Act1|Minion|4|4
+15|Flesh Moulders|D2E|Act2|Master|4|7
+16|Flesh Moulders|D2E|Act2|Minion|4|5
+17|Barghest|D2E|Act1|Master|4|5
+18|Barghest|D2E|Act1|Minion|4|4
+19|Barghest|D2E|Act2|Master|4|8
+20|Barghest|D2E|Act2|Minion|4|6
+21|Ettin|D2E|Act1|Master|3|8
+22|Ettin|D2E|Act1|Minion|3|5
+23|Ettin|D2E|Act2|Master|3|9
+24|Ettin|D2E|Act2|Minion|3|7
+25|Elemental|D2E|Act1|Master|4|6
+26|Elemental|D2E|Act1|Minion|4|4
+27|Elemental|D2E|Act2|Master|4|10
+28|Elemental|D2E|Act2|Minion|4|8
+29|Merriod|D2E|Act1|Master|3|7
+30|Merriod|D2E|Act1|Minion|3|5
+31|Merriod|D2E|Act2|Master|3|9
+32|Merriod|D2E|Act2|Minion|3|7
+33|Shadow Dragon|D2E|Act1|Master|3|9
+34|Shadow Dragon|D2E|Act1|Minion|3|6
+35|Shadow Dragon|D2E|Act2|Master|3|10
+36|Shadow Dragon|D2E|Act2|Minion|3|8
+37|Fire Imp|LotW|Act1|Master|5|4
+38|Fire Imp|LotW|Act1|Minion|5|2
+39|Fire Imp|LotW|Act2|Master|5|6
+40|Fire Imp|LotW|Act2|Minion|5|4
+41|Hybrid Sentinel|LotW|Act1|Master|4|8
+42|Hybrid Sentinel|LotW|Act1|Minion|4|5
+43|Hybrid Sentinel|LotW|Act2|Master|4|9
+44|Hybrid Sentinel|LotW|Act2|Minion|4|6

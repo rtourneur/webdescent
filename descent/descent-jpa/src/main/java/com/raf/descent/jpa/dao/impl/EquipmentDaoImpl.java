@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import com.raf.descent.jpa.dao.EquipmentDao;
 import com.raf.descent.jpa.domain.model.Equipment;
+import com.raf.fwk.jpa.dao.AbstractNamedDao;
 
 /**
  * Implementation DAO for {@link Equipment}.
@@ -11,7 +12,7 @@ import com.raf.descent.jpa.domain.model.Equipment;
  * @author RAF
  */
 @Repository
-public final class EquipmentDaoImpl extends AbstractNamedDao<Equipment, String> implements EquipmentDao {
+public final class EquipmentDaoImpl extends AbstractNamedDao<Equipment> implements EquipmentDao {
 
   /**
    * Constructor.

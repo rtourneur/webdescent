@@ -1,0 +1,30 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-descent-condition-1">
+    <createTable tableName="CONDITION" schemaName="DESCENT" remarks="Table for conditions">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the condition">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="CONDITION_PK" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Message code of the condition">
+        <constraints nullable="false" />
+      </column>
+      <column name="RULE_CODE" type="VARCHAR(30)" remarks="Rule code of the condition">
+        <constraints nullable="false" />
+      </column>
+      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the condition">
+        <constraints nullable="false" foreignKeyName="FK_CONDITION_EXPANSION" references="DESCENT.EXPANSION(NAME)" />
+      </column>
+      <column name="IMAGE" type="VARCHAR(30)" remarks="Image name of the condition">
+        <constraints nullable="false" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+  </changeSet>
+  <changeSet author="RAF" id="load-descent-condition-1">
+    <loadData schemaName="DESCENT" relativeToChangelogFile="true" encoding="UTF-8" file="../data/condition.csv" separator="|" tableName="CONDITION" />
+  </changeSet>
+</databaseChangeLog>

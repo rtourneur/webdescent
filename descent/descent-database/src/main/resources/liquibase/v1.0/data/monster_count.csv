@@ -1,0 +1,217 @@
+MONSTER|EXPANSION|HERO|MASTER|MINION
+Goblin Archer|D2E|2|1|2
+Zombie|D2E|2|1|2
+Cave Spider|D2E|2|1|2
+Flesh Moulders|D2E|2|1|1
+Barghest|D2E|2|1|1
+Ettin|D2E|2|0|1
+Elemental|D2E|2|0|1
+Merriod|D2E|2|0|1
+Shadow Dragon|D2E|2|0|1
+Fire Imp|LotW|2|1|2
+Hybrid Sentinel|LotW|2|1|0
+Goblin Witcher|LoR|2|1|1
+Volucrix Reaver|LoR|2|0|2
+Arachyura|LoR|2|0|1
+Carrion Drake|LoR|2|1|0
+Harpy|TT|2|1|1
+Plague Worm|TT|2|1|0
+Rat Swarm|SoN|2|0|2
+Changelin|SoN|2|1|1
+Ironbound|SoN|2|0|1
+Ynfernael Hulk|SoN|2|0|1
+Bandit|MoR|2|1|2
+Wraith|MoR|2|1|0
+Beastman|DCK|2|1|1
+Skeleton Archer|DCK|2|1|2
+Bane Spider|DCK|2|1|0
+Razorwing|DCK|2|1|1
+Hell Hound|DCK|2|1|2
+Sorcerer|DCK|2|1|1
+Ogre|DCK|2|0|1
+Manticore|DCK|2|0|1
+Naga|DCK|2|1|0
+Giant|DCK|2|0|1
+Crypt Dragon|DCK|2|0|1
+Demon Lord|DCK|2|0|1
+Kobold|DCK|2|2|4
+Ferrox|DCK|2|1|1
+Golem|DCK|2|0|1
+Dark Priest|DCK|2|1|1
+Blood Ape|DCK|2|1|0
+Chaos Beast|DCK|2|1|0
+Deep Elf|DCK|2|0|1
+Troll|DCK|2|0|1
+Shade|DCK|2|1|2
+Lava Beetle|DCK|2|1|1
+Medusa|DCK|2|0|2
+Wendigo|DCK|2|1|0
+Ice Wyrm|DCK|2|0|1
+Beastman|OotO|2|1|1
+Bane Spider|OotO|2|1|0
+Razorwing|OotO|2|1|1
+Giant|CoD|2|0|1
+Chaos Beast|CoD|2|1|0
+Lava Beetle|CoD|2|1|1
+Sorcerer|CotF|2|1|1
+Golem|CotF|2|0|1
+Medusa|CotF|2|0|2
+Crypt Dragon|GoD|2|0|1
+Dark Priest|GoD|2|1|1
+Wendigo|GoD|2|1|0
+Ogre|VoD|2|0|1
+Manticore|VoD|2|0|1
+Troll|VoD|2|0|1
+Hell Hound|BotW|2|1|2
+Kobold|BotW|2|2|4
+Deep Elf|BotW|2|0|1
+Skeleton Archer|ToC|2|1|2
+Demon Lord|ToC|2|0|1
+Crow Hag|ToC|2|1|0
+Naga|SotS|2|1|0
+Ferrox|SotS|2|1|1
+Blood Ape|SotS|2|1|0
+Goblin Archer|D2E|3|1|3
+Zombie|D2E|3|1|3
+Cave Spider|D2E|3|1|3
+Flesh Moulders|D2E|3|1|2
+Barghest|D2E|3|1|2
+Ettin|D2E|3|1|0
+Elemental|D2E|3|1|0
+Merriod|D2E|3|1|0
+Shadow Dragon|D2E|3|1|0
+Fire Imp|LotW|3|1|3
+Hybrid Sentinel|LotW|3|1|1
+Goblin Witcher|LoR|3|1|2
+Volucrix Reaver|LoR|3|1|2
+Arachyura|LoR|3|1|0
+Carrion Drake|LoR|3|1|1
+Harpy|TT|3|1|2
+Plague Worm|TT|3|1|1
+Rat Swarm|SoN|3|1|2
+Changelin|SoN|3|1|2
+Ironbound|SoN|3|1|0
+Ynfernael Hulk|SoN|3|1|0
+Bandit|MoR|3|1|3
+Wraith|MoR|3|1|1
+Beastman|DCK|3|1|2
+Skeleton Archer|DCK|3|1|3
+Bane Spider|DCK|3|1|1
+Razorwing|DCK|3|1|2
+Hell Hound|DCK|3|1|2
+Sorcerer|DCK|3|1|2
+Ogre|DCK|3|1|0
+Manticore|DCK|3|1|0
+Naga|DCK|3|1|1
+Giant|DCK|3|1|0
+Crypt Dragon|DCK|3|1|0
+Demon Lord|DCK|3|1|0
+Kobold|DCK|3|2|8
+Ferrox|DCK|3|1|2
+Golem|DCK|3|1|0
+Dark Priest|DCK|3|1|2
+Blood Ape|DCK|3|1|1
+Chaos Beast|DCK|3|1|1
+Deep Elf|DCK|3|1|0
+Troll|DCK|3|1|0
+Shade|DCK|3|1|3
+Lava Beetle|DCK|3|1|2
+Medusa|DCK|3|1|1
+Wendigo|DCK|3|1|1
+Ice Wyrm|DCK|3|1|0
+Beastman|OotO|3|1|2
+Bane Spider|OotO|3|1|1
+Razorwing|OotO|3|1|2
+Giant|CoD|3|1|0
+Chaos Beast|CoD|3|1|1
+Lava Beetle|CoD|3|1|2
+Sorcerer|CotF|3|1|2
+Golem|CotF|3|1|0
+Medusa|CotF|3|1|1
+Crypt Dragon|GoD|3|1|0
+Dark Priest|GoD|3|1|2
+Wendigo|GoD|3|1|1
+Ogre|VoD|3|1|0
+Manticore|VoD|3|1|0
+Troll|VoD|3|1|0
+Hell Hound|BotW|3|1|2
+Kobold|BotW|3|2|8
+Deep Elf|BotW|3|1|0
+Skeleton Archer|ToC|3|1|3
+Demon Lord|ToC|3|1|0
+Crow Hag|ToC|3|1|1
+Naga|SotS|3|1|1
+Ferrox|SotS|3|1|2
+Blood Ape|SotS|3|1|1
+Goblin Archer|D2E|4|1|4
+Zombie|D2E|4|1|4
+Cave Spider|D2E|4|1|4
+Flesh Moulders|D2E|4|1|3
+Barghest|D2E|4|1|3
+Ettin|D2E|4|1|1
+Elemental|D2E|4|1|1
+Merriod|D2E|4|1|1
+Shadow Dragon|D2E|4|1|1
+Fire Imp|LotW|4|2|3
+Hybrid Sentinel|LotW|4|1|2
+Goblin Witcher|LoR|4|1|3
+Volucrix Reaver|LoR|4|1|3
+Arachyura|LoR|4|1|1
+Carrion Drake|LoR|4|1|2
+Harpy|TT|4|1|3
+Plague Worm|TT|4|1|2
+Rat Swarm|SoN|4|1|3
+Changelin|SoN|4|1|3
+Ironbound|SoN|4|1|1
+Ynfernael Hulk|SoN|4|1|1
+Bandit|MoR|4|1|4
+Wraith|MoR|4|1|2
+Beastman|DCK|4|1|3
+Skeleton Archer|DCK|4|1|4
+Bane Spider|DCK|4|1|2
+Razorwing|DCK|4|1|3
+Hell Hound|DCK|4|1|3
+Sorcerer|DCK|4|1|3
+Ogre|DCK|4|1|1
+Manticore|DCK|4|1|1
+Naga|DCK|4|1|2
+Giant|DCK|4|1|1
+Crypt Dragon|DCK|4|1|1
+Demon Lord|DCK|4|1|1
+Kobold|DCK|4|3|9
+Ferrox|DCK|4|1|3
+Golem|DCK|4|1|1
+Dark Priest|DCK|4|1|3
+Blood Ape|DCK|4|1|2
+Chaos Beast|DCK|4|1|2
+Deep Elf|DCK|4|1|1
+Troll|DCK|4|1|1
+Shade|DCK|4|1|4
+Lava Beetle|DCK|4|1|3
+Medusa|DCK|4|1|2
+Wendigo|DCK|4|1|2
+Ice Wyrm|DCK|4|1|1
+Beastman|OotO|4|1|3
+Bane Spider|OotO|4|1|2
+Razorwing|OotO|4|1|3
+Giant|CoD|4|1|1
+Chaos Beast|CoD|4|1|2
+Lava Beetle|CoD|4|1|3
+Sorcerer|CotF|4|1|3
+Golem|CotF|4|1|1
+Medusa|CotF|4|1|2
+Crypt Dragon|GoD|4|1|1
+Dark Priest|GoD|4|1|3
+Wendigo|GoD|4|1|2
+Ogre|VoD|4|1|1
+Manticore|VoD|4|1|1
+Troll|VoD|4|1|1
+Hell Hound|BotW|4|1|3
+Kobold|BotW|4|3|9
+Deep Elf|BotW|4|1|1
+Skeleton Archer|ToC|4|1|4
+Demon Lord|ToC|4|1|1
+Crow Hag|ToC|4|1|2
+Naga|SotS|4|1|2
+Ferrox|SotS|4|1|3
+Blood Ape|SotS|4|1|2

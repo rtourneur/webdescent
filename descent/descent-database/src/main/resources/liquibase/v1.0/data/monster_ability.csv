@@ -1,0 +1,69 @@
+ID|ABILITY|VALUE|ACTION
+1|Scamper|null|null
+2|Scamper|null|null
+3|Scamper|null|null
+4|Scamper|null|null
+5|Shambling|null|null
+6|Shambling|null|null
+7|Shambling|null|null
+8|Shambling|null|null
+9|Web|null|null
+11|Web|null|null
+13|Heal|null|null
+15|Heal|null|null
+17|Howl|null|true
+18|Howl|null|true
+19|Howl|null|true
+20|Howl|null|true
+21|Reach|null|null
+22|Reach|null|null
+23|Reach|null|null
+24|Reach|null|null
+25|Fire|null|true
+26|Fire|null|true
+27|Fire|null|true
+28|Fire|null|true
+29|Reach|null|null
+30|Reach|null|null
+31|Reach|null|null
+32|Reach|null|null
+33|Shadow|null|null
+34|Shadow|null|null
+35|Shadow|null|null
+36|Shadow|null|null
+37|Flame Fiend|null|null
+38|Flame Fiend|null|null
+39|Flame Fiend|null|null
+40|Flame Fiend|null|null
+41|Fly|null|null
+42|Fly|null|null
+43|Fly|null|null
+44|Fly|null|null
+2|Cowardly|null|null
+4|Cowardly|null|null
+5|Grab|null|true
+7|Grab|null|true
+17|Night Stalker|null|null
+19|Night Stalker|null|null
+21|Throw|null|true
+23|Throw|null|true
+25|Water|null|true
+26|Water|null|true
+27|Water|null|true
+28|Water|null|true
+29|Flail|null|null
+31|Flail|null|null
+37|Combustible|null|null
+39|Combustible|null|null
+41|Prey on the Weak|null|null
+42|Prey on the Weak|null|null
+43|Prey on the Weak|null|null
+44|Prey on the Weak|null|null
+25|Earth|null|true
+26|Earth|null|true
+27|Earth|null|true
+28|Earth|null|true
+25|Air|null|true
+26|Air|null|true
+27|Air|null|true
+28|Air|null|true

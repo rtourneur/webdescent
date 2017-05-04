@@ -11,14 +11,14 @@ import javax.transaction.Transactional;
 
 import org.junit.Test;
 
-import com.raf.descent.jpa.domain.DomainEntity;
 import com.raf.descent.jpa.domain.card.Search;
-import com.raf.descent.jpa.domain.card.SearchDice;
 import com.raf.descent.jpa.domain.model.AttackType;
 import com.raf.descent.jpa.domain.model.Expansion;
 import com.raf.descent.jpa.domain.model.NameExpansionPk;
-import com.raf.descent.jpa.domain.model.Trait;
-import com.raf.descent.util.Paged;
+import com.raf.descent.jpa.domain.model.ObjectTrait;
+import com.raf.descent.jpa.domain.model.StatDiceName;
+import com.raf.fwk.jpa.domain.DomainEntity;
+import com.raf.fwk.util.Paged;
 
 /**
  * 
@@ -48,7 +48,7 @@ public class SearchDaoTest extends AbstractDaoTest {
     nameExpansionPk.setExpansion("D2E");
     Search example = this.searchDao.getById(nameExpansionPk);
     assertNotNull(example);
-    assertEquals(nameExpansionPk, example.getId());
+    assertEquals(nameExpansionPk, example.getIdentifier());
     assertEquals("Fire Flask", example.getName());
     assertEquals("search.fireflask.d2e", example.getMessageCode());
     assertEquals("D2E", example.getExpansionName());
@@ -62,10 +62,10 @@ public class SearchDaoTest extends AbstractDaoTest {
     AttackType attackType = example.getAttackType();
     assertNotNull(attackType);
     assertEquals("Ranged", attackType.getName());
-    List<Trait> traits = example.getTraits();
+    List<ObjectTrait> traits = example.getTraits();
     assertNotNull(traits);
     assertFalse(traits.isEmpty());
-    List<SearchDice> searchDices = example.getDices();
+    List<StatDiceName> searchDices = example.getDiceNames();
     assertNotNull(searchDices);
     assertFalse(searchDices.isEmpty());
   }
@@ -85,7 +85,7 @@ public class SearchDaoTest extends AbstractDaoTest {
     assertNotNull(list);
     assertFalse(list.isEmpty());
     assertEquals(1, list.size());
-    example.setIdent(null);
+    example.setIdentifier(null);
     example.setExpansion(this.expansionDao.getById("D2E"));
     list = this.searchDao.findByExample(example);
     assertNotNull(list);

@@ -1,0 +1,29 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <!-- Création des tables -->
+  <include file="liquibase/v1.0/def/expansion.xml" />
+  <include file="liquibase/v1.0/def/archetype.xml" />
+  <include file="liquibase/v1.0/def/act.xml" />
+  <include file="liquibase/v1.0/def/dice_type.xml" />
+  <include file="liquibase/v1.0/def/dice.xml" />
+  <include file="liquibase/v1.0/def/attribute.xml" />
+  <include file="liquibase/v1.0/def/condition.xml" />
+  <include file="liquibase/v1.0/def/ability.xml" />
+  <include file="liquibase/v1.0/def/surge.xml" />
+  <include file="liquibase/v1.0/def/hero.xml" />
+  <include file="liquibase/v1.0/def/class.xml" />
+  <include file="liquibase/v1.0/def/skill.xml" />
+  <include file="liquibase/v1.0/def/item_type.xml" />
+  <include file="liquibase/v1.0/def/trait.xml" />
+  <include file="liquibase/v1.0/def/attack_type.xml" />
+  <include file="liquibase/v1.0/def/equipment.xml" />
+  <include file="liquibase/v1.0/def/item.xml" />
+  <include file="liquibase/v1.0/def/search.xml" />
+  <include file="liquibase/v1.0/def/monster_trait.xml" />
+  <include file="liquibase/v1.0/def/monster_size.xml" />
+  <include file="liquibase/v1.0/def/monster_type.xml" />
+  <include file="liquibase/v1.0/def/monster_group.xml" />
+  <include file="liquibase/v1.0/def/monster_stat.xml" />
+</databaseChangeLog>

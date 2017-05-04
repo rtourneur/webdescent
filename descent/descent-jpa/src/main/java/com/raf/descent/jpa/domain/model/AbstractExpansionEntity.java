@@ -9,8 +9,13 @@ import javax.persistence.MappedSuperclass;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import com.raf.descent.jpa.domain.AbstractEntity;
-import com.raf.descent.jpa.domain.DomainNamedEntity;
+import com.raf.fwk.jpa.domain.AbstractEntity;
+import com.raf.fwk.jpa.domain.DomainNamedEntity;
+
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Abstract super class for domain named entities.
@@ -18,6 +23,9 @@ import com.raf.descent.jpa.domain.DomainNamedEntity;
  * @author RAF
  */
 @MappedSuperclass
+@Getter
+@Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class AbstractExpansionEntity extends AbstractEntity implements DomainNamedEntity<NameExpansionPk> {
 
   /** Serial UID. */
@@ -31,21 +39,10 @@ public abstract class AbstractExpansionEntity extends AbstractEntity implements 
   @Column(name = "MESSAGE_CODE", nullable = false, length = 30)
   private String messageCode;
 
-  /** The image. */
-  @Column(nullable = false, length = 30)
-  private String image;
-
   /** The expansion. */
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "EXPANSION", nullable = false, insertable = false, updatable = false)
   private Expansion expansion;
-
-  /**
-   * Constructor.
-   */
-  public AbstractExpansionEntity() {
-    super();
-  }
 
   /**
    * Returns the serializable ID of domain entity.
@@ -54,29 +51,20 @@ public abstract class AbstractExpansionEntity extends AbstractEntity implements 
    * @see DomainNamedEntity#getId()
    */
   @Override
-  public NameExpansionPk getId() {
-    return getIdent();
-  }
-
-  /**
-   * Returns the identifier.
-   * 
-   * @return the ident
-   */
-  public NameExpansionPk getIdent() {
+  public NameExpansionPk getIdentifier() {
     return this.ident;
   }
 
   /**
    * Defines the identifier.
    * 
-   * @param ident
+   * @param identifier
    *          the ident to set
    * @see DomainNamedEntity#setIdent(NameExpansionPk)
    */
   @Override
-  public void setIdent(final NameExpansionPk ident) {
-    this.ident = ident;
+  public void setIdentifier(final NameExpansionPk identifier) {
+    this.ident = identifier;
   }
 
   /**
@@ -133,58 +121,6 @@ public abstract class AbstractExpansionEntity extends AbstractEntity implements 
     this.ident.setExpansion(expansionName);
   }
 
-
-  /**
-   * Returns the message code.
-   * 
-   * @return the message code
-   * @see DomainNamedEntity#getMessageCode()
-   */
-  @Override
-  public String getMessageCode() {
-    return this.messageCode;
-  }
-
-  /**
-   * Defines the message code.
-   * 
-   * @param messageCode
-   *          the message code
-   * @see DomainNamedEntity#setMessageCode(String)
-   */
-  @Override
-  public void setMessageCode(final String messageCode) {
-    this.messageCode = messageCode;
-  }
-
-  /**
-   * Returns the image.
-   * 
-   * @return the image
-   */
-  public String getImage() {
-    return this.image;
-  }
-
-  /**
-   * Defines the image.
-   * 
-   * @param image
-   *          the image to set
-   */
-  public void setImage(final String image) {
-    this.image = image;
-  }
-
-  /**
-   * Returns the expansion.
-   * 
-   * @return the expansion
-   */
-  public Expansion getExpansion() {
-    return this.expansion;
-  }
-
   /**
    * Defines the expansion.
    * 
@@ -193,6 +129,9 @@ public abstract class AbstractExpansionEntity extends AbstractEntity implements 
    */
   public void setExpansion(final Expansion expansion) {
     this.expansion = expansion;
+    if (this.expansion != null) {
+      setExpansionName(this.expansion.getName());
+    }
   }
 
   /**
@@ -204,10 +143,9 @@ public abstract class AbstractExpansionEntity extends AbstractEntity implements 
    */
   @Override
   protected final void append(final ToStringBuilder builder) {
-    builder.append("name", getName()).append("expansionName", getExpansionName())
-        .append("messageCode", this.messageCode);
+    builder.append("name", getName()).append("expansionName", getExpansionName()).append("messageCode",
+        this.messageCode);
     appendExpansion(builder);
-    builder.append("image", this.image);
     if (this.expansion != null && Expansion.class.equals(this.expansion.getClass())) {
       builder.append("expansion", this.expansion);
     }
