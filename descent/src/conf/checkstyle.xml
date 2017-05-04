@@ -5,7 +5,7 @@
     This configuration file was written by the eclipse-cs plugin configuration editor
 -->
 <!--
-    Checkstyle-Configuration: Xwing
+    Checkstyle-Configuration: Descent
     Description: none
 -->
 <module name="Checker">
@@ -188,7 +188,6 @@
       <property name="tokens" value="METHOD_DEF,PARAMETER_DEF,VARIABLE_DEF"/>
     </module>
     <module name="InnerAssignment"/>
-    <module name="MissingCtor"/>
     <module name="ModifiedControlVariable"/>
     <module name="PackageDeclaration"/>
     <module name="ParameterAssignment"/>
