@@ -41,8 +41,8 @@ public class DamageRuleTest extends AbstractRuleTest {
   public final void testGetDamages() {
     Damages damages = this.damageRule.getDamages("Goblin Archer", "D2E", "Act1", "Minion");
     assertNotNull(damages);
-    assertEquals(2, damages.getMin());
-    assertEquals(5, damages.getMax());
+    assertEquals(2, damages.getMinDamage());
+    assertEquals(5, damages.getMaxDamage());
 
   }
 
@@ -55,11 +55,20 @@ public class DamageRuleTest extends AbstractRuleTest {
     List<MonsterStat> monsters = this.monsterStatDao.listAll();
     Damages damages;
     for (MonsterStat monster : monsters) {
-      damages = this.damageRule.getDamages(monster.getName(), monster.getExpansionName(),
-          monster.getActName(), monster.getMonsterTypeName());
-      LOGGER.info(monster.getMonsterTypeName() + " Monster " + monster.getName() + " ("
-          + monster.getExpansionName() + ") " + monster.getActName() + " : min (" + damages.getMin() + ") max ("
-          + damages.getMax() + ") moyenne (" + damages.getMoy() + ")");
+      boolean ranged = "Ranged".equals(monster.getMonsterGroup().getAttackType().getName());
+      damages = this.damageRule.getDamages(monster.getName(), monster.getExpansionName(), monster.getActName(),
+          monster.getMonsterTypeName());
+      StringBuilder builder = new StringBuilder();
+      builder.append(monster.getMonsterTypeName()).append(" Monster ").append(monster.getName()).append(" (")
+          .append(monster.getExpansionName()).append(") ").append(monster.getActName()).append(" : damages [")
+          .append(damages.getMinDamage()).append('-').append(damages.getMaxDamage()).append('(')
+          .append(damages.getMoyDamage()).append(")]");
+      if (ranged) {
+        builder.append(" range [").append(damages.getMinRange()).append('-').append(damages.getMaxRange()).append('(')
+            .append(damages.getMoyRange()).append(")]");
+      }
+
+      LOGGER.info(builder.toString());
     }
 
   }
