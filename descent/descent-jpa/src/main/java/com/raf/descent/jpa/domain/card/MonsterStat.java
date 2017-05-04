@@ -82,8 +82,9 @@ public class MonsterStat extends AbstractIdEntity {
 
   /** The monster type. */
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumns({ @JoinColumn(name = "NAME", nullable = false, insertable = false, updatable = false),
-      @JoinColumn(name = "EXPANSION", nullable = false, insertable = false, updatable = false) })
+  @JoinColumns({
+      @JoinColumn(name = "NAME", referencedColumnName = "NAME", nullable = false, insertable = false, updatable = false),
+      @JoinColumn(name = "EXPANSION", referencedColumnName = "EXPANSION", nullable = false, insertable = false, updatable = false) })
   private MonsterGroup monsterGroup;
 
   /** The monster defences dices. */

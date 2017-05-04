@@ -25,6 +25,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.raf.fwk.util.config.UtilConfig;
 
+import lombok.NoArgsConstructor;
+
 /**
  * Spring configuration class for persistence.
  * 
@@ -35,18 +37,12 @@ import com.raf.fwk.util.config.UtilConfig;
 @ComponentScan("com.raf.descent.jpa")
 @PropertySource({ "classpath:persistence.properties" })
 @EnableTransactionManagement
+@NoArgsConstructor
 public class PersistenceJpaConfig {
 
   /** Spring environment. */
   @Autowired
   private Environment env;
-
-  /**
-   * Constructor.
-   */
-  public PersistenceJpaConfig() {
-    super();
-  }
 
   /**
    * Initialize the entity manager factory.
