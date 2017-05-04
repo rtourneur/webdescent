@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Import;
 import com.raf.descent.jpa.config.PersistenceJpaConfig;
 import com.raf.fwk.util.config.UtilConfig;
 
+import lombok.NoArgsConstructor;
+
 /**
  * Spring configuration class for rules.
  * 
@@ -15,13 +17,7 @@ import com.raf.fwk.util.config.UtilConfig;
 @Configuration
 @Import(value = { UtilConfig.class, PersistenceJpaConfig.class })
 @ComponentScan("com.raf.descent.rule")
+@NoArgsConstructor
 public class RuleConfig {
-
-  /**
-   * Constructor.
-   */
-  public RuleConfig() {
-    super();
-  }
-
+  // RAS
 }
