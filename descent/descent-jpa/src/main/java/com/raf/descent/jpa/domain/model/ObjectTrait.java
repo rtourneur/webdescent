@@ -1,5 +1,7 @@
 package com.raf.descent.jpa.domain.model;
 
+import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
+
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -37,7 +39,7 @@ public class ObjectTrait implements Serializable {
    */
   @Override
   public final String toString() {
-    final ToStringBuilder builder = new ToStringBuilder(this);
+    final ToStringBuilder builder = new ToStringBuilder(this, SHORT_PREFIX_STYLE);
     builder.append("trait", this.traitName);
     return builder.toString();
   }

@@ -1,5 +1,7 @@
 package com.raf.descent.jpa.domain.card;
 
+import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
+
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -44,7 +46,7 @@ public class MonsterCount implements Serializable {
    */
   @Override
   public final String toString() {
-    final ToStringBuilder builder = new ToStringBuilder(this);
+    final ToStringBuilder builder = new ToStringBuilder(this, SHORT_PREFIX_STYLE);
     builder.append("hero", this.hero).append("master", this.master).append("minion", this.minion);
     return builder.toString();
   }

@@ -1,5 +1,7 @@
 package com.raf.descent.jpa.domain.model;
 
+import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
+
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -28,7 +30,7 @@ public class StatDiceName implements Serializable {
   /** The dice name. */
   @Column(name = "DICE", nullable = false, length = 30)
   private String diceName;
-  
+
   /** The index of the dice (for unicity). */
   @Column(name = "INDEX", nullable = false, precision = 1)
   private int index;
@@ -40,7 +42,7 @@ public class StatDiceName implements Serializable {
    */
   @Override
   public final String toString() {
-    final ToStringBuilder builder = new ToStringBuilder(this);
+    final ToStringBuilder builder = new ToStringBuilder(this, SHORT_PREFIX_STYLE);
     builder.append("dice", this.diceName).append("index", this.index);
     return builder.toString();
   }
