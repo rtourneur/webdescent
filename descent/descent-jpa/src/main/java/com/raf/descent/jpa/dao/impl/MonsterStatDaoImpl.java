@@ -122,20 +122,25 @@ public final class MonsterStatDaoImpl extends AbstractIdDao<MonsterStat> impleme
   }
 
   /**
-   * Returns the criteria default order.
+   * Append the criteria default order.
+   * <ul>
+   * <li>name</li>
+   * <li>expansion</li>
+   * </ul>
    * 
+   * @param orders
+   *          the orders list
    * @param builder
    *          the criteria builder
    * @param root
    *          the root type
-   * @return the criteria order
-   * @see AbstractDao#getOrder(CriteriaBuilder, Root)
+   * 
+   * @see AbstractIdDao#appendOrder(List, CriteriaBuilder, Root)
    */
   @Override
-  protected List<Order> getOrder(final CriteriaBuilder builder, final Root<MonsterStat> root) {
-    final List<Order> orders = new ArrayList<>();
-    orders.add(builder.asc(root.get(IDENT)));
-    return orders;
+  protected void appendOrder(final List<Order> orders, final CriteriaBuilder builder, final Root<MonsterStat> root) {
+    orders.add(builder.asc(root.get(NAME)));
+    orders.add(builder.asc(root.get("expansionName")));
   }
 
 }
