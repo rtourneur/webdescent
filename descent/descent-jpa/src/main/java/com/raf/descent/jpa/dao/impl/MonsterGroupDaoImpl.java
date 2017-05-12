@@ -43,7 +43,7 @@ public final class MonsterGroupDaoImpl extends AbstractDao<MonsterGroup, NameExp
    *          the root type
    * @param example
    *          the example
-   * @see AbstractDao#getPredicates(Root, MonsterGroup)
+   * @see AbstractDao#getPredicates(Root, com.raf.fwk.jpa.domain.DomainEntity)
    */
   @Override
   protected Predicate[] getPredicates(final Root<MonsterGroup> root, final MonsterGroup example) {

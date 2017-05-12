@@ -39,7 +39,7 @@ public final class AbilityDaoImpl extends AbstractDao<Ability, String> implement
    *          the root type
    * @param example
    *          the example
-   * @see AbstractDao#getPredicates(Root, Ability)
+   * @see AbstractDao#getPredicates(Root, com.raf.fwk.jpa.domain.DomainEntity)
    */
   @Override
   protected Predicate[] getPredicates(final Root<Ability> root, final Ability example) {

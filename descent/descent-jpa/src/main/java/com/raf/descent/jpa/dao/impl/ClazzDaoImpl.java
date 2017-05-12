@@ -41,7 +41,7 @@ public final class ClazzDaoImpl extends AbstractDao<Clazz, String> implements Cl
    *          the root type
    * @param example
    *          the example
-   * @see AbstractDao#getPredicates(Root, Clazz)
+   * @see AbstractDao#getPredicates(Root, com.raf.fwk.jpa.domain.DomainEntity)
    */
   @Override
   protected Predicate[] getPredicates(final Root<Clazz> root, final Clazz example) {

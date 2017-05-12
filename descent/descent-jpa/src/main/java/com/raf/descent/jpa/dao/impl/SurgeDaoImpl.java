@@ -39,7 +39,7 @@ public final class SurgeDaoImpl extends AbstractDao<Surge, Integer> implements S
    *          the root type
    * @param example
    *          the example
-   * @see AbstractDao#getPredicates(Root, Surge)
+   * @see AbstractDao#getPredicates(Root, com.raf.fwk.jpa.domain.DomainEntity)
    */
   @Override
   protected Predicate[] getPredicates(final Root<Surge> root, final Surge example) {

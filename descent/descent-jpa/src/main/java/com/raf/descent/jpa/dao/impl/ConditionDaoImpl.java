@@ -40,7 +40,7 @@ public final class ConditionDaoImpl extends AbstractDao<Condition, String> imple
    *          the root type
    * @param example
    *          the example
-   * @see AbstractDao#getPredicates(Root, Condition)
+   * @see AbstractDao#getPredicates(Root, com.raf.fwk.jpa.domain.DomainEntity)
    */
   @Override
   protected Predicate[] getPredicates(final Root<Condition> root, final Condition example) {

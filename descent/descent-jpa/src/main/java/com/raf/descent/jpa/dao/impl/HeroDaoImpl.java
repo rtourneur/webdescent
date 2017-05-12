@@ -42,7 +42,7 @@ public final class HeroDaoImpl extends AbstractDao<Hero, NameExpansionPk> implem
    *          the root type
    * @param example
    *          the example
-   * @see AbstractDao#getPredicates(Root, Hero)
+   * @see AbstractDao#getPredicates(Root, com.raf.fwk.jpa.domain.DomainEntity)
    */
   @Override
   protected Predicate[] getPredicates(final Root<Hero> root, final Hero example) {

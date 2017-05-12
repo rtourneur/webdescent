@@ -68,7 +68,7 @@ public final class MonsterStatDaoImpl extends AbstractIdDao<MonsterStat> impleme
    * @param example
    *          the example
    * @return an array of predicates
-   * @see AbstractIdDao#getUniquePredicates(Root, MonsterStat)
+   * @see AbstractIdDao#getUniquePredicates(Root, com.raf.fwk.jpa.domain.DomainIdEntity)
    */
   @Override
   protected Predicate[] getUniquePredicates(final Root<MonsterStat> root, final MonsterStat example) {
@@ -95,7 +95,7 @@ public final class MonsterStatDaoImpl extends AbstractIdDao<MonsterStat> impleme
    *          the root type
    * @param example
    *          the example
-   * @see AbstractDao#getPredicates(Root, MonsterStat)
+   * @see AbstractDao#getPredicates(Root, com.raf.fwk.jpa.domain.DomainEntity)
    */
   @Override
   protected Predicate[] getPredicates(final Root<MonsterStat> root, final MonsterStat example) {

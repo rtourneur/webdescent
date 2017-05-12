@@ -44,7 +44,7 @@ public final class ItemDaoImpl extends AbstractDao<Item, String> implements Item
    *          the root type
    * @param example
    *          the example
-   * @see AbstractDao#getPredicates(Root, Item)
+   * @see AbstractDao#getPredicates(Root, com.raf.fwk.jpa.domain.DomainEntity)
    */
   @Override
   protected Predicate[] getPredicates(final Root<Item> root, final Item example) {

@@ -48,7 +48,7 @@ public abstract class AbstractExpansionEntity extends AbstractEntity implements 
    * Returns the serializable ID of domain entity.
    *
    * @return the ID
-   * @see DomainNamedEntity#getId()
+   * @see DomainNamedEntity#getIdentifier()
    */
   @Override
   public NameExpansionPk getIdentifier() {
@@ -60,7 +60,7 @@ public abstract class AbstractExpansionEntity extends AbstractEntity implements 
    * 
    * @param identifier
    *          the ident to set
-   * @see DomainNamedEntity#setIdent(NameExpansionPk)
+   * @see DomainNamedEntity#setIdentifier(java.io.Serializable)
    */
   @Override
   public void setIdentifier(final NameExpansionPk identifier) {

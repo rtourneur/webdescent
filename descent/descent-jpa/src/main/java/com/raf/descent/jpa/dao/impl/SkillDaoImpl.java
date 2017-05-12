@@ -40,7 +40,7 @@ public final class SkillDaoImpl extends AbstractDao<Skill, String> implements Sk
    *          the root type
    * @param example
    *          the example
-   * @see AbstractDao#getPredicates(Root, Skill)
+   * @see AbstractDao#getPredicates(Root, com.raf.fwk.jpa.domain.DomainEntity)
    */
   @Override
   protected Predicate[] getPredicates(final Root<Skill> root, final Skill example) {

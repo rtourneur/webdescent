@@ -39,7 +39,7 @@ public final class ActDaoImpl extends AbstractDao<Act, String> implements ActDao
    *          the root type
    * @param example
    *          the example
-   * @see AbstractDao#getPredicates(Root, Act)
+   * @see AbstractDao#getPredicates(Root, com.raf.fwk.jpa.domain.DomainEntity)
    */
   @Override
   protected Predicate[] getPredicates(final Root<Act> root, final Act example) {

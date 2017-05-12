@@ -7,7 +7,7 @@ import com.raf.descent.jpa.domain.model.DiceType;
 import com.raf.fwk.jpa.dao.AbstractNamedDao;
 
 /**
- * Implementation DAO for {@link DiceTypeImpl}.
+ * Implementation DAO for {@link DiceType}.
  * 
  * @author RAF
  */

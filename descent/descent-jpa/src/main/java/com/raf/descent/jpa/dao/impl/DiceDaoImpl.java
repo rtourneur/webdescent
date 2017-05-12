@@ -40,7 +40,7 @@ public final class DiceDaoImpl extends AbstractDao<Dice, String> implements Dice
    *          the root type
    * @param example
    *          the example
-   * @see AbstractDao#getPredicates(Root, Dice)
+   * @see AbstractDao#getPredicates(Root, com.raf.fwk.jpa.domain.DomainEntity)
    */
   @Override
   protected Predicate[] getPredicates(final Root<Dice> root, final Dice example) {
