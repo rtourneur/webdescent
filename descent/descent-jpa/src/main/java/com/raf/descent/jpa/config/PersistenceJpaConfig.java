@@ -1,5 +1,12 @@
 package com.raf.descent.jpa.config;
 
+import static org.hibernate.cfg.AvailableSettings.DEFAULT_BATCH_FETCH_SIZE;
+import static org.hibernate.cfg.AvailableSettings.DIALECT;
+import static org.hibernate.cfg.AvailableSettings.FORMAT_SQL;
+import static org.hibernate.cfg.AvailableSettings.MAX_FETCH_DEPTH;
+import static org.hibernate.cfg.AvailableSettings.SHOW_SQL;
+import static org.hibernate.cfg.AvailableSettings.STATEMENT_BATCH_SIZE;
+
 import java.util.Properties;
 
 import javax.naming.Context;
@@ -110,9 +117,27 @@ public class PersistenceJpaConfig {
    */
   private Properties additionalProperties() {
     final Properties properties = new Properties();
-    properties.setProperty("hibernate.dialect", this.env.getProperty("hibernate.dialect"));
-    properties.setProperty("hibernate.show_sql", this.env.getProperty("hibernate.show_sql"));
-    properties.setProperty("hibernate.format_sql", this.env.getProperty("hibernate.format_sql"));
+    setHibernateProperty(properties, DIALECT);
+    setHibernateProperty(properties, SHOW_SQL);
+    setHibernateProperty(properties, FORMAT_SQL);
+    setHibernateProperty(properties, MAX_FETCH_DEPTH);
+    setHibernateProperty(properties, DEFAULT_BATCH_FETCH_SIZE);
+    setHibernateProperty(properties, STATEMENT_BATCH_SIZE);
     return properties;
+  }
+
+  /**
+   * Add the hibernate property from the environment.
+   * 
+   * @param properties
+   *          the properties
+   * @param propertyName
+   *          the property name the
+   */
+  private void setHibernateProperty(final Properties properties, final String propertyName) {
+    if (this.env.containsProperty(propertyName)) {
+      properties.setProperty(propertyName, this.env.getProperty(propertyName));
+    }
+
   }
 }
