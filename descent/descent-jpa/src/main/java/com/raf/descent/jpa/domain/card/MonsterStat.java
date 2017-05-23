@@ -1,6 +1,7 @@
 package com.raf.descent.jpa.domain.card;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
@@ -91,13 +92,13 @@ public class MonsterStat extends AbstractIdEntity {
   @ElementCollection(fetch = FetchType.EAGER)
   @CollectionTable(name = "MONSTER_DEFENSE", schema = "DESCENT", joinColumns = { @JoinColumn(name = "ID") }, indexes = {
       @Index(name = "IDX_MONSTER_DEFENSE", columnList = "ID, DICE, INDEX", unique = true) })
-  private List<StatDiceName> defenseDiceNames;
+  private Set<StatDiceName> defenseDiceNames;
 
   /** The monster attack dices. */
   @ElementCollection(fetch = FetchType.EAGER)
   @CollectionTable(name = "MONSTER_ATTACK", schema = "DESCENT", joinColumns = { @JoinColumn(name = "ID") }, indexes = {
       @Index(name = "IDX_MONSTER_ATTACK", columnList = "ID, DICE, INDEX", unique = true) })
-  private List<StatDiceName> attackDiceNames;
+  private Set<StatDiceName> attackDiceNames;
 
   /** The monster abilities. */
   @ElementCollection(fetch = FetchType.EAGER)

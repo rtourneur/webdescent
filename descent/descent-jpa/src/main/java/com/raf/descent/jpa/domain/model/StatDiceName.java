@@ -9,6 +9,7 @@ import javax.persistence.Embeddable;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,6 +23,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@EqualsAndHashCode
 public class StatDiceName implements Serializable {
 
   /** Serial UID. */

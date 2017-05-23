@@ -5,6 +5,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
@@ -60,10 +61,10 @@ public class MonsterStatDaoTest extends AbstractDaoTest {
     MonsterType monsterType = result.getMonsterType();
     assertNotNull(monsterType);
     assertEquals("Master", monsterType.getName());
-    List<StatDiceName> defenses = result.getDefenseDiceNames();
+    Set<StatDiceName> defenses = result.getDefenseDiceNames();
     assertNotNull(defenses);
     assertFalse(defenses.isEmpty());
-    List<StatDiceName> attacks = result.getAttackDiceNames();
+    Set<StatDiceName> attacks = result.getAttackDiceNames();
     assertNotNull(attacks);
     assertFalse(attacks.isEmpty());
     List<MonsterAbility> abilities = result.getAbilities();
@@ -91,10 +92,10 @@ public class MonsterStatDaoTest extends AbstractDaoTest {
     MonsterType monsterType = result.getMonsterType();
     assertNotNull(monsterType);
     assertEquals("Master", monsterType.getName());
-    List<StatDiceName> defenses = result.getDefenseDiceNames();
+    Set<StatDiceName> defenses = result.getDefenseDiceNames();
     assertNotNull(defenses);
     assertFalse(defenses.isEmpty());
-    List<StatDiceName> attacks = result.getAttackDiceNames();
+    Set<StatDiceName> attacks = result.getAttackDiceNames();
     assertNotNull(attacks);
     assertFalse(attacks.isEmpty());
     List<MonsterAbility> abilities = result.getAbilities();
